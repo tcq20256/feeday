@@ -1,6 +1,9 @@
 {
-    "title":"Blog Title",
-    "subTitle":"Blog description",
+    "title":"Blog",
+    "subTitle":"Description",
+    "homeUrl":"https://blog.cpuck.com",
     "avatarUrl":"https://github.githubassets.com/favicons/favicon.svg",
+    "bottomText":"❤️ 转载文章请注明出处，谢谢！❤️",
+    "script": "<script src='/gmeek/GmeekTOC.js'></script>",
     "GMEEK_VERSION":"last"
 }
