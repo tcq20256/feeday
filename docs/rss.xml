@@ -1,13 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog</title><link>https://blog.cpuck.com</link><description>Description</description><copyright>Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://blog.cpuck.com</link></image><lastBuildDate>Sat, 19 Jul 2025 20:48:08 +0000</lastBuildDate><managingEditor>Blog</managingEditor><ttl>60</ttl><webMaster>Blog</webMaster><item><title>NextChat</title><link>https://blog.cpuck.com/post/NextChat.html</link><description>&lt;div align='center'&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog</title><link>https://blog.cpuck.com</link><description>Description</description><copyright>Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://blog.cpuck.com</link></image><lastBuildDate>Sat, 19 Jul 2025 21:06:24 +0000</lastBuildDate><managingEditor>Blog</managingEditor><ttl>60</ttl><webMaster>Blog</webMaster><item><title>NextChat</title><link>https://blog.cpuck.com/post/NextChat.html</link><description>
 
 ✨ Light and Fast AI Assistant,with Claude, DeepSeek, GPT4 &amp; Gemini Pro support. 
 
-[![Saas][Saas-image]][saas-url]
-[![Web][Web-image]][web-url]
-[![Windows][Windows-image]][download-url]
-[![MacOS][MacOS-image]][download-url]
-[![Linux][Linux-image]][download-url]
 
 [NextChatAI](https://nextchat.club?utm_source=readme) / [Web App Demo](https://app.nextchat.dev) / [Desktop App](https://github.com/Yidadaa/ChatGPT-Next-Web/releases) / [Discord](https://discord.gg/YCkeafCafC) / [Enterprise Edition](#enterprise-edition) / [Twitter](https://twitter.com/NextChatDev)
 
@@ -25,7 +20,7 @@
 
 [&lt;img src='https://github.com/user-attachments/assets/903482d4-3e87-4134-9af1-f2588fa90659' height='50' width='' &gt;](https://monica.im/?utm=nxcrp)
 
-&lt;/div&gt;
+
 
 ## Dokploy
 

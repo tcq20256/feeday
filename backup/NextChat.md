@@ -1,12 +1,7 @@
-<div align="center">
+
 
 ✨ Light and Fast AI Assistant,with Claude, DeepSeek, GPT4 & Gemini Pro support. 
 
-[![Saas][Saas-image]][saas-url]
-[![Web][Web-image]][web-url]
-[![Windows][Windows-image]][download-url]
-[![MacOS][MacOS-image]][download-url]
-[![Linux][Linux-image]][download-url]
 
 [NextChatAI](https://nextchat.club?utm_source=readme) / [Web App Demo](https://app.nextchat.dev) / [Desktop App](https://github.com/Yidadaa/ChatGPT-Next-Web/releases) / [Discord](https://discord.gg/YCkeafCafC) / [Enterprise Edition](#enterprise-edition) / [Twitter](https://twitter.com/NextChatDev)
 
@@ -24,7 +19,7 @@
 
 [<img src="https://github.com/user-attachments/assets/903482d4-3e87-4134-9af1-f2588fa90659" height="50" width="" >](https://monica.im/?utm=nxcrp)
 
-</div>
+
 
 ## Dokploy
 
