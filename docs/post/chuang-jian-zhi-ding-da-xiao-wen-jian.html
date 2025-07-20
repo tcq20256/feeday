@@ -10,135 +10,39 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="```
-import os
-import cv2
-import numpy as np
-from keras.applications.resnet50 import ResNet50, preprocess_input
- 
-# pip install opencv-python numpy keras tensorflow
- 
-def extract_image_features(image_path):
-    image = cv2.imread(image_path)  # 读取图片
-    image = cv2.resize(image, (256, 256))  # 缩放图片到统一尺寸
-    image = image[16:240, 16:240]  # 裁剪中间区域(224x224)
-    
-    image = np.expand_dims(image, axis=0)  # 扩展维度以匹配模型输入要求
-    image = preprocess_input(image)  # 预处理图片
-    
-    features = model.predict(image)  # 提取特征向量
-    features /= np.linalg.norm(features)  # 归一化特征向量
-    
-    return features.flatten()  # 平铺特征向量
- 
-def delete_duplicate_images():
-    current_dir = os.getcwd()  # 获取当前目录路径
-    files = [f for f in os.listdir(current_dir) if os.path.isfile(os.path.join(current_dir, f))]  # 获取当前目录下的所有文件
- 
-    image_features = {}
-    deleted_count = 0  # 记录删除的图片数量
-    duplicate_pairs = []  # 用于保存重复图片的文件名对
- 
-    for file_name in files:
-        if file_name.endswith('.jpg') or file_name.endswith('.png'):  # 筛选出图片文件
-            file_path = os.path.join(current_dir, file_name)
-            image_feature = extract_image_features(file_path)
- 
-            is_duplicate = False
-            for existing_path, existing_feature in image_features.items():
-                distance = np.linalg.norm(existing_feature - image_feature)  # 计算欧氏距离
-                if distance < 0.3:  # 设定阈值来判断相似度，根据实际情况调整
-                    is_duplicate = True
-                    print(f'删除重复图片: {file_path}')
-                    os.remove(file_path)
-                    deleted_count += 1
-                    # 记录重复的文件名对 (当前文件名和已有文件名)
-                    duplicate_pairs.append((file_name, os.path.basename(existing_path)))
-                    break
- 
-            if not is_duplicate:
-                image_features[file_path] = image_feature
- 
-    # 将重复图片文件名对保存到txt文件
-    if duplicate_pairs:
-        with open('duplicate_images.txt', 'w') as f:
-            for file1, file2 in duplicate_pairs:
-                f.write(f'{file1} 与 {file2} 重复\n')
-    
-    print('已删除 {} 张重复图片'.format(deleted_count))
- 
-# 加载预训练的ResNet50模型
-model = ResNet50(weights='imagenet', include_top=False, pooling='avg')
- 
-delete_duplicate_images()
+<meta name="description" content="运行 cmd 执行创建文本文件
+
+```
+fsutil file createnew f:\1GB.txt 1073741824
+```
+
+换算单位
+
+```
+byte (B):1073741824
+kilobyte (kB):1048576
+megabyte (MB):1024
+gigabyte (GB):	1
 ```。">
-<meta property="og:title" content="删除重复图像">
-<meta property="og:description" content="```
-import os
-import cv2
-import numpy as np
-from keras.applications.resnet50 import ResNet50, preprocess_input
- 
-# pip install opencv-python numpy keras tensorflow
- 
-def extract_image_features(image_path):
-    image = cv2.imread(image_path)  # 读取图片
-    image = cv2.resize(image, (256, 256))  # 缩放图片到统一尺寸
-    image = image[16:240, 16:240]  # 裁剪中间区域(224x224)
-    
-    image = np.expand_dims(image, axis=0)  # 扩展维度以匹配模型输入要求
-    image = preprocess_input(image)  # 预处理图片
-    
-    features = model.predict(image)  # 提取特征向量
-    features /= np.linalg.norm(features)  # 归一化特征向量
-    
-    return features.flatten()  # 平铺特征向量
- 
-def delete_duplicate_images():
-    current_dir = os.getcwd()  # 获取当前目录路径
-    files = [f for f in os.listdir(current_dir) if os.path.isfile(os.path.join(current_dir, f))]  # 获取当前目录下的所有文件
- 
-    image_features = {}
-    deleted_count = 0  # 记录删除的图片数量
-    duplicate_pairs = []  # 用于保存重复图片的文件名对
- 
-    for file_name in files:
-        if file_name.endswith('.jpg') or file_name.endswith('.png'):  # 筛选出图片文件
-            file_path = os.path.join(current_dir, file_name)
-            image_feature = extract_image_features(file_path)
- 
-            is_duplicate = False
-            for existing_path, existing_feature in image_features.items():
-                distance = np.linalg.norm(existing_feature - image_feature)  # 计算欧氏距离
-                if distance < 0.3:  # 设定阈值来判断相似度，根据实际情况调整
-                    is_duplicate = True
-                    print(f'删除重复图片: {file_path}')
-                    os.remove(file_path)
-                    deleted_count += 1
-                    # 记录重复的文件名对 (当前文件名和已有文件名)
-                    duplicate_pairs.append((file_name, os.path.basename(existing_path)))
-                    break
- 
-            if not is_duplicate:
-                image_features[file_path] = image_feature
- 
-    # 将重复图片文件名对保存到txt文件
-    if duplicate_pairs:
-        with open('duplicate_images.txt', 'w') as f:
-            for file1, file2 in duplicate_pairs:
-                f.write(f'{file1} 与 {file2} 重复\n')
-    
-    print('已删除 {} 张重复图片'.format(deleted_count))
- 
-# 加载预训练的ResNet50模型
-model = ResNet50(weights='imagenet', include_top=False, pooling='avg')
- 
-delete_duplicate_images()
+<meta property="og:title" content="创建指定大小文件">
+<meta property="og:description" content="运行 cmd 执行创建文本文件
+
+```
+fsutil file createnew f:\1GB.txt 1073741824
+```
+
+换算单位
+
+```
+byte (B):1073741824
+kilobyte (kB):1048576
+megabyte (MB):1024
+gigabyte (GB):	1
 ```。">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://blog.cpuck.com/post/shan-chu-zhong-fu-tu-xiang.html">
+<meta property="og:url" content="https://blog.cpuck.com/post/chuang-jian-zhi-ding-da-xiao-wen-jian.html">
 <meta property="og:image" content="https://github.githubassets.com/favicons/favicon.svg">
-<title>删除重复图像</title>
+<title>创建指定大小文件</title>
 
 
 
@@ -181,7 +85,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 <body>
     <div id="header">
-<h1 class="postTitle">删除重复图像</h1>
+<h1 class="postTitle">创建指定大小文件</h1>
 <div class="title-right">
     <a href="https://blog.cpuck.com" id="buttonHome" class="btn btn-invisible circle" title="首页">
         <svg class="octicon" width="16" height="16">
@@ -189,7 +93,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
         </svg>
     </a>
     
-    <a href="https://github.com/feeday/blog/issues/6" target="_blank" class="btn btn-invisible circle" title="Issue">
+    <a href="https://github.com/feeday/blog/issues/10" target="_blank" class="btn btn-invisible circle" title="Issue">
         <svg class="octicon" width="16" height="16">
             <path id="pathIssue" fill-rule="evenodd"></path>
         </svg>
@@ -205,66 +109,14 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><pre class="notranslate"><code class="notranslate">import os
-import cv2
-import numpy as np
-from keras.applications.resnet50 import ResNet50, preprocess_input
- 
-# pip install opencv-python numpy keras tensorflow
- 
-def extract_image_features(image_path):
-    image = cv2.imread(image_path)  # 读取图片
-    image = cv2.resize(image, (256, 256))  # 缩放图片到统一尺寸
-    image = image[16:240, 16:240]  # 裁剪中间区域(224x224)
-    
-    image = np.expand_dims(image, axis=0)  # 扩展维度以匹配模型输入要求
-    image = preprocess_input(image)  # 预处理图片
-    
-    features = model.predict(image)  # 提取特征向量
-    features /= np.linalg.norm(features)  # 归一化特征向量
-    
-    return features.flatten()  # 平铺特征向量
- 
-def delete_duplicate_images():
-    current_dir = os.getcwd()  # 获取当前目录路径
-    files = [f for f in os.listdir(current_dir) if os.path.isfile(os.path.join(current_dir, f))]  # 获取当前目录下的所有文件
- 
-    image_features = {}
-    deleted_count = 0  # 记录删除的图片数量
-    duplicate_pairs = []  # 用于保存重复图片的文件名对
- 
-    for file_name in files:
-        if file_name.endswith(".jpg") or file_name.endswith(".png"):  # 筛选出图片文件
-            file_path = os.path.join(current_dir, file_name)
-            image_feature = extract_image_features(file_path)
- 
-            is_duplicate = False
-            for existing_path, existing_feature in image_features.items():
-                distance = np.linalg.norm(existing_feature - image_feature)  # 计算欧氏距离
-                if distance &lt; 0.3:  # 设定阈值来判断相似度，根据实际情况调整
-                    is_duplicate = True
-                    print(f"删除重复图片: {file_path}")
-                    os.remove(file_path)
-                    deleted_count += 1
-                    # 记录重复的文件名对 (当前文件名和已有文件名)
-                    duplicate_pairs.append((file_name, os.path.basename(existing_path)))
-                    break
- 
-            if not is_duplicate:
-                image_features[file_path] = image_feature
- 
-    # 将重复图片文件名对保存到txt文件
-    if duplicate_pairs:
-        with open("duplicate_images.txt", "w") as f:
-            for file1, file2 in duplicate_pairs:
-                f.write(f"{file1} 与 {file2} 重复\n")
-    
-    print("已删除 {} 张重复图片".format(deleted_count))
- 
-# 加载预训练的ResNet50模型
-model = ResNet50(weights='imagenet', include_top=False, pooling='avg')
- 
-delete_duplicate_images()
+<div class="markdown-body" id="postBody"><p>运行 cmd 执行创建文本文件</p>
+<pre class="notranslate"><code class="notranslate">fsutil file createnew f:\1GB.txt 1073741824
+</code></pre>
+<p>换算单位</p>
+<pre class="notranslate"><code class="notranslate">byte (B):1073741824
+kilobyte (kB):1048576
+megabyte (MB):1024
+gigabyte (GB):	1
 </code></pre></div>
 <div style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</div>
 
