@@ -1,5 +1,35 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog</title><link>https://blog.cpuck.com</link><description>Description</description><copyright>Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://blog.cpuck.com</link></image><lastBuildDate>Sun, 20 Jul 2025 04:43:44 +0000</lastBuildDate><managingEditor>Blog</managingEditor><ttl>60</ttl><webMaster>Blog</webMaster><item><title>删除重复图像</title><link>https://blog.cpuck.com/post/shan-chu-zhong-fu-tu-xiang.html</link><description>```
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog</title><link>https://blog.cpuck.com</link><description>Description</description><copyright>Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://blog.cpuck.com</link></image><lastBuildDate>Sun, 20 Jul 2025 04:44:57 +0000</lastBuildDate><managingEditor>Blog</managingEditor><ttl>60</ttl><webMaster>Blog</webMaster><item><title>移到文件</title><link>https://blog.cpuck.com/post/yi-dao-wen-jian.html</link><description>### 按照指定文件名移到文件
+
+### 简介
+假设目录与文件如下：
+```
+H:\
+├─ data
+│   ├─ report1.txt
+│   ├─ image_fail.png
+│   └─ sub
+│       └─ test_error.log
+├─ list.txt
+└─ copy    （初始为空）
+```
+
+list.txt 内容（每行一个关键字）
+```
+report
+fail
+missing
+error
+```
+
+运行控制台输出：
+```
+✔ 已移动: 'report1.txt' 对应关键字 'report' 到 'H:\copy\report1.txt'
+✔ 已移动: 'image_fail.png' 对应关键字 'fail' 到 'H:\copy\image_fail.png'
+⚠ 未找到匹配文件 for key: 'missing'
+✔ 已移动: 'test_error.log' 对应关键字 'error' 到 'H:\copy\test_error.log'
+ 
+共 4 个关键字，成功移动 3 个，对应文件。</description><guid isPermaLink="true">https://blog.cpuck.com/post/yi-dao-wen-jian.html</guid><pubDate>Sun, 20 Jul 2025 04:44:19 +0000</pubDate></item><item><title>删除重复图像</title><link>https://blog.cpuck.com/post/shan-chu-zhong-fu-tu-xiang.html</link><description>```
 import os
 import cv2
 import numpy as np
