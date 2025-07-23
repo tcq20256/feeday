@@ -1,5 +1,50 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Wed, 23 Jul 2025 04:48:20 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>筛查重复或类似图像</title><link>https://feeday.cn/post/shai-cha-zhong-fu-huo-lei-si-tu-xiang.html</link><description>筛查重复或类似图像
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Wed, 23 Jul 2025 04:50:32 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>视频提取图像</title><link>https://feeday.cn/post/shi-pin-ti-qu-tu-xiang.html</link><description>视频提取图像
+```
+import cv2
+import os
+
+def extract_frames(video_path, output_folder):
+    # 获取视频文件名并用作输出文件夹的名称（去掉扩展名）
+    video_name = os.path.splitext(os.path.basename(video_path))[0]
+    video_output_folder = os.path.join(output_folder, video_name)
+    
+    # 创建输出文件夹（如果不存在）
+    os.makedirs(video_output_folder, exist_ok=True)
+
+    # 打开视频文件
+    cap = cv2.VideoCapture(video_path)
+    if not cap.isOpened():
+        print(f'无法打开视频文件：{video_path}')
+        return
+
+    # 获取视频的帧率（FPS）
+    fps = cap.get(cv2.CAP_PROP_FPS)
+    print(f'视频帧率：{fps} FPS')
+
+    # 获取视频的总帧数
+    total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+    print(f'视频总帧数：{total_frames}')
+
+    # 遍历视频中的每一帧
+    for frame_num in range(total_frames):
+        ret, frame = cap.read()
+        if not ret:
+            print(f'无法读取第 {frame_num} 帧')
+            break
+
+        # 每秒提取一帧
+        if frame_num % int(fps) == 0:
+            # 获取当前帧的时间戳（秒）
+            timestamp = frame_num // int(fps)
+            # 构造输出图像的文件路径
+            output_path = os.path.join(video_output_folder, f'frame_{timestamp:04d}.jpg')
+            # 保存当前帧为图像文件
+            if frame is not None:
+                cv2.imwrite(output_path, frame)
+                print(f'已保存：{output_path}')
+            else:
+                print(f'第 {timestamp} 秒图像为空，跳过保存。</description><guid isPermaLink="true">https://feeday.cn/post/shi-pin-ti-qu-tu-xiang.html</guid><pubDate>Wed, 23 Jul 2025 04:50:00 +0000</pubDate></item><item><title>筛查重复或类似图像</title><link>https://feeday.cn/post/shai-cha-zhong-fu-huo-lei-si-tu-xiang.html</link><description>筛查重复或类似图像
 ```
 import subprocess
 import sys
