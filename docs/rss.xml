@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Wed, 23 Jul 2025 04:52:09 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>筛出文件指定比例的文件</title><link>https://feeday.cn/post/shai-chu-wen-jian-zhi-ding-bi-li-de-wen-jian.html</link><description>筛出文件指定比例的文件
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Wed, 23 Jul 2025 04:58:16 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>筛出文件指定比例的文件</title><link>https://feeday.cn/post/shai-chu-wen-jian-zhi-ding-bi-li-de-wen-jian.html</link><description>筛出文件指定比例的文件
 ```
 import os
 import shutil
@@ -749,6 +749,8 @@ kilobyte (kB):1048576
 megabyte (MB):1024
 gigabyte (GB):	1
 ```。</description><guid isPermaLink="true">https://feeday.cn/post/chuang-jian-zhi-ding-da-xiao-wen-jian.html</guid><pubDate>Sun, 20 Jul 2025 04:46:02 +0000</pubDate></item><item><title>获取网页链接</title><link>https://feeday.cn/post/huo-qu-wang-ye-lian-jie.html</link><description>控制台浏览器获取网址
+
+## bilibili
 ```
 const links = document.getElementsByTagName('a');
 // 遍历所有链接并查找匹配的网址
@@ -760,7 +762,24 @@ for (const link of links) {
     console.log('匹配到的网址: ' + href);
   }
 }
-```。</description><guid isPermaLink="true">https://feeday.cn/post/huo-qu-wang-ye-lian-jie.html</guid><pubDate>Sun, 20 Jul 2025 04:45:35 +0000</pubDate></item><item><title>查找替换</title><link>https://feeday.cn/post/cha-zhao-ti-huan.html</link><description>搜索匹配当前目录下所有[文件名]或文件里的内容打印显示行号
+```
+
+## youtube
+
+```
+const links = document.getElementsByTagName('a');
+
+// 遍历所有链接并查找匹配的网址
+for (const link of links) {
+  const href = link.href;
+  // 使用正则表达式匹配 YouTube 视频链接
+  const urlRegex = /https:\/\/www\.youtube\.com\/watch\?v=[A-Za-z0-9_-]+/;
+  if (urlRegex.test(href)) {
+    console.log('匹配到的网址: ' + href);
+  }
+}
+```
+。</description><guid isPermaLink="true">https://feeday.cn/post/huo-qu-wang-ye-lian-jie.html</guid><pubDate>Sun, 20 Jul 2025 04:45:35 +0000</pubDate></item><item><title>查找替换</title><link>https://feeday.cn/post/cha-zhao-ti-huan.html</link><description>搜索匹配当前目录下所有[文件名]或文件里的内容打印显示行号
 ```
 grep -rn 'Money' *
 ```
