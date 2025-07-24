@@ -145,7 +145,7 @@ def write_to_csv_with_timestamp(base_name, rows, batch_size, output_dir="D:/data
 def main():
     total_tasks = len(primary_classes) * len(secondary_classes) * len(styles)
     task_counter = 0
-    batch_size = 5  # 没生成5条保存成表
+    batch_size = 5  # 生成5条保存成表
     buffer = []
     base_name = "generated_texts"
     output_dir = r"C:\test"  # 你需要的输出目录，请修改为你想要的路径
@@ -193,13 +193,15 @@ Today, I stumbled upon an ancient device in the ruins of an old library—an old
 ```
 from openai import OpenAI
 import time
+import csv
+import os
+from datetime import datetime
 
 # 初始化客户端，替换成 DeepSeek 的 base_url 和 api_key
 client = OpenAI(
-    api_key="sk-xxx",  # 这里换成你在 DeepSeek 申请的 API Key
+    api_key="sk-x",  # 这里换成你在 DeepSeek 申请的 API Key
     base_url="https://api.deepseek.com"    # DeepSeek API 地址，带/v1也可以
 )
-
 
 primary_classes = [
     "案件案例", "博客文章", "个人日记", "观点", "广告文案", "技术文档",
@@ -249,9 +251,25 @@ def generate_text(primary: str, secondary: str, style: str, max_retries=3) -> st
         return text.replace('\n', ' ')
     return ""
 
+def save_batch_to_csv(rows, batch_num, base_name="deepseek_output", output_dir="output"):
+    os.makedirs(output_dir, exist_ok=True)
+    timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+    filename = f"{base_name}_{timestamp}_batch{batch_num}.csv"
+    filepath = os.path.join(output_dir, filename)
+    with open(filepath, mode='w', encoding='utf-8-sig', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow(["编号", "一级类", "二级类", "风格", "内容", "字符数"])
+        writer.writerows(rows)
+    print(f"Saved batch {batch_num} with {len(rows)} records to {filepath}")
+
 def main():
     total_tasks = len(primary_classes) * len(secondary_classes) * len(styles)
     task_counter = 0
+    batch_size = 5  # 生成5条保存成表
+    batch_data = []
+    batch_number = 1
+    base_name = "deepseek_output"
+    output_dir = r"c:\test"  # 修改成你想保存的路径
 
     for primary in primary_classes:
         for secondary in secondary_classes:
@@ -263,7 +281,20 @@ def main():
                 print(f"Content ({length} characters):\n")
                 print(content)
                 print("\n" + "="*100 + "\n")
+
+                batch_data.append([task_counter, primary, secondary, style, content, length])
+
+                if len(batch_data) >= batch_size:
+                    save_batch_to_csv(batch_data, batch_number, base_name, output_dir)
+                    batch_data.clear()
+                    batch_number += 1
+
                 time.sleep(1)  # 避免请求过快被限流
+
+    if batch_data:
+        save_batch_to_csv(batch_data, batch_number, base_name, output_dir)
+
+    print("All tasks completed.")
 
 if __name__ == "__main__":
     main()
