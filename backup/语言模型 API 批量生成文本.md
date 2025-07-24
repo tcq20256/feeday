@@ -3,19 +3,21 @@
 
 ## ChatGPT 
 
-批量生成文本 - 第三方代理
+第三方代理接口
 
 -  [https://openkey.cloud](https://openkey.cloud/register?aff=22CVF)
 
 ### 执行脚本
 ```
 from openai import OpenAI
-import csv
 import time
+import csv
+import os
+from datetime import datetime
 
-# 你的OpenAI API Key和代理地址
+# 初始化客户端
 client = OpenAI(
-    api_key="sk-xxx",
+    api_key="sk-x",
     base_url="https://openkey.cloud/v1"
 )
 
@@ -129,25 +131,48 @@ def generate_text(primary, secondary, style, max_retries=3):
     print(f"Max retries reached for {primary}-{secondary}-{style}, returning last result")
     return text
 
+def write_to_csv_with_timestamp(base_name, rows, batch_size, output_dir="D:/data/output"):
+    os.makedirs(output_dir, exist_ok=True)
+    now_str = datetime.now().strftime("%Y%m%d%H%M")
+    filename = f"{base_name}_{now_str}_{batch_size}.csv"
+    full_path = os.path.join(output_dir, filename)
+    with open(full_path, 'w', newline='', encoding='utf-8-sig') as f:
+        writer = csv.writer(f)
+        writer.writerow(["编号", "一级类", "二级类", "风格", "内容", "字符数"])
+        writer.writerows(rows)
+    print(f"Saved batch of {len(rows)} records to {full_path}")
+
 def main():
     total_tasks = len(primary_classes) * len(secondary_classes) * len(styles)
     task_counter = 0
+    batch_size = 5  # 没生成5条保存成表
+    buffer = []
+    base_name = "generated_texts"
+    output_dir = r"C:\test"  # 你需要的输出目录，请修改为你想要的路径
 
-    with open("output_all_classes.tsv", "w", encoding="utf-8", newline="") as f:
-        writer = csv.writer(f, delimiter="\t")
-        writer.writerow(["一级类", "二级类", "风格", "内容"])  # 表头
+    for primary in primary_classes:
+        for secondary in secondary_classes:
+            for style in styles:
+                task_counter += 1
+                print(f"\n[{task_counter}/{total_tasks}] Generating: {primary} - {secondary} - {style}\n")
+                content = generate_text(primary, secondary, style)
+                char_num = char_count(content)
+                print(f"Content ({char_num} chars):\n")
+                print(content)
+                print("\n" + "="*80 + "\n")
 
-        for primary in primary_classes:
-            for secondary in secondary_classes:
-                for style in styles:
-                    task_counter += 1
-                    print(f"[{task_counter}/{total_tasks}] Generating: {primary} - {secondary} - {style}")
-                    content = generate_text(primary, secondary, style)
-                    print(f"Generated chars: {char_count(content)}")
-                    print("Full content:\n" + content)
-                    print("="*60 + "\n")
-                    writer.writerow([primary, secondary, style, content])
-                    time.sleep(1)  # 限流等待
+                buffer.append([task_counter, primary, secondary, style, content, char_num])
+
+                if len(buffer) >= batch_size:
+                    write_to_csv_with_timestamp(base_name, buffer, batch_size, output_dir=output_dir)
+                    buffer.clear()
+
+                time.sleep(1)  # 限流防封禁
+
+    if buffer:
+        write_to_csv_with_timestamp(base_name, buffer, len(buffer), output_dir=output_dir)
+
+    print("All done!")
 
 if __name__ == "__main__":
     main()
