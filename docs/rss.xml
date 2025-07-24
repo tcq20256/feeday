@@ -1,5 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Thu, 24 Jul 2025 14:36:58 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>语言模型 API 批量生成文本</title><link>https://feeday.cn/post/yu-yan-mo-xing-%20API%20-pi-liang-sheng-cheng-wen-ben.html</link><description>批量生成测试
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Thu, 24 Jul 2025 14:57:04 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>文本行转表列</title><link>https://feeday.cn/post/wen-ben-xing-zhuan-biao-lie.html</link><description>
+### 运行脚本
+```
+import sys
+import subprocess
+import os
+import re
+
+# 自动安装包的函数
+def install_package(package):
+    try:
+        __import__(package)
+    except ImportError:
+        print(f'缺少包 {package}，正在安装...')
+        subprocess.check_call([sys.executable, '-m', 'pip', 'install', package])
+        print(f'{package} 安装完成。</description><guid isPermaLink="true">https://feeday.cn/post/wen-ben-xing-zhuan-biao-lie.html</guid><pubDate>Thu, 24 Jul 2025 14:56:23 +0000</pubDate></item><item><title>语言模型 API 批量生成文本</title><link>https://feeday.cn/post/yu-yan-mo-xing-%20API%20-pi-liang-sheng-cheng-wen-ben.html</link><description>批量生成测试
 
 
 ## ChatGPT 
