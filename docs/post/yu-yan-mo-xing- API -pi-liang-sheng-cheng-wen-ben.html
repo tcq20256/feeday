@@ -10,7 +10,7 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="批量生成测试
+<meta name="description" content="文本模型批量生成文本测试
 
 
 ## ChatGPT 
@@ -172,10 +172,100 @@ Full content:
 October 12, 2147
 
 Today, I stumbled upon an ancient device in the ruins of an old library—an old smartphone. Its screen flickered to life, revealing images of a world long gone. I felt a surge of nostalgia for a time when humans thrived on connection, not just data. As I scrolled through its apps, I wondered what stories lay hidden in its memory, waiting to bridge the gap between past and present.
+```
+
+## DeepSeek
+- [https://platform.deepseek.com/api_keys](https://platform.deepseek.com/api_keys)
+### 运行脚本
+```
+from openai import OpenAI
+import time
+
+# 初始化客户端，替换成 DeepSeek 的 base_url 和 api_key
+client = OpenAI(
+    api_key='sk-xxx',  # 这里换成你在 DeepSeek 申请的 API Key
+    base_url='https://api.deepseek.com'    # DeepSeek API 地址，带/v1也可以
+)
+
+
+primary_classes = [
+    '案件案例', '博客文章', '个人日记', '观点', '广告文案', '技术文档',
+    '评论', '散文', '社交媒体帖子', '诗歌', '小说片段', '新闻报道', '学术论文摘要'
+]
+
+secondary_classes = [
+    'AI', '动物', '情感', '公益', '购物', '古代文明', '交通', '教育', '近代战争', '经济',
+    '科幻', '科技', '科普', '历史', '旅行', '美食', '母婴', '奇幻', '气候变化', '三农',
+    '社会问题', '摄影', '生活', '时尚', '时政', '体育', '文化', '武器', '校园', '医疗',
+    '艺术', '音乐', '影视', '游戏', '娱乐', '育儿', '职场', '植物', '商业'
+]
+
+styles = ['正式', '叙事', '情感化', '科普']
+
+def generate_text(primary: str, secondary: str, style: str, max_retries=3) -> str:
+    prompt = (
+        f'Please write an English text about the following topic.\n'
+        f'The text must be coherent and well-structured,\n'
+        f'with at least 200 characters. Avoid making the text too long.\n\n'
+        f'Primary category: {primary}\n'
+        f'Secondary category: {secondary}\n'
+        f'Writing style: {style}'
+    )
+    text = ''
+    for attempt in range(1, max_retries + 1):
+        try:
+            response = client.chat.completions.create(
+                model='deepseek-chat',
+                messages=[{'role': 'user', 'content': prompt}],
+                temperature=0.7,
+                max_tokens=500  # 允许稍长文本，模型自动控制长度
+            )
+            text = response.choices[0].message.content.strip()
+            length = len(text)
+            if length >= 200:
+                return text.replace('\n', ' ')
+            else:
+                print(f'Retry {attempt} for {primary} - {secondary} - {style}: char count {length} < 200')
+                time.sleep(1)
+        except Exception as e:
+            print(f'Error on {primary} - {secondary} - {style}: {e}')
+            time.sleep(2)
+
+    print(f'Max retries reached for {primary} - {secondary} - {style}. Returning last result.')
+    if text:
+        return text.replace('\n', ' ')
+    return ''
+
+def main():
+    total_tasks = len(primary_classes) * len(secondary_classes) * len(styles)
+    task_counter = 0
+
+    for primary in primary_classes:
+        for secondary in secondary_classes:
+            for style in styles:
+                task_counter += 1
+                print(f'\n[{task_counter}/{total_tasks}] Generating: {primary} - {secondary} - {style}\n')
+                content = generate_text(primary, secondary, style)
+                length = len(content)
+                print(f'Content ({length} characters):\n')
+                print(content)
+                print('\n' + '='*100 + '\n')
+                time.sleep(1)  # 避免请求过快被限流
+
+if __name__ == '__main__':
+    main()
+```
+### 输出结果
+```
+[15/2028] Generating: 案件案例 - 公益 - 情感化
+
+Content (827 characters):
+
+**A Beacon of Hope: The Power of Compassion in Legal Cases**    In the midst of cold courtrooms and rigid laws, some cases shine as reminders of humanity’s warmth. Take the story of an elderly woman evicted unfairly—her plight moved strangers to crowdfund her legal fees. Or the pro bono lawyers who fought for a child’s right to education against all odds. These stories aren’t just about justice; they’re about hearts uniting to lift others up.    Every such case whispers a truth: the law is stronger when wrapped in kindness. Behind every docket number is a life, and behind every verdict, a chance to heal. Let’s celebrate these unsung heroes—the donors, volunteers, and advocates—who turn legal battles into triumphs of empathy. Because justice, when paired with love, doesn’t just win—it transforms.    (Characters: 598)
 ```
 。">
 <meta property="og:title" content="语言模型 API 批量生成文本">
-<meta property="og:description" content="批量生成测试
+<meta property="og:description" content="文本模型批量生成文本测试
 
 
 ## ChatGPT 
@@ -337,6 +427,96 @@ Full content:
 October 12, 2147
 
 Today, I stumbled upon an ancient device in the ruins of an old library—an old smartphone. Its screen flickered to life, revealing images of a world long gone. I felt a surge of nostalgia for a time when humans thrived on connection, not just data. As I scrolled through its apps, I wondered what stories lay hidden in its memory, waiting to bridge the gap between past and present.
+```
+
+## DeepSeek
+- [https://platform.deepseek.com/api_keys](https://platform.deepseek.com/api_keys)
+### 运行脚本
+```
+from openai import OpenAI
+import time
+
+# 初始化客户端，替换成 DeepSeek 的 base_url 和 api_key
+client = OpenAI(
+    api_key='sk-xxx',  # 这里换成你在 DeepSeek 申请的 API Key
+    base_url='https://api.deepseek.com'    # DeepSeek API 地址，带/v1也可以
+)
+
+
+primary_classes = [
+    '案件案例', '博客文章', '个人日记', '观点', '广告文案', '技术文档',
+    '评论', '散文', '社交媒体帖子', '诗歌', '小说片段', '新闻报道', '学术论文摘要'
+]
+
+secondary_classes = [
+    'AI', '动物', '情感', '公益', '购物', '古代文明', '交通', '教育', '近代战争', '经济',
+    '科幻', '科技', '科普', '历史', '旅行', '美食', '母婴', '奇幻', '气候变化', '三农',
+    '社会问题', '摄影', '生活', '时尚', '时政', '体育', '文化', '武器', '校园', '医疗',
+    '艺术', '音乐', '影视', '游戏', '娱乐', '育儿', '职场', '植物', '商业'
+]
+
+styles = ['正式', '叙事', '情感化', '科普']
+
+def generate_text(primary: str, secondary: str, style: str, max_retries=3) -> str:
+    prompt = (
+        f'Please write an English text about the following topic.\n'
+        f'The text must be coherent and well-structured,\n'
+        f'with at least 200 characters. Avoid making the text too long.\n\n'
+        f'Primary category: {primary}\n'
+        f'Secondary category: {secondary}\n'
+        f'Writing style: {style}'
+    )
+    text = ''
+    for attempt in range(1, max_retries + 1):
+        try:
+            response = client.chat.completions.create(
+                model='deepseek-chat',
+                messages=[{'role': 'user', 'content': prompt}],
+                temperature=0.7,
+                max_tokens=500  # 允许稍长文本，模型自动控制长度
+            )
+            text = response.choices[0].message.content.strip()
+            length = len(text)
+            if length >= 200:
+                return text.replace('\n', ' ')
+            else:
+                print(f'Retry {attempt} for {primary} - {secondary} - {style}: char count {length} < 200')
+                time.sleep(1)
+        except Exception as e:
+            print(f'Error on {primary} - {secondary} - {style}: {e}')
+            time.sleep(2)
+
+    print(f'Max retries reached for {primary} - {secondary} - {style}. Returning last result.')
+    if text:
+        return text.replace('\n', ' ')
+    return ''
+
+def main():
+    total_tasks = len(primary_classes) * len(secondary_classes) * len(styles)
+    task_counter = 0
+
+    for primary in primary_classes:
+        for secondary in secondary_classes:
+            for style in styles:
+                task_counter += 1
+                print(f'\n[{task_counter}/{total_tasks}] Generating: {primary} - {secondary} - {style}\n')
+                content = generate_text(primary, secondary, style)
+                length = len(content)
+                print(f'Content ({length} characters):\n')
+                print(content)
+                print('\n' + '='*100 + '\n')
+                time.sleep(1)  # 避免请求过快被限流
+
+if __name__ == '__main__':
+    main()
+```
+### 输出结果
+```
+[15/2028] Generating: 案件案例 - 公益 - 情感化
+
+Content (827 characters):
+
+**A Beacon of Hope: The Power of Compassion in Legal Cases**    In the midst of cold courtrooms and rigid laws, some cases shine as reminders of humanity’s warmth. Take the story of an elderly woman evicted unfairly—her plight moved strangers to crowdfund her legal fees. Or the pro bono lawyers who fought for a child’s right to education against all odds. These stories aren’t just about justice; they’re about hearts uniting to lift others up.    Every such case whispers a truth: the law is stronger when wrapped in kindness. Behind every docket number is a life, and behind every verdict, a chance to heal. Let’s celebrate these unsung heroes—the donors, volunteers, and advocates—who turn legal battles into triumphs of empathy. Because justice, when paired with love, doesn’t just win—it transforms.    (Characters: 598)
 ```
 。">
 <meta property="og:type" content="article">
@@ -409,7 +589,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p>批量生成测试</p>
+<div class="markdown-body" id="postBody"><p>文本模型批量生成文本测试</p>
 <h2>ChatGPT</h2>
 <p>批量生成文本 - 第三方代理</p>
 <ul>
@@ -566,6 +746,95 @@ Full content:
 October 12, 2147
 
 Today, I stumbled upon an ancient device in the ruins of an old library—an old smartphone. Its screen flickered to life, revealing images of a world long gone. I felt a surge of nostalgia for a time when humans thrived on connection, not just data. As I scrolled through its apps, I wondered what stories lay hidden in its memory, waiting to bridge the gap between past and present.
+</code></pre>
+<h2>DeepSeek</h2>
+<ul>
+<li><a href="https://platform.deepseek.com/api_keys" rel="nofollow">https://platform.deepseek.com/api_keys</a></li>
+</ul>
+<h3>运行脚本</h3>
+<pre class="notranslate"><code class="notranslate">from openai import OpenAI
+import time
+
+# 初始化客户端，替换成 DeepSeek 的 base_url 和 api_key
+client = OpenAI(
+    api_key="sk-xxx",  # 这里换成你在 DeepSeek 申请的 API Key
+    base_url="https://api.deepseek.com"    # DeepSeek API 地址，带/v1也可以
+)
+
+
+primary_classes = [
+    "案件案例", "博客文章", "个人日记", "观点", "广告文案", "技术文档",
+    "评论", "散文", "社交媒体帖子", "诗歌", "小说片段", "新闻报道", "学术论文摘要"
+]
+
+secondary_classes = [
+    "AI", "动物", "情感", "公益", "购物", "古代文明", "交通", "教育", "近代战争", "经济",
+    "科幻", "科技", "科普", "历史", "旅行", "美食", "母婴", "奇幻", "气候变化", "三农",
+    "社会问题", "摄影", "生活", "时尚", "时政", "体育", "文化", "武器", "校园", "医疗",
+    "艺术", "音乐", "影视", "游戏", "娱乐", "育儿", "职场", "植物", "商业"
+]
+
+styles = ["正式", "叙事", "情感化", "科普"]
+
+def generate_text(primary: str, secondary: str, style: str, max_retries=3) -&gt; str:
+    prompt = (
+        f"Please write an English text about the following topic.\n"
+        f"The text must be coherent and well-structured,\n"
+        f"with at least 200 characters. Avoid making the text too long.\n\n"
+        f"Primary category: {primary}\n"
+        f"Secondary category: {secondary}\n"
+        f"Writing style: {style}"
+    )
+    text = ""
+    for attempt in range(1, max_retries + 1):
+        try:
+            response = client.chat.completions.create(
+                model="deepseek-chat",
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.7,
+                max_tokens=500  # 允许稍长文本，模型自动控制长度
+            )
+            text = response.choices[0].message.content.strip()
+            length = len(text)
+            if length &gt;= 200:
+                return text.replace('\n', ' ')
+            else:
+                print(f"Retry {attempt} for {primary} - {secondary} - {style}: char count {length} &lt; 200")
+                time.sleep(1)
+        except Exception as e:
+            print(f"Error on {primary} - {secondary} - {style}: {e}")
+            time.sleep(2)
+
+    print(f"Max retries reached for {primary} - {secondary} - {style}. Returning last result.")
+    if text:
+        return text.replace('\n', ' ')
+    return ""
+
+def main():
+    total_tasks = len(primary_classes) * len(secondary_classes) * len(styles)
+    task_counter = 0
+
+    for primary in primary_classes:
+        for secondary in secondary_classes:
+            for style in styles:
+                task_counter += 1
+                print(f"\n[{task_counter}/{total_tasks}] Generating: {primary} - {secondary} - {style}\n")
+                content = generate_text(primary, secondary, style)
+                length = len(content)
+                print(f"Content ({length} characters):\n")
+                print(content)
+                print("\n" + "="*100 + "\n")
+                time.sleep(1)  # 避免请求过快被限流
+
+if __name__ == "__main__":
+    main()
+</code></pre>
+<h3>输出结果</h3>
+<pre class="notranslate"><code class="notranslate">[15/2028] Generating: 案件案例 - 公益 - 情感化
+
+Content (827 characters):
+
+**A Beacon of Hope: The Power of Compassion in Legal Cases**    In the midst of cold courtrooms and rigid laws, some cases shine as reminders of humanity’s warmth. Take the story of an elderly woman evicted unfairly—her plight moved strangers to crowdfund her legal fees. Or the pro bono lawyers who fought for a child’s right to education against all odds. These stories aren’t just about justice; they’re about hearts uniting to lift others up.    Every such case whispers a truth: the law is stronger when wrapped in kindness. Behind every docket number is a life, and behind every verdict, a chance to heal. Let’s celebrate these unsung heroes—the donors, volunteers, and advocates—who turn legal battles into triumphs of empathy. Because justice, when paired with love, doesn’t just win—it transforms.    (Characters: 598)
 </code></pre></div>
 <div style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</div>
 
