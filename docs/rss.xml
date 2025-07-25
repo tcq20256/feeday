@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Thu, 24 Jul 2025 15:54:03 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>文本行转表列</title><link>https://feeday.cn/post/wen-ben-xing-zhuan-biao-lie.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Fri, 25 Jul 2025 02:14:53 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>文本行转表列</title><link>https://feeday.cn/post/wen-ben-xing-zhuan-biao-lie.html</link><description>
 ### 运行脚本
 ```
 import sys
@@ -323,7 +323,32 @@ Content (827 characters):
 
 **A Beacon of Hope: The Power of Compassion in Legal Cases**    In the midst of cold courtrooms and rigid laws, some cases shine as reminders of humanity’s warmth. Take the story of an elderly woman evicted unfairly—her plight moved strangers to crowdfund her legal fees. Or the pro bono lawyers who fought for a child’s right to education against all odds. These stories aren’t just about justice; they’re about hearts uniting to lift others up.    Every such case whispers a truth: the law is stronger when wrapped in kindness. Behind every docket number is a life, and behind every verdict, a chance to heal. Let’s celebrate these unsung heroes—the donors, volunteers, and advocates—who turn legal battles into triumphs of empathy. Because justice, when paired with love, doesn’t just win—it transforms.    (Characters: 598)
 ```
-。</description><guid isPermaLink="true">https://feeday.cn/post/yu-yan-mo-xing-%20API%20-pi-liang-sheng-cheng-wen-ben.html</guid><pubDate>Thu, 24 Jul 2025 14:11:48 +0000</pubDate></item><item><title>筛出文件指定比例的文件</title><link>https://feeday.cn/post/shai-chu-wen-jian-zhi-ding-bi-li-de-wen-jian.html</link><description>筛出文件指定比例的文件
+## Kimi 
+
+-  [https://platform.moonshot.cn/console/api-keys](https://platform.moonshot.cn/console/api-keys)
+
+### 执行脚本
+```
+from openai import OpenAI
+import time
+import csv
+import os
+from datetime import datetime
+
+# === 模型选择 ===
+USE_MODEL = 'moonshot'
+
+# === 初始化客户端（Moonshot 中文）===
+client = OpenAI(
+    api_key='sk-xxx',  # ← 替换为你的 API Key
+    base_url='https://api.moonshot.cn/v1'
+)
+
+
+
+model_name = 'kimi-k2-0711-preview'
+system_prompt = (
+    '你是 Kimi，由 Moonshot AI 提供的人工智能助手。</description><guid isPermaLink="true">https://feeday.cn/post/yu-yan-mo-xing-%20API%20-pi-liang-sheng-cheng-wen-ben.html</guid><pubDate>Thu, 24 Jul 2025 14:11:48 +0000</pubDate></item><item><title>筛出文件指定比例的文件</title><link>https://feeday.cn/post/shai-chu-wen-jian-zhi-ding-bi-li-de-wen-jian.html</link><description>筛出文件指定比例的文件
 ```
 import os
 import shutil

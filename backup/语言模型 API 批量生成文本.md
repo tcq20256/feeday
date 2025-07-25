@@ -307,3 +307,143 @@ Content (827 characters):
 
 **A Beacon of Hope: The Power of Compassion in Legal Cases**    In the midst of cold courtrooms and rigid laws, some cases shine as reminders of humanity’s warmth. Take the story of an elderly woman evicted unfairly—her plight moved strangers to crowdfund her legal fees. Or the pro bono lawyers who fought for a child’s right to education against all odds. These stories aren’t just about justice; they’re about hearts uniting to lift others up.    Every such case whispers a truth: the law is stronger when wrapped in kindness. Behind every docket number is a life, and behind every verdict, a chance to heal. Let’s celebrate these unsung heroes—the donors, volunteers, and advocates—who turn legal battles into triumphs of empathy. Because justice, when paired with love, doesn’t just win—it transforms.    (Characters: 598)
 ```
+## Kimi 
+
+-  [https://platform.moonshot.cn/console/api-keys](https://platform.moonshot.cn/console/api-keys)
+
+### 执行脚本
+```
+from openai import OpenAI
+import time
+import csv
+import os
+from datetime import datetime
+
+# === 模型选择 ===
+USE_MODEL = "moonshot"
+
+# === 初始化客户端（Moonshot 中文）===
+client = OpenAI(
+    api_key="sk-xxx",  # ← 替换为你的 API Key
+    base_url="https://api.moonshot.cn/v1"
+)
+
+
+
+model_name = "kimi-k2-0711-preview"
+system_prompt = (
+    "你是 Kimi，由 Moonshot AI 提供的人工智能助手。你擅长中文内容创作，能够根据给定的分类和风格，"
+    "生成真实、连贯且结构良好的中文文本，内容不少于200字。"
+)
+
+# === 分类定义 ===
+primary_classes = [
+    "案件案例", "博客文章", "个人日记", "观点", "广告文案", "技术文档",
+    "评论", "散文", "社交媒体帖子", "诗歌", "小说片段", "新闻报道", "学术论文摘要"
+]
+
+secondary_classes = [
+    "AI", "动物", "情感", "公益", "购物", "古代文明", "交通", "教育", "近代战争", "经济",
+    "科幻", "科技", "科普", "历史", "旅行", "美食", "母婴", "奇幻", "气候变化", "三农",
+    "社会问题", "摄影", "生活", "时尚", "时政", "体育", "文化", "武器", "校园", "医疗",
+    "艺术", "音乐", "影视", "游戏", "娱乐", "育儿", "职场", "植物", "商业"
+]
+
+styles = ["正式", "叙事", "情感化", "科普"]
+
+# === 内容生成函数 ===
+def generate_text(primary: str, secondary: str, style: str, max_retries=3) -> str:
+    prompt = (
+        f"请根据以下要求，撰写一段结构清晰、通顺连贯的中文内容。\n"
+        f"内容长度应不少于200字，不要过长。\n\n"
+        f"一级分类：{primary}\n"
+        f"二级分类：{secondary}\n"
+        f"写作风格：{style}"
+    )
+    text = ""
+    for attempt in range(1, max_retries + 1):
+        try:
+            messages = [{"role": "system", "content": system_prompt},
+                        {"role": "user", "content": prompt}]
+
+            response = client.chat.completions.create(
+                model=model_name,
+                messages=messages,
+                temperature=0.7,
+                max_tokens=500,
+                timeout=60  # ⏰ 防止长时间卡住
+            )
+            text = response.choices[0].message.content.strip()
+            if len(text) >= 200:
+                return text.replace('\n', ' ')
+            else:
+                print(f"⚠️ Retry {attempt}: 内容太短（{len(text)} 字符）")
+                time.sleep(1)
+        except Exception as e:
+            print(f"❌ 错误：{primary}-{secondary}-{style} 第 {attempt} 次尝试失败：{e}")
+            time.sleep(2)
+
+    # 最终失败处理
+    fail_msg = "生成失败：内容为空"
+    with open("error_log.txt", "a", encoding="utf-8") as f:
+        f.write(f"[失败] {primary}-{secondary}-{style}\n")
+    return fail_msg
+
+# === 保存 CSV ===
+def save_batch_to_csv(rows, batch_num, base_name="output", output_dir="output"):
+    os.makedirs(output_dir, exist_ok=True)
+    timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+    filename = f"{base_name}_{timestamp}_batch{batch_num}.csv"
+    filepath = os.path.join(output_dir, filename)
+    with open(filepath, mode='w', encoding='utf-8-sig', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow(["编号", "一级类", "二级类", "风格", "内容", "字符数"])
+        writer.writerows(rows)
+    print(f"✅ 保存第 {batch_num} 批，共 {len(rows)} 条 → {filepath}")
+
+# === 主函数 ===
+def main():
+    total_tasks = len(primary_classes) * len(secondary_classes) * len(styles)  # = 2028
+    task_counter = 0
+    batch_data = []
+    batch_size = 52
+    batch_number = 1
+    output_dir = r"D:\zxl_bak\ds\moonshot_中文生成"  # ← 替换为你的输出目录
+
+    for primary in primary_classes:
+        for secondary in secondary_classes:
+            for style in styles:
+                task_counter += 1
+                print(f"\n[{task_counter}/{total_tasks}] ⏳ 正在生成：{primary} - {secondary} - {style}")
+                content = generate_text(primary, secondary, style)
+                length = len(content)
+                print(f"→ 内容长度: {length} 字符")
+                print("内容：")
+                print(content)
+                print("=" * 100)
+
+                batch_data.append([task_counter, primary, secondary, style, content, length])
+
+                if len(batch_data) >= batch_size:
+                    save_batch_to_csv(batch_data, batch_number, base_name="moonshot", output_dir=output_dir)
+                    batch_data.clear()
+                    batch_number += 1
+                time.sleep(1)
+
+    if batch_data:
+        save_batch_to_csv(batch_data, batch_number, base_name="moonshot", output_dir=output_dir)
+
+    print("\n🎉 所有 2028 条中文内容生成完毕！")
+
+if __name__ == "__main__":
+    main()
+```
+
+### 输出结果
+```
+[37/2028] ⏳ 正在生成：案件案例 - 经济 - 正式
+→ 内容长度: 534 字符
+内容：
+案例名称：金辉集团财务造假案  案件背景：2022年3月，经证监会稽查总队立案，上市公司金辉集团（代码：603877）被指控在2019至2021年间，通过虚增海外工程收入、提前确认未完工项目利润及利用关联方循环交易等方式，累计虚增营业收入人民币24.6亿元，虚增净 利润7.8亿元，导致年度报告存在重大虚假记载。  调查与审理：证监会联合财政部、公安部成立专案组，调取金辉集团及其上下游企业 的电子账套、银行流水及海运提单。经比对，发现其海外项目完工率被系统篡改，且多家注册于英属维京群岛的壳公司与实际控制人存在隐蔽股权关系。2023年1月，案件移送上海市人民检察院第三分院审查起诉。同年12月，上海市第三中级人民法院以违规披露重要信息罪 、操纵证券市场罪两罪并罚，判处金辉集团罚金人民币3亿元；对时任董事长赵某判处有期徒刑七年，并处罚金2000万元；对财务总监等 五名直接责任人员分别判处三至五年不等有期徒刑。  典型意义：本案系注册制下首例以“全链条证据穿透”认定财务造假的标杆案件。判决书首次确认，上市公司通过“海外项目”跨境舞弊同样适用《刑法》第一百六十一条，为后续同类案件审理提供了明确裁判标准，并推动证监会修订《上市公司现场检查办法》，强化了对异常境外收入的监管。
+====================================================================================================
+```
