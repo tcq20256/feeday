@@ -1,5 +1,23 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Fri, 25 Jul 2025 02:14:53 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>文本行转表列</title><link>https://feeday.cn/post/wen-ben-xing-zhuan-biao-lie.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Mon, 28 Jul 2025 05:05:43 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>多个表合并</title><link>https://feeday.cn/post/duo-ge-biao-he-bing.html</link><description>### 多张格式一样的表合并成一个表
+```
+import pandas as pd
+import os
+
+# 设置文件夹路径
+folder_path = r'D:\hb  # 替换为你的CSV文件夹路径
+
+# 获取所有 CSV 文件路径
+csv_files = [f for f in os.listdir(folder_path) if f.endswith('.csv')]
+
+# 合并所有 CSV 文件
+df_list = [pd.read_csv(os.path.join(folder_path, f)) for f in csv_files]
+combined_df = pd.concat(df_list, ignore_index=True)
+
+# 保存为一个新文件
+combined_df.to_csv(r'D:\hb.csv', index=False)
+
+```。</description><guid isPermaLink="true">https://feeday.cn/post/duo-ge-biao-he-bing.html</guid><pubDate>Mon, 28 Jul 2025 05:05:08 +0000</pubDate></item><item><title>文本行转表列</title><link>https://feeday.cn/post/wen-ben-xing-zhuan-biao-lie.html</link><description>
 ### 运行脚本
 ```
 import sys
