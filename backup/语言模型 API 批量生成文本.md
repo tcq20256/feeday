@@ -408,7 +408,7 @@ def main():
     batch_data = []
     batch_size = 52
     batch_number = 1
-    output_dir = r"D:\zxl_bak\ds\moonshot_中文生成"  # ← 替换为你的输出目录
+    output_dir = r"C:\test"  # ← 替换为你的输出目录
 
     for primary in primary_classes:
         for secondary in secondary_classes:
@@ -553,7 +553,7 @@ def main():
     batch_data = []
     batch_size = 52
     batch_number = 1
-    output_dir = r"D:\zxl_bak\ds\hunyuan_output"  # ← 替换为你自己的保存目录
+    output_dir = r"C:\test"  # ← 替换为你自己的保存目录
 
     for primary in primary_classes:
         for secondary in secondary_classes:
