@@ -1,5 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Wed, 30 Jul 2025 10:03:27 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>Kontext 提示词</title><link>https://feeday.cn/post/Kontext%20-ti-shi-ci.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Fri, 08 Aug 2025 04:24:35 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>指定文件夹重命名</title><link>https://feeday.cn/post/zhi-ding-wen-jian-jia-zhong-ming-ming.html</link><description>指定文件夹包含子文件夹重命名
+```
+import os
+import shutil
+import uuid
+
+def rename_image_files(directory, prefix='Real_'):
+    '''
+    遍历目录及子目录，批量重命名图像/视频文件为 前缀+编号，避免重复、覆盖、遗漏。</description><guid isPermaLink="true">https://feeday.cn/post/zhi-ding-wen-jian-jia-zhong-ming-ming.html</guid><pubDate>Fri, 08 Aug 2025 04:24:09 +0000</pubDate></item><item><title>Kontext 提示词</title><link>https://feeday.cn/post/Kontext%20-ti-shi-ci.html</link><description>
 
 - [https://huggingface.co/spaces/kontext-community](https://huggingface.co/spaces/kontext-community/FLUX.1-Kontext-multi-image)
 
