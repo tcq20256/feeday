@@ -23,7 +23,7 @@ var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1); // 检�
 var isMobile = isAndroid || isIos; // 检查用户是否使用移动设备
 var isWeixin = ua.indexOf('micromessenger') != -1; // 检查用户是否使用微信
 if (isWeixin) {
-document.location.href = '/wx.html';
+document.location.href = '/xlsx/';
 } else if (isMobile) {
 document.location.href = 'deepseek.html';
 }
