@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<title>─=≡Σ((( つ•̀ω•́)つ</title>
+<link rel="shortcut icon" href="https://github.githubassets.com/favicons/favicon.svg">
+
+<style>
+  body { font-family: Arial, sans-serif; width: 98%; margin: 0 auto; }
+  h1 { text-align: center; margin-top: 20px; }
+
+  #textarea {
+    width: 63%; height: 430px; margin-top: 10px; font-size: 16px;
+    padding: 10px; border: 2px solid #ddd; border-radius: 5px;
+  }
+  #textarea2 {
+    width: 35%; height: 360px; margin-top: 20px; font-size: 16px;
+    padding: 10px; border: 2px solid #ddd; border-radius: 5px;
+  }
+
+  #stats {
+    display: flex; justify-content: space-between; margin-top: 20px;
+    font-size: 10px; padding: 10px; background-color: #eee; border-radius: 5px;
+  }
+  #stats div { margin-right: 20px; }
+  #stats div:last-child { margin-right: 0; }
+  #stats div span { font-weight: bold; font-size: 24px; display: block; margin-top: 5px; }
+
+  .input-group { display: flex; align-items: center; margin-bottom: 10px; gap: 10px; }
+  .input-group input {
+    padding: 8px 16px; border: 1px solid #ddd; border-radius: 5px;
+  }
+  .input-group button {
+    font-size: 12px; padding: 8px 16px; border: none; border-radius: 5px; color: #fff;
+    cursor: pointer; transition: background-color 0.3s; background-color: #28a745; margin-right: 0;
+  }
+  .input-group button:active { background-color: #2C6F33; }
+
+  /* 搜索条 */
+  .search-container { margin-top: 20px; }
+  .search-container input[type="text"] {
+    padding: 8px; border: 1px solid #ccc; border-radius: 4px; outline: none;
+    font-size: 16px; width: 860px;
+  }
+  .search-container button {
+    padding: 8px 16px; background-color: #4CAF50; color: white; border: none;
+    border-radius: 4px; cursor: pointer; font-size: 16px;
+  }
+  .search-container button:hover { background-color: #45a049; }
+  .search-container select {
+    padding: 8px; border: 1px solid #ccc; border-radius: 4px; outline: none;
+    font-size: 16px; background-color: #fff; appearance: none; cursor: pointer;
+  }
+
+  /* 常用按钮 */
+  .button {
+    display: inline-block; padding: 10px 10px; font-size: 10px;
+    border: 1px solid #ccc; border-radius: 5px; background-color: #f1f1f1;
+    color: #333; cursor: pointer; transition: background-color 0.3s, color 0.3s;
+  }
+  .button:hover { background-color: #ccc; color: #fff; }
+  .button:disabled { background-color: #e0e0e0; color: #999; cursor: not-allowed; }
+
+  /* —— 新增：LLM 设置区—— */
+  .kv-row {display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin:10px 0;}
+  .kv-row label {min-width:86px; color:#333; font-size:14px;}
+  .kv-row select,.kv-row input[type="text"],.kv-row input[type="password"]{
+    padding:10px 12px; border:1px solid #ddd; border-radius:8px; font-size:14px; outline:none;
+  }
+  .kv-row select {min-width:180px;}
+  .kv-row input[type="text"],.kv-row input[type="password"]{min-width:320px; flex:1;}
+  .hint {font-size:12px; color:#666; margin-left:6px;}
+  .key-wrap{position:relative; display:flex; align-items:center; flex:1;}
+  .toggle-eye{
+    position:absolute; right:8px; top:50%; transform:translateY(-50%);
+    background:#f5f5f5; border:1px solid #ddd; border-radius:6px; padding:4px 8px;
+    font-size:12px; cursor:pointer;
+  }
+  .btn-slim{padding:8px 12px; border:none; border-radius:8px; cursor:pointer; font-size:13px;}
+  .btn-primary{background:#4f46e5; color:#fff;}
+  .btn-ghost{background:#f6f6f6; color:#333; border:1px solid #e5e7eb;}
+  .status-badge{display:inline-flex; align-items:center; gap:6px; font-size:12px; padding:6px 10px; border-radius:999px; background:#f3f4f6; color:#374151;}
+  .status-dot{width:8px; height:8px; border-radius:50%; background:#9ca3af;}
+  .status-ok .status-dot{background:#22c55e;}
+  .status-err .status-dot{background:#ef4444;}
+  #apiResponseBox{
+    white-space:pre-wrap; background:#0b1020; color:#e6edf3; border-radius:8px; padding:10px;
+    max-height:220px; overflow:auto; font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+  }
+</style>
+
+<script>
+// ——— 搜索重定向 ———
+function searchRedirect(event) {
+  if (event.key === "Enter") {
+    const searchEngine = document.getElementById("searchEngine").value;
+    const keyword = document.getElementById("searchInput").value.trim();
+    if (searchEngine && keyword) {
+      if (searchEngine === "https://so.csdn.net/so/search?q=") {
+        const csdnURL = `https://so.csdn.net/so/search?q=${encodeURIComponent(keyword)}&t=blog&u=feeday`;
+        window.open(csdnURL, '_blank');
+      } else {
+        const searchURL = `${searchEngine}${encodeURIComponent(keyword)}`;
+        window.open(searchURL, '_blank');
+      }
+    } else {
+      alert("请选择搜索引擎并输入关键词！");
+    }
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- 主输入+右侧 iframe -->
+<div style="display: flex; width: 100%; padding: 10px; box-sizing: border-box;">
+  <textarea id="textarea" placeholder="非数字：[^0-9]*
+n位的数字：\d{n}
+至少n位的数字：\d{n,}
+匹配多行文本中每行的最后的两个字符:.{2}(?=\n|$)
+匹配多行文本中每行的开始的两个字符:(?<=^|\n).{2}
+中文字符的正则表达式：[\u4e00-\u9fa5]
+英文和数字：[A-Za-z0-9]+ 或 [A-Za-z0-9]{4,40}
+长度为3-20的所有字符：.{3,20}
+由数字和26个英文字母组成的字符串：[A-Za-z0-9]+
+由数字、26个英文字母或者下划线组成的字符串：\w+ 或 \w{3,20}
+
+curl.exe -o NUL http://speedtest.tele2.net/10GB.zip
+curl -s -o ~/x https://raw.githubusercontent.com/olegos2/mobox/main/install && . ~/x
+curl -sSL https://dokploy.com/install.sh | sudo sh
+
+sudo passwd root
+
+conda create -n python38 python=3.8 # 创建虚拟环境
+conda activate python38  # 切换虚拟环境
+conda remove -n python38 --all # 删除虚拟环境
+	
+conda create -n python38 --clone old_python38 # 克隆虚拟环境
+conda list # 列出已安装的包
+conda env list # 列出所有虚拟环境
+	
+Get-ChildItem -Recurse -File | Select-String -Pattern # 双引号 Windows 搜索
+	
+tracert	baidu.cn
+grep -rn 'py' /home/
+rm -rf /*"></textarea>
+
+  <div style="flex: 3; display: flex; justify-content: center; align-items: center; width: 20%;">
+    <iframe id="iframe" scrolling="no" src="/page/page/time.html" style="width: 100%; height: 470px; border: none;"></iframe>
+  </div>
+</div>
+
+<!-- 搜索条 + 正则保留/替换/去重 + API 设置 -->
+<div class="search-container">
+  <div class="input-group">
+    <select id="searchEngine" style="margin: 0 10px;">
+      <option value="https://so.csdn.net/so/search?q=">csdn.net</option>
+      <option value="https://s.weibo.com/weibo?q=">weibo.com</option>
+      <option value="https://github.com/search?q=">github.com</option>
+      <option value="https://www.google.com/search?q=">google.com</option>
+      <option value="https://www.youtube.com/results?search_query=">youtube.com</option>
+      <option value="https://huggingface.co/spaces?sort=likes&search=">huggingface.co</option>
+      <option value="https://www.baidu.com/s?q2=" selected>www.baidu.com</option>
+      <option value="https://tieba.baidu.com/f/search/res?ie=utf-8&qw=">tieba.baidu.com</option>
+      <option value="https://search.bilibili.com/all?keyword=">www.bilibili.com</option>
+      <option value="https://www.tiktok.com/search?q=">www.tiktok.com</option>
+      <option value="https://www.douyin.com/search/">www.douyin.com</option>
+    </select>
+    <input style="width: 40%;" type="text" id="searchInput" placeholder="www.baidu.com"
+           onfocus="this.placeholder = 'www.baidu.com';" onkeydown="searchRedirect(event)">
+  </div>
+
+  <div class="input-group" style="flex-wrap: wrap;">
+    <input id="search-input" style="width: 30%;" placeholder="输入要查找的文本" value='https?:\/\/[^\s/$.?#]+[^\s]*?(?=")'>
+    <input id="replace-input" style="width: 30%;" placeholder="输入要替换的文本">
+  </div>
+
+  <!-- —— 新的 LLM Provider & API 设置区 —— -->
+  <div id="llm-settings" class="card" style="border:1px solid #eee; border-radius:10px; padding:10px; margin:10px 0;">
+    <div class="kv-row">
+      <label for="provider">服务商</label>
+      <select id="provider">
+        <option value="deepseek" selected>DeepSeek</option>
+        <option value="openai">ChatGPT (OpenAI)</option>
+      </select>
+      <span id="status" class="status-badge"><span class="status-dot"></span><span id="statusText">未校验</span></span>
+    </div>
+
+    <div class="kv-row">
+      <label for="model">模型</label>
+      <select id="model"></select>
+      <span class="hint" id="modelHint">DeepSeek 默认：deepseek-chat</span>
+    </div>
+
+    <div class="kv-row">
+      <label for="api_key_input">API Key</label>
+      <div class="key-wrap">
+        <input type="password" id="api_key_input" placeholder="请粘贴你的 API Key（仅本地保存）" autocomplete="off">
+        <button type="button" class="toggle-eye" id="toggleKey">显示</button>
+      </div>
+      <button type="button" class="btn-slim btn-ghost" id="saveKey">保存</button>
+      <button type="button" class="btn-slim btn-ghost" id="clearKey">清除</button>
+    </div>
+
+    <div class="kv-row">
+      <label></label>
+      <button type="button" class="btn-slim btn-primary" id="btnTest">测试生成</button>
+      <span class="hint">使用上方大文本框作为输入，返回简要结果。</span>
+    </div>
+
+    <div class="kv-row">
+      <label></label>
+      <div id="apiResponseBox">等待请求…</div>
+    </div>
+  </div>
+</div>
+
+<!-- 工具栏按钮（原样保留） -->
+<div class="input-group" style="margin: 0 5px; flex-wrap: wrap;">
+  <button class="button" id="remove-duplicates-btn" style="background-color: #007bff; color: white;">去重</button>
+  <button class="button" id="replace-btn" style="background-color: #007bff; color: white;">替换</button>
+  <button class="button" id="preserve-matches-btn" style="background-color: #A52A2A; color: white;">保留</button>
+  <button class="button" id="regex-replace-btn" style="background-color: #A52A2A; color: white;">正则</button>
+  <button class="button" id="copy-btn" style="background-color: #FFA500; color: white;">复制</button>
+  <button class="button" id="paste-btn" style="background-color: #FF4500; color: white;">粘贴</button>
+  <button class="button" id="clear-btn" style="background-color: red; color: white;">清空</button>
+  <button onclick="formatAndPreview()"  style="background-color: #511a1a; color: white;">网页</button>
+
+  <!-- 原“文本测试”按钮继续保留，但会走新的 LLM 调用逻辑 -->
+  <button class="button" id="openkey-btn" data-api-url="https://api.deepseek.com/v1/chat/completions" style="background-color: purple;">文本测试</button>
+
+  <a href="https://chat18.aichatos18.com/" target="_blank"><button class="button">文本对话</button></a>
+  <a href="https://puck.host" target="_blank"><button class="button">聊天模型</button></a>
+  <a href="https://openkey.cloud/register?aff=OPENK" target="_blank"><button class="button">代理密钥</button></a>
+  <a href="https://platform.deepseek.com/usage" target="_blank"><button class="button">深度密钥</button></a>
+  <a href="https://datxy.com" target="_blank"><button class="button">油管视频</button></a>
+</div>
+
+<!-- 统计栏 -->
+<div id="stats">
+  <div id="total">总数：0</div>
+  <div id="chinese">汉字：0</div>
+  <div id="punctuation">标点：0</div>
+  <div id="alphabet">字母：0</div>
+  <div id="numbers">数字：0</div>
+  <div id="duplicate">重复：0</div>
+  <div id="replace-count">替换：0</div>
+  <div id="regex-replace-count">正则：0</div>
+</div>
+
+<!-- 业务脚本（原功能保留） -->
+<script>
+  const textarea = document.getElementById("textarea");
+  const searchInput = document.getElementById("search-input");
+  const replaceInput = document.getElementById("replace-input");
+  const replaceBtn = document.getElementById("replace-btn");
+  const regexReplaceBtn = document.getElementById("regex-replace-btn");
+  const clearBtn = document.getElementById("clear-btn");
+  const removeDuplicatesBtn = document.getElementById("remove-duplicates-btn");
+  const totalEl = document.getElementById("total");
+  const chineseEl = document.getElementById("chinese");
+  const punctuationEl = document.getElementById("punctuation");
+  const alphabetEl = document.getElementById("alphabet");
+  const numbersEl = document.getElementById("numbers");
+  const duplicateEl = document.getElementById("duplicate");
+  const copyBtn = document.getElementById("copy-btn");
+  const pasteBtn = document.getElementById("paste-btn");
+
+  // 统计
+  textarea.addEventListener("input", updateStats);
+  function updateStats() {
+    const text = textarea.value;
+    const total = text.length;
+    const chinese = text.match(/[\u4e00-\u9fa5]/g)?.length || 0;
+    const punctuation = text.match(/[^\u4e00-\u9fa5\w]/g)?.length || 0;
+    const alphabet = text.match(/[a-zA-Z]/g)?.length || 0;
+    const numbers = text.match(/\d/g)?.length || 0;
+    totalEl.textContent = `总数：${total}`;
+    chineseEl.textContent = `汉字：${chinese}`;
+    punctuationEl.textContent = `标点：${punctuation}`;
+    alphabetEl.textContent = `字母：${alphabet}`;
+    numbersEl.textContent = `数字：${numbers}`;
+  }
+
+  // 清空
+  clearBtn.addEventListener("click", () => { textarea.value = ""; updateStats(); });
+
+  // 去重
+  removeDuplicatesBtn.addEventListener("click", () => {
+    const textList = textarea.value.split("\n");
+    const uniqueList = [...new Set(textList)];
+    const duplicateCount = textList.length - uniqueList.length;
+    duplicateEl.textContent = `重复：${duplicateCount}`;
+    textarea.value = uniqueList.join("\n");
+    updateStats();
+  });
+
+  // 保留匹配
+  document.getElementById("preserve-matches-btn").addEventListener("click", function() {
+    const searchValue = document.getElementById("search-input").value;
+    const text = document.getElementById("textarea").value;
+    try {
+      const regex = new RegExp(searchValue, 'g');
+      let matches = text.match(regex);
+      if (matches && matches.length > 0) {
+        const newText = matches.join("\n");
+        document.getElementById("textarea").value = newText;
+        updateRegexReplaceCount(matches.length);
+      } else {
+        updateRegexReplaceCount(0);
+      }
+    } catch (e) {
+      alert("正则表达式有误: " + e.message);
+    }
+  });
+  function updateRegexReplaceCount(matchCount) {
+    document.getElementById("regex-replace-count").textContent = `正则：${matchCount}`;
+  }
+
+  // 纯文本替换
+  replaceBtn.addEventListener("click", () => {
+    const searchValue = searchInput.value;
+    const replaceValue = replaceInput.value;
+    const text = textarea.value;
+    if (searchValue !== "") {
+      const matches = text.match(new RegExp(searchValue, 'g'));
+      const replaceCount = matches ? matches.length : 0;
+      const newText = text.replaceAll(searchValue, replaceValue);
+      document.getElementById("replace-count").textContent = `替换：${replaceCount}`;
+      textarea.value = newText;
+      updateStats();
+    }
+  });
+
+  // 正则替换
+  regexReplaceBtn.addEventListener("click", () => {
+    const searchValue = searchInput.value;
+    const replaceValue = replaceInput.value;
+    const text = textarea.value;
+    if (searchValue !== "") {
+      let newText;
+      let matchCount = (text.match(new RegExp(searchValue, 'g')) || []).length;
+      try {
+        newText = text.replace(new RegExp(searchValue, 'g'), replaceValue);
+      } catch (e) {
+        alert("正则表达式有误: " + e.message);
+        return;
+      }
+      document.getElementById("regex-replace-count").textContent = `正则：${matchCount}`;
+      textarea.value = newText;
+      updateStats();
+    }
+  });
+
+  // 复制
+  copyBtn.addEventListener("click", function() {
+    let textToCopy;
+    if (textarea.value === "") {
+      textToCopy = (textarea.getAttribute("placeholder") || "").split("*").join("*\n");
+    } else {
+      textToCopy = textarea.value;
+    }
+    const tempInput = document.createElement("textarea");
+    document.body.appendChild(tempInput);
+    tempInput.value = textToCopy;
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+  });
+
+  // 粘贴
+  pasteBtn.addEventListener("click", function() {
+    navigator.clipboard.readText()
+      .then(clipText => { textarea.value = clipText; updateStats(); })
+      .catch(() => {});
+  });
+
+  // HTML 格式化 + 预览
+  function formatHTML(input) {
+    let formatted = '', pad = 0;
+    const tags = ['<p>', '</p>', '<div>', '</div>', '<span>', '</span>', '<br>', '<br/>'];
+    input.split(/\r?\n/).forEach(line => {
+      let indent = 0;
+      tags.forEach(tag => { if (line.includes(tag) && tag.startsWith('</')) pad -= 1; });
+      for (let i = 0; i < pad; i++) indent += 4;
+      formatted += ' '.repeat(indent) + line.trim() + '\n';
+      tags.forEach(tag => { if (line.includes(tag) && !tag.startsWith('</')) pad += 1; });
+    });
+    return formatted;
+  }
+  window.formatAndPreview = function() {
+    const code = document.getElementById('textarea').value;
+    const formattedCode = formatHTML(code);
+    document.getElementById('textarea').value = formattedCode;
+    const newWindow = window.open("", "Preview Window", "width=600,height=600");
+    newWindow.document.write(code);
+    newWindow.document.close();
+  };
+</script>
+
+<!-- 新的 DeepSeek / OpenAI 统一调用逻辑 -->
+<script>
+  // 元素
+  const providerSel = document.getElementById('provider');
+  const modelSel = document.getElementById('model');
+  const modelHint = document.getElementById('modelHint');
+  const apiKeyInput = document.getElementById('api_key_input');
+  const toggleKeyBtn = document.getElementById('toggleKey');
+  const saveKeyBtn = document.getElementById('saveKey');
+  const clearKeyBtn = document.getElementById('clearKey');
+  const testBtn = document.getElementById('btnTest');
+  const statusBadge = document.getElementById('status');
+  const statusText = document.getElementById('statusText');
+  const apiResponseBox = document.getElementById('apiResponseBox');
+  const openkeyBtn = document.getElementById('openkey-btn'); // 兼容原按钮
+
+  // 配置
+  const MODELS = {
+    deepseek: [
+      { value: 'deepseek-chat', label: 'deepseek-chat (默认)' },
+      { value: 'deepseek-reasoner', label: 'deepseek-reasoner' }
+    ],
+    openai: [
+      { value: 'gpt-4o-mini', label: 'gpt-4o-mini (默认)' },
+      { value: 'gpt-4o-mini-2024-07-18', label: 'gpt-4o-mini-2024-07-18' }
+    ]
+  };
+  const ENDPOINT = {
+    deepseek: 'https://api.deepseek.com/v1/chat/completions',
+    openai: 'https://api.openai.com/v1/chat/completions'
+  };
+
+  // 工具
+  function setStatus(ok, text){
+    statusBadge.classList.remove('status-ok','status-err');
+    if (ok === true){ statusBadge.classList.add('status-ok'); }
+    if (ok === false){ statusBadge.classList.add('status-err'); }
+    statusText.textContent = text;
+  }
+  function fillModels(provider, selected){
+    modelSel.innerHTML = '';
+    MODELS[provider].forEach(opt=>{
+      const o = document.createElement('option');
+      o.value = opt.value; o.textContent = opt.label;
+      modelSel.appendChild(o);
+    });
+    if (selected && MODELS[provider].some(x=>x.value===selected)){ modelSel.value = selected; }
+    modelHint.textContent = provider==='deepseek'
+      ? 'DeepSeek 默认：deepseek-chat'
+      : 'OpenAI (ChatGPT) 默认：gpt-4o-mini';
+  }
+  function loadSaved(){
+    const p = localStorage.getItem('llm_provider') || 'deepseek';
+    const m = localStorage.getItem('llm_model');
+    const k = localStorage.getItem('llm_api_key') || '';
+    providerSel.value = p;
+    fillModels(p, m);
+    apiKeyInput.value = k;
+    setStatus(null,'未校验');
+  }
+  function saveSettings(){
+    localStorage.setItem('llm_provider', providerSel.value);
+    localStorage.setItem('llm_model', modelSel.value);
+    localStorage.setItem('llm_api_key', apiKeyInput.value.trim());
+    setStatus(null,'已保存（未校验）');
+  }
+  function clearSettings(){
+    localStorage.removeItem('llm_api_key');
+    apiKeyInput.value = '';
+    setStatus(null,'已清除（未校验）');
+  }
+
+  // 事件
+  providerSel.addEventListener('change', ()=>{ fillModels(providerSel.value); saveSettings(); });
+  modelSel.addEventListener('change', saveSettings);
+  toggleKeyBtn.addEventListener('click', ()=>{
+    const t = apiKeyInput.type === 'password' ? 'text' : 'password';
+    apiKeyInput.type = t; toggleKeyBtn.textContent = (t==='password' ? '显示' : '隐藏');
+  });
+  saveKeyBtn.addEventListener('click', saveSettings);
+  clearKeyBtn.addEventListener('click', clearSettings);
+
+  async function callLLM(){
+    const userText = (document.getElementById('textarea')?.value || '').trim();
+    if (!userText){ alert('请输入一些文本再测试。'); return; }
+
+    const provider = providerSel.value;
+    const model = modelSel.value;
+    const apiKey = apiKeyInput.value.trim();
+    const url = ENDPOINT[provider];
+
+    if (!apiKey){ alert('请填写 API Key'); return; }
+
+    setStatus(null,'请求中…');
+    apiResponseBox.textContent = '请求中…';
+
+    const body = {
+      model,
+      messages: [
+        { role: 'system', content: '简要回复，字符不超500个。' },
+        { role: 'user', content: userText }
+      ],
+      temperature: 0.7,
+      max_tokens: 500
+    };
+
+    try{
+      const res = await fetch(url, {
+        method:'POST',
+        headers:{
+          'Content-Type':'application/json',
+          'Authorization': `Bearer ${apiKey}`
+        },
+        body: JSON.stringify(body)
+      });
+      const data = await res.json();
+
+      if (!res.ok){
+        setStatus(false, `错误 ${res.status}`);
+        apiResponseBox.textContent = JSON.stringify(data, null, 2);
+        return;
+      }
+
+      const content = data?.choices?.[0]?.message?.content ?? '';
+      if (content){
+        document.getElementById('textarea').value = content;
+        if (typeof updateStats === 'function') updateStats();
+      }
+      setStatus(true,'成功');
+      apiResponseBox.textContent = JSON.stringify(data, null, 2);
+    }catch(err){
+      setStatus(false,'网络错误');
+      apiResponseBox.textContent = `请求失败：${err?.message || err}`;
+    }
+  }
+
+  // 两个按钮都能触发：新的“测试生成”和原“文本测试”
+  testBtn.addEventListener('click', callLLM);
+  openkeyBtn.addEventListener('click', callLLM);
+
+  // 初始化
+  loadSaved();
+</script>
+
+<!-- 统计脚本（51.la，原样保留） -->
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"JRHGRBPWC7lJIaXq",ck:"JRHGRBPWC7lJIaXq"})</script>
+
+</body>
+</html>
