@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>realfake.top</title><link>https://blog.realfake.top</link><description>BB Work No Money</description><copyright>realfake.top</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://blog.realfake.top</link></image><lastBuildDate>Sun, 10 Aug 2025 06:02:49 +0000</lastBuildDate><managingEditor>realfake.top</managingEditor><ttl>60</ttl><webMaster>realfake.top</webMaster><item><title>deepseek-chat-鬼故事-雾钟巷</title><link>https://blog.realfake.top/post/deepseek-chat--gui-gu-shi---wu-zhong-xiang.html</link><description>## 雾钟巷
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>realfake.top</title><link>https://blog.realfake.top</link><description>BB Work No Money</description><copyright>realfake.top</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://blog.realfake.top</link></image><lastBuildDate>Sun, 10 Aug 2025 06:40:12 +0000</lastBuildDate><managingEditor>realfake.top</managingEditor><ttl>60</ttl><webMaster>realfake.top</webMaster><item><title>deepseek-chat-鬼故事-雾钟巷</title><link>https://blog.realfake.top/post/deepseek-chat--gui-gu-shi---wu-zhong-xiang.html</link><description>## 雾钟巷
 
 ### 书腰文案  
 
@@ -11,7 +11,7 @@ import uuid
 
 def rename_image_files(directory, prefix='Real_'):
     '''
-    遍历目录及子目录，批量重命名图像/视频文件为 前缀+编号，避免重复、覆盖、遗漏。</description><guid isPermaLink="true">https://blog.realfake.top/post/zhi-ding-wen-jian-jia-zhong-ming-ming.html</guid><pubDate>Fri, 08 Aug 2025 04:24:09 +0000</pubDate></item><item><title>Kontext 提示词</title><link>https://blog.realfake.top/post/Kontext%20-ti-shi-ci.html</link><description>
+    遍历目录及子目录，批量重命名图像/视频文件为 前缀+编号，避免重复、覆盖、遗漏。</description><guid isPermaLink="true">https://blog.realfake.top/post/zhi-ding-wen-jian-jia-zhong-ming-ming.html</guid><pubDate>Fri, 08 Aug 2025 04:24:09 +0000</pubDate></item><item><title>Kontext-提示词</title><link>https://blog.realfake.top/post/Kontext--ti-shi-ci.html</link><description>
 
 - [https://huggingface.co/spaces/kontext-community](https://huggingface.co/spaces/kontext-community/FLUX.1-Kontext-multi-image)
 
@@ -24,7 +24,7 @@ restore and colorize this photo. Repair the damaged white background. Maintain t
 
 需求类型 | 英文模板 | 中文解析
 -- | -- | --
-对象修改 | 'Change [object] to [new state], keep [content to preserve] unchanged' | 更改 [具体对象] 为 [新的状态]，同时保持 [需要保留的内容] 不变。</description><guid isPermaLink="true">https://blog.realfake.top/post/Kontext%20-ti-shi-ci.html</guid><pubDate>Wed, 30 Jul 2025 10:02:57 +0000</pubDate></item><item><title>多个表合并</title><link>https://blog.realfake.top/post/duo-ge-biao-he-bing.html</link><description>### 多张格式一样的表合并成一个表
+对象修改 | 'Change [object] to [new state], keep [content to preserve] unchanged' | 更改 [具体对象] 为 [新的状态]，同时保持 [需要保留的内容] 不变。</description><guid isPermaLink="true">https://blog.realfake.top/post/Kontext--ti-shi-ci.html</guid><pubDate>Wed, 30 Jul 2025 10:02:57 +0000</pubDate></item><item><title>多个表合并</title><link>https://blog.realfake.top/post/duo-ge-biao-he-bing.html</link><description>### 多张格式一样的表合并成一个表
 ```
 import pandas as pd
 import os
