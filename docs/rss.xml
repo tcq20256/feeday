@@ -1,34 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>realfake.top</title><link>https://blog.realfake.top</link><description>BB Work No Money</description><copyright>realfake.top</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://blog.realfake.top</link></image><lastBuildDate>Sun, 10 Aug 2025 05:19:16 +0000</lastBuildDate><managingEditor>realfake.top</managingEditor><ttl>60</ttl><webMaster>realfake.top</webMaster><item><title>deepseek-chat-鬼故事-雾钟巷</title><link>https://blog.realfake.top/post/deepseek-chat--gui-gu-shi---wu-zhong-xiang.html</link><description>## 雾钟巷
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>realfake.top</title><link>https://blog.realfake.top</link><description>BB Work No Money</description><copyright>realfake.top</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://blog.realfake.top</link></image><lastBuildDate>Sun, 10 Aug 2025 06:02:49 +0000</lastBuildDate><managingEditor>realfake.top</managingEditor><ttl>60</ttl><webMaster>realfake.top</webMaster><item><title>deepseek-chat-鬼故事-雾钟巷</title><link>https://blog.realfake.top/post/deepseek-chat--gui-gu-shi---wu-zhong-xiang.html</link><description>## 雾钟巷
 
-###  [成品喜马拉雅有声书](https://www.ximalaya.com/album/101478552)
+### 书腰文案  
 
-### 执行脚本
-
-```
-from openai import OpenAI
-import os
-import time
-from datetime import datetime
-
-# ============ 必填：你的 DeepSeek Key 与 API 基址 ============
-client = OpenAI(
-    api_key=os.getenv('DEEPSEEK_API_KEY') or 'sk-xxxx',  # ← 改成你的
-    base_url='https://api.deepseek.com'  # 兼容 /v1
-)
-
-# ============ 生成参数 ============
-MODEL = 'deepseek-chat'
-TARGET_CHARS = 10000           # 目标中文字符数（≈1万字）
-CHUNK_CHARS = 1300             # 每段大致字数（模型会有波动）
-MAX_TOKENS_PER_CALL = 1600     # 每次调用返回的 token 上限（可按账户限额调整）
-SLEEP_BETWEEN_CALLS = 1.0      # 调用间隔，防限流
-OUTPUT_DIR = r'F:\x'
-TITLE = '雾钟巷'                # 小说名（可自定义）
-THEME = '恐怖鬼故事 · 都市传说 · 心理悬疑 · 地下空间与旧楼'
-
-# ============ 初始系统/用户提示词 ============
-SYSTEM_PROMPT = '''你是一位擅长中文长篇恐怖小说创作的作家。</description><guid isPermaLink="true">https://blog.realfake.top/post/deepseek-chat--gui-gu-shi---wu-zhong-xiang.html</guid><pubDate>Sun, 10 Aug 2025 04:26:13 +0000</pubDate></item><item><title>指定文件夹重命名</title><link>https://blog.realfake.top/post/zhi-ding-wen-jian-jia-zhong-ming-ming.html</link><description>指定文件夹包含子文件夹重命名
+'当钟声敲响第十二下，你会听见自己的心跳消失。</description><guid isPermaLink="true">https://blog.realfake.top/post/deepseek-chat--gui-gu-shi---wu-zhong-xiang.html</guid><pubDate>Sun, 10 Aug 2025 04:26:13 +0000</pubDate></item><item><title>指定文件夹重命名</title><link>https://blog.realfake.top/post/zhi-ding-wen-jian-jia-zhong-ming-ming.html</link><description>指定文件夹包含子文件夹重命名
 ```
 import os
 import shutil
