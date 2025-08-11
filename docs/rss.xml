@@ -1,5 +1,24 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>realfake.top</title><link>https://blog.realfake.top</link><description>BB Work No Money</description><copyright>realfake.top</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://blog.realfake.top</link></image><lastBuildDate>Sun, 10 Aug 2025 16:19:59 +0000</lastBuildDate><managingEditor>realfake.top</managingEditor><ttl>60</ttl><webMaster>realfake.top</webMaster><item><title>deepseek-chat-鬼故事-雾钟巷</title><link>https://blog.realfake.top/post/deepseek-chat--gui-gu-shi---wu-zhong-xiang.html</link><description>## 雾钟巷
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>realfake.top</title><link>https://blog.realfake.top</link><description>BB Work No Money</description><copyright>realfake.top</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://blog.realfake.top</link></image><lastBuildDate>Mon, 11 Aug 2025 04:32:19 +0000</lastBuildDate><managingEditor>realfake.top</managingEditor><ttl>60</ttl><webMaster>realfake.top</webMaster><item><title>视频延长</title><link>https://blog.realfake.top/post/shi-pin-yan-chang.html</link><description># 视频延长
+
+不满足十秒的水平正倒播放延迟十秒以上
+
+```
+import os, math
+from moviepy.editor import VideoFileClip, concatenate_videoclips, vfx
+
+# === 配置 ===
+INPUT_DIR  = r'D:\\1'   # 待处理视频目录
+OUTPUT_DIR = r'D:\2'   # 输出目录
+TARGET_SEC = 10                      # 最少目标时长（秒）
+EXTS = ('.mp4', '.mov', '.avi', '.mkv', '.m4v')
+
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+def build_pingpong_min_duration(clip, min_sec=10):
+    '''
+    把 clip 做成“正放+倒放”交替的 ping-pong 循环，
+    一直拼到时长 &gt;= min_sec，不截断。</description><guid isPermaLink="true">https://blog.realfake.top/post/shi-pin-yan-chang.html</guid><pubDate>Mon, 11 Aug 2025 04:31:45 +0000</pubDate></item><item><title>deepseek-chat-鬼故事-雾钟巷</title><link>https://blog.realfake.top/post/deepseek-chat--gui-gu-shi---wu-zhong-xiang.html</link><description>## 雾钟巷
 
 ### 文案  
 
