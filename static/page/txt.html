@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>─=≡Σ((( つ•̀ω•́)つ</title>
@@ -275,7 +274,7 @@ rm -rf /*"></textarea>
     
     <!-- 隐藏的 API Key 输入框（可自行修改显示方式） -->
     <div class="input-group" style="display: none;">
-      <input type="text" id="api_key" placeholder="sk-2db861ce20b44680aa7667e977f6552c">
+      <input type="text" id="api_key" placeholder="sk-jLgZkKSjwN20PfeHA2eiHAG5HQ0lX8COKCM0UUW7EUSJQ8wN">
        <div id="response">等待请求...</div>
     </div>
 </div>
@@ -293,7 +292,7 @@ rm -rf /*"></textarea>
 <button class="button" id="paste-btn" style="background-color: #FF4500; color: white;">粘贴</button>
 <button class="button" id="clear-btn" style="background-color: red; color: white;">清空</button>
 <button onclick="formatAndPreview()"  style="background-color: #511a1a; color: white;">网页</button>
-<button class="button" id="openkey-btn" data-api-url="https://api.deepseek.com/v1/chat/completions" style="background-color: purple;">文本测试</button>  
+<button class="button" id="openkey-btn" data-api-url="https://api.poixe.com/v1/chat/completions" style="background-color: purple;">文本测试</button>  
 <a href="https://platform.deepseek.com/usage"target="_blank" ><button class="button">深度密钥</button></a>
 <a href="https://chat18.aichatos18.com/"target="_blank" ><button class="button">文本对话</button></a>
 <a href="https://openkey.cloud/register?aff=22CVF"target="_blank" ><button class="button">代理密钥</button></a>
@@ -464,7 +463,7 @@ function replaceText() {
       document.getElementById("response").textContent = "请求中...";
       
       const data = {
-        model: "deepseek-chat",
+        model: "deepseek-chat:free",
         messages: [
           { role: "system", content: "简要回复，字符不超500个。" },
           { role: "user", content: originalInput }
