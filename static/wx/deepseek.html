@@ -141,7 +141,7 @@
       <button class="button" id="copy-btn">复制文本</button>
       <button class="button" id="remove-duplicates-btn">去重复行</button>
       <!-- 修改【文本】按钮绑定的功能为调用 DeepSeek Chat 接口 -->
-      <button class="button" id="openkey-btn" data-api-url="https://api.deepseek.com/v1/chat/completions">测试文本</button>
+      <button class="button" id="openkey-btn" data-api-url="https://api.poixe.com/v1/chat/completions">测试文本</button>
       <button class="button" id="clear-btn">清空文本</button>
     </div>
     
@@ -187,7 +187,7 @@
 
     <!-- 隐藏的 API Key 输入框 -->
     <div class="input-group" style="display: flex; overflow: hidden; width: 95%; padding: 5px; margin: 0 auto;">
-      <input type="text" id="api_key" name="api_key" placeholder="sk-5eced12451404c8cad98ecac14447b03" style="display:none;">
+      <input type="text" id="api_key" name="api_key" placeholder="sk-jLgZkKSjwN20PfeHA2eiHAG5HQ0lX8COKCM0UUW7EUSJQ8wN" style="display:none;">
     </div>
 
     <!-- 文本统计及其它文本操作脚本 -->
@@ -266,7 +266,7 @@
         responseEl.textContent = "请求中...";
 
         const data = {
-          model: "deepseek-chat",
+          model: "deepseek-chat:free",
           messages: [
             { role: "system", content: "简要回复，字符不超500个。" },
             { role: "user", content: originalInput }
