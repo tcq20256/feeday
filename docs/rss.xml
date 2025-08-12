@@ -1,5 +1,35 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>realfake.top</title><link>https://realfake.top</link><description>BB Work No Money</description><copyright>realfake.top</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://realfake.top</link></image><lastBuildDate>Tue, 12 Aug 2025 09:46:19 +0000</lastBuildDate><managingEditor>realfake.top</managingEditor><ttl>60</ttl><webMaster>realfake.top</webMaster><item><title>微软本地文字转语音</title><link>https://realfake.top/post/wei-ruan-ben-di-wen-zi-zhuan-yu-yin.html</link><description>## HTML 版本
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>realfake.top</title><link>https://realfake.top</link><description>BB Work No Money</description><copyright>realfake.top</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://realfake.top</link></image><lastBuildDate>Tue, 12 Aug 2025 10:28:03 +0000</lastBuildDate><managingEditor>realfake.top</managingEditor><ttl>60</ttl><webMaster>realfake.top</webMaster><item><title>文本合并</title><link>https://realfake.top/post/wen-ben-he-bing.html</link><description>##  特殊格式文本合并
+```
+import os
+import chardet  # pip install chardet
+
+# 指定目录路径（修改为你的目录）
+directory = r'D:\txthb'  # 示例：r'D:\data\texts'
+
+# 输出文件路径
+output_file = os.path.join(directory, 'merged.txt')
+error_log = os.path.join(directory, 'errors.log')
+
+# 扩展常见编码列表，支持更多（如繁体Big5、UTF-16）
+common_encodings = ['utf-8', 'gbk', 'utf-8-sig', 'gb2312', 'big5', 'utf-16', 'latin1', 'cp1252']
+
+def read_file_with_encoding(file_path):
+    # 先尝试检测编码
+    with open(file_path, 'rb') as f:
+        raw_data = f.read()
+        detected = chardet.detect(raw_data)
+        encoding = detected['encoding'] if detected['encoding'] else None
+    
+    # 如果检测失败，逐个尝试常见编码
+    if not encoding:
+        for enc in common_encodings:
+            try:
+                with open(file_path, 'r', encoding=enc) as f:
+                    return f.read().strip()
+            except UnicodeDecodeError:
+                continue
+        raise ValueError(f'无法读取文件 {file_path}，编码不支持。</description><guid isPermaLink="true">https://realfake.top/post/wen-ben-he-bing.html</guid><pubDate>Tue, 12 Aug 2025 10:27:27 +0000</pubDate></item><item><title>微软本地文字转语音</title><link>https://realfake.top/post/wei-ruan-ben-di-wen-zi-zhuan-yu-yin.html</link><description>## HTML 版本
 ```
 &lt;html&gt;
 &lt;body&gt;
