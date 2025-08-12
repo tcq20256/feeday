@@ -143,7 +143,7 @@ rm -rf /*"></textarea>
   </div>
   <!-- === 语音朗读（Web Speech Synthesis）=== -->
   <div class="tts-panel" id="tts-panel">
-    <div class="tts-row" style="margin-bottom: 8px;">
+    <div class="tts-row" style="margin-bottom: 1px;">
       <label for="tts-filterChinese">只显示中文语音？</label>
       <input type="checkbox" id="tts-filterChinese" checked>
 
@@ -155,15 +155,15 @@ rm -rf /*"></textarea>
     </div>
     <div class="tts-row">
       <label for="tts-rate">语速</label>
-      <input id="tts-rate" type="range" min="0.5" max="2" step="0.1" value="1" />
+      <input id="tts-rate" type="range" min="0.1" max="10" step="0.1" value="1" />
       <span id="tts-rate-val">1.0x</span>
 
       <label for="tts-pitch" style="margin-left:12px;">音调</label>
-      <input id="tts-pitch" type="range" min="0" max="2" step="0.1" value="1" />
+      <input id="tts-pitch" type="range" min="0" max="10" step="0.1" value="1" />
       <span id="tts-pitch-val">1.0</span>
 
       <label for="tts-volume" style="margin-left:12px;">音量</label>
-      <input id="tts-volume" type="range" min="0" max="1" step="0.1" value="1" />
+      <input id="tts-volume" type="range" min="0" max="10" step="0.1" value="1" />
       <span id="tts-volume-val">1.0</span>
     </div>
     <div class="tts-hint">提示：朗读内容取自上方大文本框（#textarea）。长文本将自动分句逐段播放；点击“停止朗读”可立即终止。</div>
