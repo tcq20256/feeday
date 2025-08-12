@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>realfake.top</title><link>https://realfake.top</link><description>BB Work No Money</description><copyright>realfake.top</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://realfake.top</link></image><lastBuildDate>Tue, 12 Aug 2025 04:37:59 +0000</lastBuildDate><managingEditor>realfake.top</managingEditor><ttl>60</ttl><webMaster>realfake.top</webMaster><item><title>微软本地文字转语音</title><link>https://realfake.top/post/wei-ruan-ben-di-wen-zi-zhuan-yu-yin.html</link><description>## HTML 版本
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>realfake.top</title><link>https://realfake.top</link><description>BB Work No Money</description><copyright>realfake.top</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://realfake.top</link></image><lastBuildDate>Tue, 12 Aug 2025 05:01:29 +0000</lastBuildDate><managingEditor>realfake.top</managingEditor><ttl>60</ttl><webMaster>realfake.top</webMaster><item><title>微软本地文字转语音</title><link>https://realfake.top/post/wei-ruan-ben-di-wen-zi-zhuan-yu-yin.html</link><description>## HTML 版本
 ```
 &lt;!DOCTYPE html&gt;
 &lt;html lang='zh-CN'&gt;
@@ -17,34 +17,9 @@
     &lt;label for='voiceSelect'&gt;选择中文语音：&lt;/label&gt;
     &lt;select id='voiceSelect'&gt;&lt;/select&gt;&lt;br&gt;&lt;br&gt;
 
-    &lt;button id='startButton'&gt;开始朗读并保存音频&lt;/button&gt;
+    &lt;button id='startButton'&gt;开始朗读并下载&lt;/button&gt;
 
     &lt;script&gt;
-        // 初始化音频上下文
-        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        const mediaStreamDestination = audioContext.createMediaStreamDestination();
-
-        // 创建一个 `MediaRecorder` 用于录音
-        const recorder = new MediaRecorder(mediaStreamDestination.stream);
-        let audioChunks = [];
-
-        // 录音完成时，生成音频文件并保存
-        recorder.ondataavailable = (event) =&gt; {
-            audioChunks.push(event.data);
-        };
-
-        // 当录音停止时，生成并下载音频文件
-        recorder.onstop = () =&gt; {
-            const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
-            const audioUrl = URL.createObjectURL(audioBlob);
-            
-            // 创建一个下载链接
-            const link = document.createElement('a');
-            link.href = audioUrl;
-            link.download = 'speech_output.wav';
-            link.click();
-        };
-
         // 获取可用的中文语音并填充选择框
         function populateVoiceList() {
             const voices = speechSynthesis.getVoices();
@@ -63,49 +38,56 @@
             });
         }
 
-        // 创建朗读函数并启动音频合成
-        function speakAndSave(text, selectedVoice) {
+        // 创建朗读函数并启动音频合成与录音
+        function speakAndRecord(text, selectedVoice) {
             const utterance = new SpeechSynthesisUtterance(text);
             utterance.lang = 'zh-CN'; // 设置中文语音
             utterance.voice = selectedVoice; // 设置选择的音色
 
-            // 连接语音合成到音频上下文
-            const sourceNode = audioContext.createMediaStreamSource(mediaStreamDestination.stream);
-            sourceNode.connect(audioContext.destination);
+            // 请求音频捕获权限（重要：用户需选择系统音频监视器输入，以捕获内部音频输出）
+            navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(stream =&gt; {
+                    let mediaRecorder = new MediaRecorder(stream);
+                    let audioChunks = [];
 
-            // 启动语音合成并开始录音
-            window.speechSynthesis.speak(utterance);
-            recorder.start();
-        }
+                    mediaRecorder.ondataavailable = (event) =&gt; {
+                        if (event.data.size &gt; 0) {
+                            audioChunks.push(event.data);
+                        }
+                    };
 
-        // 执行朗读并保存音频
-        document.getElementById('startButton').addEventListener('click', () =&gt; {
-            const textInput = document.getElementById('textInput').value.trim();
-            const selectedVoiceName = document.getElementById('voiceSelect').value;
-            const voices = speechSynthesis.getVoices();
-            const selectedVoice = voices.find(voice =&gt; voice.name === selectedVoiceName);
+                    mediaRecorder.onstop = () =&gt; {
+                        const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                        const audioUrl = URL.createObjectURL(audioBlob);
 
-            if (textInput) {
-                speakAndSave(textInput, selectedVoice);
-                // 停止录音并保存音频文件
-                setTimeout(() =&gt; recorder.stop(), 2000); // 设置朗读停止后录音停止
-            } else {
-                alert('请输入文本');
-            }
-        });
+                        // 自动下载
+                        const link = document.createElement('a');
+                        link.href = audioUrl;
+                        link.download = 'speech_output.wav';
+                        link.click();
 
-        // 初始化并填充可用的中文语音列表
-        populateVoiceList();
-        
-        // 在语音列表加载完后，重新填充语音选择框
-        if (speechSynthesis.onvoiceschanged !== undefined) {
-            speechSynthesis.onvoiceschanged = populateVoiceList;
-        }
-    &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+                        // 重置
+                        audioChunks = [];
+                    };
 
-```。</description><guid isPermaLink="true">https://realfake.top/post/wei-ruan-ben-di-wen-zi-zhuan-yu-yin.html</guid><pubDate>Tue, 12 Aug 2025 04:37:10 +0000</pubDate></item><item><title>视频延长</title><link>https://realfake.top/post/shi-pin-yan-chang.html</link><description># 视频延长
+                    // 当语音开始时启动录音
+                    utterance.onstart = () =&gt; {
+                        mediaRecorder.start();
+                    };
+
+                    // 当语音结束时停止录音（添加轻微延迟以捕获尾音）
+                    utterance.onend = () =&gt; {
+                        setTimeout(() =&gt; {
+                            mediaRecorder.stop();
+                        }, 500); // 500ms 延迟，确保捕获完整音频
+                    };
+
+                    // 启动语音合成
+                    speechSynthesis.speak(utterance);
+                })
+                .catch(err =&gt; {
+                    console.error('音频捕获错误:', err);
+                    alert('无法访问音频设备。</description><guid isPermaLink="true">https://realfake.top/post/wei-ruan-ben-di-wen-zi-zhuan-yu-yin.html</guid><pubDate>Tue, 12 Aug 2025 04:37:10 +0000</pubDate></item><item><title>视频延长</title><link>https://realfake.top/post/shi-pin-yan-chang.html</link><description># 视频延长
 
 不满足十秒的水平正倒播放延迟十秒以上
 
