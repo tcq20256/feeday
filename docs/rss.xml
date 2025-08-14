@@ -1,5 +1,49 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>realfake.top</title><link>https://realfake.top</link><description>BB Work No Money</description><copyright>realfake.top</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://realfake.top</link></image><lastBuildDate>Tue, 12 Aug 2025 14:42:20 +0000</lastBuildDate><managingEditor>realfake.top</managingEditor><ttl>60</ttl><webMaster>realfake.top</webMaster><item><title>文本合并</title><link>https://realfake.top/post/wen-ben-he-bing.html</link><description>##  特殊格式文本合并
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>realfake.top</title><link>https://realfake.top</link><description>BB Work No Money</description><copyright>realfake.top</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://realfake.top</link></image><lastBuildDate>Thu, 14 Aug 2025 14:07:55 +0000</lastBuildDate><managingEditor>realfake.top</managingEditor><ttl>60</ttl><webMaster>realfake.top</webMaster><item><title>删除重复文件</title><link>https://realfake.top/post/shan-chu-zhong-fu-wen-jian.html</link><description>## 删除重复文件
+```
+import os
+import re
+
+# === 配置 ===
+FOLDER = r'C:\Users\1'  # 目标目录
+RECURSIVE = False                    # True=递归子文件夹
+DRY_RUN = False                       # True=预演；确认后改为 False 真删
+
+# 规则：只要“文件名（不含扩展名）”里出现 (数字) 就认定为副本
+# 例：a(1).txt / a (2).txt / a(12) (3).jpg 都会被删除
+PAREN_NUM_IN_STEM = re.compile(r'\(\s*\d+\s*\)')
+
+def iter_files(folder):
+    if RECURSIVE:
+        for root, _, files in os.walk(folder):
+            for f in files:
+                yield root, f
+    else:
+        for f in os.listdir(folder):
+            p = os.path.join(folder, f)
+            if os.path.isfile(p):
+                yield folder, f
+
+deleted, skipped = 0, 0
+
+for root, fname in iter_files(FOLDER):
+    stem, ext = os.path.splitext(fname)
+    if ext == '':  # 无扩展名也按规则处理
+        stem = fname
+    if PAREN_NUM_IN_STEM.search(stem):
+        path = os.path.join(root, fname)
+        try:
+            if DRY_RUN:
+                print(f'[预演] 将删除：{path}')
+            else:
+                os.remove(path)
+                print(f'已删除：{path}')
+            deleted += 1
+        except Exception as e:
+            print(f'删除失败：{path}，原因：{e}')
+            skipped += 1
+
+print(f'\n完成。</description><guid isPermaLink="true">https://realfake.top/post/shan-chu-zhong-fu-wen-jian.html</guid><pubDate>Thu, 14 Aug 2025 14:07:26 +0000</pubDate></item><item><title>文本合并</title><link>https://realfake.top/post/wen-ben-he-bing.html</link><description>##  特殊格式文本合并
 ```
 import os
 import chardet  # pip install chardet
