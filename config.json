@@ -6,5 +6,18 @@
     "bottomText":"❤️ 转载文章请注明出处，谢谢！❤️",
     "script": "<script src='/gmeek/GmeekTOC.js'></script>",
     "allHead":"<script src='/gmeek/GmeekVercount.js'></script>",
+    "head":"<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1964437526797765"
+     crossorigin="anonymous"></script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1964437526797765"
+     crossorigin="anonymous"></script>
+<!-- md-ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1964437526797765"
+     data-ad-slot="3741031277"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>",
     "GMEEK_VERSION":"last"
 }
