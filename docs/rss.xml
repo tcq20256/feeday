@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Note</title><link>https://md.cpuck.com</link><description>BB Work No Money</description><copyright>Note</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://md.cpuck.com</link></image><lastBuildDate>Mon, 18 Aug 2025 15:41:11 +0000</lastBuildDate><managingEditor>Note</managingEditor><ttl>60</ttl><webMaster>Note</webMaster><item><title>正则表达式</title><link>https://md.cpuck.com/post/zheng-ze-biao-da-shi.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Note</title><link>https://md.cpuck.com</link><description>BB Work No Money</description><copyright>Note</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://md.cpuck.com</link></image><lastBuildDate>Mon, 18 Aug 2025 15:44:31 +0000</lastBuildDate><managingEditor>Note</managingEditor><ttl>60</ttl><webMaster>Note</webMaster><item><title>正则表达式</title><link>https://md.cpuck.com/post/zheng-ze-biao-da-shi.html</link><description>
 # 正则表达式速查与示例
 
 ---
@@ -49,7 +49,7 @@
 
 ## URL 匹配（双引号包围）
 
-### 1. 原始版本（不允许域名中有 `.`）
+1. 原始版本（不允许域名中有 `.`）
 ```regex
 https?:\/\/[^\s\/$.?#]+[^\s]*?(?=')
 ```。</description><guid isPermaLink="true">https://md.cpuck.com/post/zheng-ze-biao-da-shi.html</guid><pubDate>Thu, 14 Aug 2025 14:46:44 +0000</pubDate></item><item><title>删除重复文件</title><link>https://md.cpuck.com/post/shan-chu-zhong-fu-wen-jian.html</link><description>## 删除重复文件
