@@ -6,5 +6,6 @@
     "bottomText":"❤️ 转载文章请注明出处，谢谢！❤️",
     "script": "<script src='/gmeek/GmeekTOC.js'></script>",
     "allHead":"<script src='/gmeek/GmeekVercount.js'></script>",
+    "indexScript":"<script src='/gmeek/pc.js'></script>",
     "GMEEK_VERSION":"last"
 }
