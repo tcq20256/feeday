@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Note</title><link>https://realfake.top</link><description>BB Work No Money</description><copyright>Note</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://realfake.top</link></image><lastBuildDate>Mon, 18 Aug 2025 16:08:46 +0000</lastBuildDate><managingEditor>Note</managingEditor><ttl>60</ttl><webMaster>Note</webMaster><item><title>正则表达式</title><link>https://realfake.top/post/zheng-ze-biao-da-shi.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Tue, 19 Aug 2025 15:17:31 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>正则表达式</title><link>https://feeday.cn/post/zheng-ze-biao-da-shi.html</link><description>
 # 正则表达式速查与示例
 
 ---
@@ -52,7 +52,7 @@
 1. 原始版本（不允许域名中有 `.`）
 ```regex
 https?:\/\/[^\s\/$.?#]+[^\s]*?(?=')
-```。</description><guid isPermaLink="true">https://realfake.top/post/zheng-ze-biao-da-shi.html</guid><pubDate>Thu, 14 Aug 2025 14:46:44 +0000</pubDate></item><item><title>删除重复文件</title><link>https://realfake.top/post/shan-chu-zhong-fu-wen-jian.html</link><description>## 删除重复文件
+```。</description><guid isPermaLink="true">https://feeday.cn/post/zheng-ze-biao-da-shi.html</guid><pubDate>Thu, 14 Aug 2025 14:46:44 +0000</pubDate></item><item><title>删除重复文件</title><link>https://feeday.cn/post/shan-chu-zhong-fu-wen-jian.html</link><description>## 删除重复文件
 ```
 import os
 import re
@@ -96,7 +96,7 @@ for root, fname in iter_files(FOLDER):
             print(f'删除失败：{path}，原因：{e}')
             skipped += 1
 
-print(f'\n完成。</description><guid isPermaLink="true">https://realfake.top/post/shan-chu-zhong-fu-wen-jian.html</guid><pubDate>Thu, 14 Aug 2025 14:07:26 +0000</pubDate></item><item><title>文本合并</title><link>https://realfake.top/post/wen-ben-he-bing.html</link><description>##  特殊格式文本合并
+print(f'\n完成。</description><guid isPermaLink="true">https://feeday.cn/post/shan-chu-zhong-fu-wen-jian.html</guid><pubDate>Thu, 14 Aug 2025 14:07:26 +0000</pubDate></item><item><title>文本合并</title><link>https://feeday.cn/post/wen-ben-he-bing.html</link><description>##  特殊格式文本合并
 ```
 import os
 import chardet  # pip install chardet
@@ -126,7 +126,7 @@ def read_file_with_encoding(file_path):
                     return f.read().strip()
             except UnicodeDecodeError:
                 continue
-        raise ValueError(f'无法读取文件 {file_path}，编码不支持。</description><guid isPermaLink="true">https://realfake.top/post/wen-ben-he-bing.html</guid><pubDate>Tue, 12 Aug 2025 10:27:27 +0000</pubDate></item><item><title>微软本地文字转语音</title><link>https://realfake.top/post/wei-ruan-ben-di-wen-zi-zhuan-yu-yin.html</link><description>## HTML 版本
+        raise ValueError(f'无法读取文件 {file_path}，编码不支持。</description><guid isPermaLink="true">https://feeday.cn/post/wen-ben-he-bing.html</guid><pubDate>Tue, 12 Aug 2025 10:27:27 +0000</pubDate></item><item><title>微软本地文字转语音</title><link>https://feeday.cn/post/wei-ruan-ben-di-wen-zi-zhuan-yu-yin.html</link><description>## HTML 版本
 ```
 &lt;!DOCTYPE html&gt;
 &lt;html lang='zh-CN'&gt;
@@ -172,7 +172,7 @@ def read_file_with_encoding(file_path):
                 option.textContent = '无可用语音（请安装TTS引擎）';
                 option.disabled = true;
                 voiceSelect.appendChild(option);
-                alert('未检测到任何可用语音。</description><guid isPermaLink="true">https://realfake.top/post/wei-ruan-ben-di-wen-zi-zhuan-yu-yin.html</guid><pubDate>Tue, 12 Aug 2025 04:37:10 +0000</pubDate></item><item><title>视频延长</title><link>https://realfake.top/post/shi-pin-yan-chang.html</link><description># 视频延长
+                alert('未检测到任何可用语音。</description><guid isPermaLink="true">https://feeday.cn/post/wei-ruan-ben-di-wen-zi-zhuan-yu-yin.html</guid><pubDate>Tue, 12 Aug 2025 04:37:10 +0000</pubDate></item><item><title>视频延长</title><link>https://feeday.cn/post/shi-pin-yan-chang.html</link><description># 视频延长
 
 不满足十秒的水平正倒播放延迟十秒以上
 
@@ -191,11 +191,11 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 def build_pingpong_min_duration(clip, min_sec=10):
     '''
     把 clip 做成“正放+倒放”交替的 ping-pong 循环，
-    一直拼到时长 &gt;= min_sec，不截断。</description><guid isPermaLink="true">https://realfake.top/post/shi-pin-yan-chang.html</guid><pubDate>Mon, 11 Aug 2025 04:31:45 +0000</pubDate></item><item><title>deepseek-chat-鬼故事-雾钟巷</title><link>https://realfake.top/post/deepseek-chat--gui-gu-shi---wu-zhong-xiang.html</link><description>## 雾钟巷
+    一直拼到时长 &gt;= min_sec，不截断。</description><guid isPermaLink="true">https://feeday.cn/post/shi-pin-yan-chang.html</guid><pubDate>Mon, 11 Aug 2025 04:31:45 +0000</pubDate></item><item><title>deepseek-chat-鬼故事-雾钟巷</title><link>https://feeday.cn/post/deepseek-chat--gui-gu-shi---wu-zhong-xiang.html</link><description>## 雾钟巷
 
 ### 文案  
 
-'当钟声敲响第十二下，你会听见自己的心跳消失。</description><guid isPermaLink="true">https://realfake.top/post/deepseek-chat--gui-gu-shi---wu-zhong-xiang.html</guid><pubDate>Sun, 10 Aug 2025 04:26:13 +0000</pubDate></item><item><title>指定文件夹重命名</title><link>https://realfake.top/post/zhi-ding-wen-jian-jia-zhong-ming-ming.html</link><description>指定文件夹包含子文件夹重命名
+'当钟声敲响第十二下，你会听见自己的心跳消失。</description><guid isPermaLink="true">https://feeday.cn/post/deepseek-chat--gui-gu-shi---wu-zhong-xiang.html</guid><pubDate>Sun, 10 Aug 2025 04:26:13 +0000</pubDate></item><item><title>指定文件夹重命名</title><link>https://feeday.cn/post/zhi-ding-wen-jian-jia-zhong-ming-ming.html</link><description>指定文件夹包含子文件夹重命名
 ```
 import os
 import shutil
@@ -203,7 +203,7 @@ import uuid
 
 def rename_image_files(directory, prefix='Real_'):
     '''
-    遍历目录及子目录，批量重命名图像/视频文件为 前缀+编号，避免重复、覆盖、遗漏。</description><guid isPermaLink="true">https://realfake.top/post/zhi-ding-wen-jian-jia-zhong-ming-ming.html</guid><pubDate>Fri, 08 Aug 2025 04:24:09 +0000</pubDate></item><item><title>Kontext-提示词</title><link>https://realfake.top/post/Kontext--ti-shi-ci.html</link><description>
+    遍历目录及子目录，批量重命名图像/视频文件为 前缀+编号，避免重复、覆盖、遗漏。</description><guid isPermaLink="true">https://feeday.cn/post/zhi-ding-wen-jian-jia-zhong-ming-ming.html</guid><pubDate>Fri, 08 Aug 2025 04:24:09 +0000</pubDate></item><item><title>Kontext-提示词</title><link>https://feeday.cn/post/Kontext--ti-shi-ci.html</link><description>
 
 - [https://huggingface.co/spaces/kontext-community](https://huggingface.co/spaces/kontext-community/FLUX.1-Kontext-multi-image)
 
@@ -216,7 +216,7 @@ restore and colorize this photo. Repair the damaged white background. Maintain t
 
 需求类型 | 英文模板 | 中文解析
 -- | -- | --
-对象修改 | 'Change [object] to [new state], keep [content to preserve] unchanged' | 更改 [具体对象] 为 [新的状态]，同时保持 [需要保留的内容] 不变。</description><guid isPermaLink="true">https://realfake.top/post/Kontext--ti-shi-ci.html</guid><pubDate>Wed, 30 Jul 2025 10:02:57 +0000</pubDate></item><item><title>多个表合并</title><link>https://realfake.top/post/duo-ge-biao-he-bing.html</link><description>### 多张格式一样的表合并成一个表
+对象修改 | 'Change [object] to [new state], keep [content to preserve] unchanged' | 更改 [具体对象] 为 [新的状态]，同时保持 [需要保留的内容] 不变。</description><guid isPermaLink="true">https://feeday.cn/post/Kontext--ti-shi-ci.html</guid><pubDate>Wed, 30 Jul 2025 10:02:57 +0000</pubDate></item><item><title>多个表合并</title><link>https://feeday.cn/post/duo-ge-biao-he-bing.html</link><description>### 多张格式一样的表合并成一个表
 ```
 import pandas as pd
 import os
@@ -234,7 +234,7 @@ combined_df = pd.concat(df_list, ignore_index=True)
 # 保存为一个新文件
 combined_df.to_csv(r'D:\hb.csv', index=False)
 
-```。</description><guid isPermaLink="true">https://realfake.top/post/duo-ge-biao-he-bing.html</guid><pubDate>Mon, 28 Jul 2025 05:05:08 +0000</pubDate></item><item><title>文本行转表列</title><link>https://realfake.top/post/wen-ben-xing-zhuan-biao-lie.html</link><description>
+```。</description><guid isPermaLink="true">https://feeday.cn/post/duo-ge-biao-he-bing.html</guid><pubDate>Mon, 28 Jul 2025 05:05:08 +0000</pubDate></item><item><title>文本行转表列</title><link>https://feeday.cn/post/wen-ben-xing-zhuan-biao-lie.html</link><description>
 ### 运行脚本
 ```
 import sys
@@ -249,7 +249,7 @@ def install_package(package):
     except ImportError:
         print(f'缺少包 {package}，正在安装...')
         subprocess.check_call([sys.executable, '-m', 'pip', 'install', package])
-        print(f'{package} 安装完成。</description><guid isPermaLink="true">https://realfake.top/post/wen-ben-xing-zhuan-biao-lie.html</guid><pubDate>Thu, 24 Jul 2025 14:56:23 +0000</pubDate></item><item><title>语言模型-API-批量生成文本</title><link>https://realfake.top/post/yu-yan-mo-xing--API--pi-liang-sheng-cheng-wen-ben.html</link><description>文本模型批量生成文本测试
+        print(f'{package} 安装完成。</description><guid isPermaLink="true">https://feeday.cn/post/wen-ben-xing-zhuan-biao-lie.html</guid><pubDate>Thu, 24 Jul 2025 14:56:23 +0000</pubDate></item><item><title>语言模型-API-批量生成文本</title><link>https://feeday.cn/post/yu-yan-mo-xing--API--pi-liang-sheng-cheng-wen-ben.html</link><description>文本模型批量生成文本测试
 
 
 ## ChatGPT 
@@ -583,7 +583,7 @@ client = OpenAI(
 
 model_name = 'kimi-k2-0711-preview'
 system_prompt = (
-    '你是 Kimi，由 Moonshot AI 提供的人工智能助手。</description><guid isPermaLink="true">https://realfake.top/post/yu-yan-mo-xing--API--pi-liang-sheng-cheng-wen-ben.html</guid><pubDate>Thu, 24 Jul 2025 14:11:48 +0000</pubDate></item><item><title>筛出文件指定比例的文件</title><link>https://realfake.top/post/shai-chu-wen-jian-zhi-ding-bi-li-de-wen-jian.html</link><description>筛出文件指定比例的文件
+    '你是 Kimi，由 Moonshot AI 提供的人工智能助手。</description><guid isPermaLink="true">https://feeday.cn/post/yu-yan-mo-xing--API--pi-liang-sheng-cheng-wen-ben.html</guid><pubDate>Thu, 24 Jul 2025 14:11:48 +0000</pubDate></item><item><title>筛出文件指定比例的文件</title><link>https://feeday.cn/post/shai-chu-wen-jian-zhi-ding-bi-li-de-wen-jian.html</link><description>筛出文件指定比例的文件
 ```
 import os
 import shutil
@@ -623,7 +623,7 @@ for subfolder in os.listdir(source_dir):
         shutil.move(file_path, dest_path)
         print(f'Moved: {file_path} → {dest_path}')
 
-print(f'\n✅ 每个子文件夹已随机移动约 {move_percent}% 文件。</description><guid isPermaLink="true">https://realfake.top/post/shai-chu-wen-jian-zhi-ding-bi-li-de-wen-jian.html</guid><pubDate>Wed, 23 Jul 2025 04:51:37 +0000</pubDate></item><item><title>视频提取图像</title><link>https://realfake.top/post/shi-pin-ti-qu-tu-xiang.html</link><description>视频提取图像
+print(f'\n✅ 每个子文件夹已随机移动约 {move_percent}% 文件。</description><guid isPermaLink="true">https://feeday.cn/post/shai-chu-wen-jian-zhi-ding-bi-li-de-wen-jian.html</guid><pubDate>Wed, 23 Jul 2025 04:51:37 +0000</pubDate></item><item><title>视频提取图像</title><link>https://feeday.cn/post/shi-pin-ti-qu-tu-xiang.html</link><description>视频提取图像
 ```
 import cv2
 import os
@@ -668,7 +668,7 @@ def extract_frames(video_path, output_folder):
                 cv2.imwrite(output_path, frame)
                 print(f'已保存：{output_path}')
             else:
-                print(f'第 {timestamp} 秒图像为空，跳过保存。</description><guid isPermaLink="true">https://realfake.top/post/shi-pin-ti-qu-tu-xiang.html</guid><pubDate>Wed, 23 Jul 2025 04:50:00 +0000</pubDate></item><item><title>筛查重复或类似图像</title><link>https://realfake.top/post/shai-cha-zhong-fu-huo-lei-si-tu-xiang.html</link><description>筛查重复或类似图像
+                print(f'第 {timestamp} 秒图像为空，跳过保存。</description><guid isPermaLink="true">https://feeday.cn/post/shi-pin-ti-qu-tu-xiang.html</guid><pubDate>Wed, 23 Jul 2025 04:50:00 +0000</pubDate></item><item><title>筛查重复或类似图像</title><link>https://feeday.cn/post/shai-cha-zhong-fu-huo-lei-si-tu-xiang.html</link><description>筛查重复或类似图像
 ```
 import subprocess
 import sys
@@ -784,7 +784,7 @@ input_directory = r'D:\test\img'  # 图片所在文件夹
 output_directory = r'D:\test\img2'  # 自定义保存重复图片的文件夹
 
 move_duplicate_images(input_directory, output_directory, use_cosine_similarity=False)  # 设置为True使用余弦相似度判断两个图片的特征方向是否相似，设置为False移除重复图像
-```。</description><guid isPermaLink="true">https://realfake.top/post/shai-cha-zhong-fu-huo-lei-si-tu-xiang.html</guid><pubDate>Wed, 23 Jul 2025 04:47:45 +0000</pubDate></item><item><title>图像直方图在线调节</title><link>https://realfake.top/post/tu-xiang-zhi-fang-tu-zai-xian-diao-jie.html</link><description>```
+```。</description><guid isPermaLink="true">https://feeday.cn/post/shai-cha-zhong-fu-huo-lei-si-tu-xiang.html</guid><pubDate>Wed, 23 Jul 2025 04:47:45 +0000</pubDate></item><item><title>图像直方图在线调节</title><link>https://feeday.cn/post/tu-xiang-zhi-fang-tu-zai-xian-diao-jie.html</link><description>```
 &lt;!DOCTYPE html&gt;
 &lt;html lang='zh-CN'&gt;
 &lt;head&gt;
@@ -968,7 +968,7 @@ histChart.update();
 &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-````。</description><guid isPermaLink="true">https://realfake.top/post/tu-xiang-zhi-fang-tu-zai-xian-diao-jie.html</guid><pubDate>Sun, 20 Jul 2025 04:49:40 +0000</pubDate></item><item><title>图像分类脚本</title><link>https://realfake.top/post/tu-xiang-fen-lei-jiao-ben.html</link><description>## ResNet50
+````。</description><guid isPermaLink="true">https://feeday.cn/post/tu-xiang-zhi-fang-tu-zai-xian-diao-jie.html</guid><pubDate>Sun, 20 Jul 2025 04:49:40 +0000</pubDate></item><item><title>图像分类脚本</title><link>https://feeday.cn/post/tu-xiang-fen-lei-jiao-ben.html</link><description>## ResNet50
 ```
 import subprocess
 import sys
@@ -1072,7 +1072,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     organize_images_by_class(args.src, args.dst)
-```。</description><guid isPermaLink="true">https://realfake.top/post/tu-xiang-fen-lei-jiao-ben.html</guid><pubDate>Sun, 20 Jul 2025 04:49:00 +0000</pubDate></item><item><title>typecho 密码忘记密码 sqlite 数据库</title><link>https://realfake.top/post/typecho%20-mi-ma-wang-ji-mi-ma-%20sqlite%20-shu-ju-ku.html</link><description>博客忘记了密码可以用以下方法找回密码。</description><guid isPermaLink="true">https://realfake.top/post/typecho%20-mi-ma-wang-ji-mi-ma-%20sqlite%20-shu-ju-ku.html</guid><pubDate>Sun, 20 Jul 2025 04:48:22 +0000</pubDate></item><item><title>在线文件加密解密</title><link>https://realfake.top/post/zai-xian-wen-jian-jia-mi-jie-mi.html</link><description>huggingface  spaces gradio
+```。</description><guid isPermaLink="true">https://feeday.cn/post/tu-xiang-fen-lei-jiao-ben.html</guid><pubDate>Sun, 20 Jul 2025 04:49:00 +0000</pubDate></item><item><title>typecho 密码忘记密码 sqlite 数据库</title><link>https://feeday.cn/post/typecho%20-mi-ma-wang-ji-mi-ma-%20sqlite%20-shu-ju-ku.html</link><description>博客忘记了密码可以用以下方法找回密码。</description><guid isPermaLink="true">https://feeday.cn/post/typecho%20-mi-ma-wang-ji-mi-ma-%20sqlite%20-shu-ju-ku.html</guid><pubDate>Sun, 20 Jul 2025 04:48:22 +0000</pubDate></item><item><title>在线文件加密解密</title><link>https://feeday.cn/post/zai-xian-wen-jian-jia-mi-jie-mi.html</link><description>huggingface  spaces gradio
 
 ## requirements.txt
 ```
@@ -1148,7 +1148,7 @@ with gr.Blocks() as demo:
 
 if __name__ == '__main__':
     demo.launch()
-```。</description><guid isPermaLink="true">https://realfake.top/post/zai-xian-wen-jian-jia-mi-jie-mi.html</guid><pubDate>Sun, 20 Jul 2025 04:47:52 +0000</pubDate></item><item><title>视频提取图像</title><link>https://realfake.top/post/shi-pin-ti-qu-tu-xiang.html</link><description>```
+```。</description><guid isPermaLink="true">https://feeday.cn/post/zai-xian-wen-jian-jia-mi-jie-mi.html</guid><pubDate>Sun, 20 Jul 2025 04:47:52 +0000</pubDate></item><item><title>视频提取图像</title><link>https://feeday.cn/post/shi-pin-ti-qu-tu-xiang.html</link><description>```
 import os
 import cv2
 from pathlib import Path
@@ -1201,7 +1201,7 @@ for filename in os.listdir(video_dir):
         # 释放视频对象
         cap.release()
 
-print('所有视频的帧提取完毕。</description><guid isPermaLink="true">https://realfake.top/post/shi-pin-ti-qu-tu-xiang.html</guid><pubDate>Sun, 20 Jul 2025 04:47:14 +0000</pubDate></item><item><title>导出docx文档里的图像</title><link>https://realfake.top/post/dao-chu-docx-wen-dang-li-de-tu-xiang.html</link><description>## 执行结果
+print('所有视频的帧提取完毕。</description><guid isPermaLink="true">https://feeday.cn/post/shi-pin-ti-qu-tu-xiang.html</guid><pubDate>Sun, 20 Jul 2025 04:47:14 +0000</pubDate></item><item><title>导出docx文档里的图像</title><link>https://feeday.cn/post/dao-chu-docx-wen-dang-li-de-tu-xiang.html</link><description>## 执行结果
 ```
 f:/doc/
 │
@@ -1319,7 +1319,7 @@ def process_documents(folder_path, output_folder):
 folder_path = 'f:/doc'
 output_folder = 'f:/doc/png'
 process_documents(folder_path, output_folder)
-```。</description><guid isPermaLink="true">https://realfake.top/post/dao-chu-docx-wen-dang-li-de-tu-xiang.html</guid><pubDate>Sun, 20 Jul 2025 04:46:40 +0000</pubDate></item><item><title>创建指定大小文件</title><link>https://realfake.top/post/chuang-jian-zhi-ding-da-xiao-wen-jian.html</link><description>运行 cmd 执行创建文本文件
+```。</description><guid isPermaLink="true">https://feeday.cn/post/dao-chu-docx-wen-dang-li-de-tu-xiang.html</guid><pubDate>Sun, 20 Jul 2025 04:46:40 +0000</pubDate></item><item><title>创建指定大小文件</title><link>https://feeday.cn/post/chuang-jian-zhi-ding-da-xiao-wen-jian.html</link><description>运行 cmd 执行创建文本文件
 
 ```
 fsutil file createnew f:\1GB.txt 1073741824
@@ -1332,7 +1332,7 @@ byte (B):1073741824
 kilobyte (kB):1048576
 megabyte (MB):1024
 gigabyte (GB):	1
-```。</description><guid isPermaLink="true">https://realfake.top/post/chuang-jian-zhi-ding-da-xiao-wen-jian.html</guid><pubDate>Sun, 20 Jul 2025 04:46:02 +0000</pubDate></item><item><title>获取网页链接</title><link>https://realfake.top/post/huo-qu-wang-ye-lian-jie.html</link><description>控制台浏览器获取网址
+```。</description><guid isPermaLink="true">https://feeday.cn/post/chuang-jian-zhi-ding-da-xiao-wen-jian.html</guid><pubDate>Sun, 20 Jul 2025 04:46:02 +0000</pubDate></item><item><title>获取网页链接</title><link>https://feeday.cn/post/huo-qu-wang-ye-lian-jie.html</link><description>控制台浏览器获取网址
 
 ## bilibili
 ```
@@ -1363,7 +1363,7 @@ for (const link of links) {
   }
 }
 ```
-。</description><guid isPermaLink="true">https://realfake.top/post/huo-qu-wang-ye-lian-jie.html</guid><pubDate>Sun, 20 Jul 2025 04:45:35 +0000</pubDate></item><item><title>查找替换</title><link>https://realfake.top/post/cha-zhao-ti-huan.html</link><description>搜索匹配当前目录下所有[文件名]或文件里的内容打印显示行号
+。</description><guid isPermaLink="true">https://feeday.cn/post/huo-qu-wang-ye-lian-jie.html</guid><pubDate>Sun, 20 Jul 2025 04:45:35 +0000</pubDate></item><item><title>查找替换</title><link>https://feeday.cn/post/cha-zhao-ti-huan.html</link><description>搜索匹配当前目录下所有[文件名]或文件里的内容打印显示行号
 ```
 grep -rn 'Money' *
 ```
@@ -1376,7 +1376,7 @@ grep -l 'Money' file1 file2 file3...
 查找 formatting.php 文件内 length’, 55 替换 length’, 56 :
 ```
 sed -i s/'length', 55'/'length', 56'/g `grep 'length', 55' -rl --include='formatting.php' ./`
-```。</description><guid isPermaLink="true">https://realfake.top/post/cha-zhao-ti-huan.html</guid><pubDate>Sun, 20 Jul 2025 04:45:05 +0000</pubDate></item><item><title>移到文件</title><link>https://realfake.top/post/yi-dao-wen-jian.html</link><description>### 按照指定文件名移到文件
+```。</description><guid isPermaLink="true">https://feeday.cn/post/cha-zhao-ti-huan.html</guid><pubDate>Sun, 20 Jul 2025 04:45:05 +0000</pubDate></item><item><title>移到文件</title><link>https://feeday.cn/post/yi-dao-wen-jian.html</link><description>### 按照指定文件名移到文件
 
 ### 简介
 假设目录与文件如下：
@@ -1406,7 +1406,7 @@ error
 ⚠ 未找到匹配文件 for key: 'missing'
 ✔ 已移动: 'test_error.log' 对应关键字 'error' 到 'H:\copy\test_error.log'
  
-共 4 个关键字，成功移动 3 个，对应文件。</description><guid isPermaLink="true">https://realfake.top/post/yi-dao-wen-jian.html</guid><pubDate>Sun, 20 Jul 2025 04:44:19 +0000</pubDate></item><item><title>删除重复图像</title><link>https://realfake.top/post/shan-chu-zhong-fu-tu-xiang.html</link><description>```
+共 4 个关键字，成功移动 3 个，对应文件。</description><guid isPermaLink="true">https://feeday.cn/post/yi-dao-wen-jian.html</guid><pubDate>Sun, 20 Jul 2025 04:44:19 +0000</pubDate></item><item><title>删除重复图像</title><link>https://feeday.cn/post/shan-chu-zhong-fu-tu-xiang.html</link><description>```
 import os
 import cv2
 import numpy as np
@@ -1467,9 +1467,9 @@ def delete_duplicate_images():
 model = ResNet50(weights='imagenet', include_top=False, pooling='avg')
  
 delete_duplicate_images()
-```。</description><guid isPermaLink="true">https://realfake.top/post/shan-chu-zhong-fu-tu-xiang.html</guid><pubDate>Sun, 20 Jul 2025 04:43:13 +0000</pubDate></item><item><title>md5处理文件</title><link>https://realfake.top/post/md5-chu-li-wen-jian.html</link><description>## 删除MD5值相同的文件
+```。</description><guid isPermaLink="true">https://feeday.cn/post/shan-chu-zhong-fu-tu-xiang.html</guid><pubDate>Sun, 20 Jul 2025 04:43:13 +0000</pubDate></item><item><title>md5处理文件</title><link>https://feeday.cn/post/md5-chu-li-wen-jian.html</link><description>## 删除MD5值相同的文件
 
-通过MD5值把重复的文件移到del文件夹，表格记录。</description><guid isPermaLink="true">https://realfake.top/post/md5-chu-li-wen-jian.html</guid><pubDate>Sun, 20 Jul 2025 04:42:26 +0000</pubDate></item><item><title>同步代码</title><link>https://realfake.top/post/tong-bu-dai-ma.html</link><description>## 常用的 Git 命令
+通过MD5值把重复的文件移到del文件夹，表格记录。</description><guid isPermaLink="true">https://feeday.cn/post/md5-chu-li-wen-jian.html</guid><pubDate>Sun, 20 Jul 2025 04:42:26 +0000</pubDate></item><item><title>同步代码</title><link>https://feeday.cn/post/tong-bu-dai-ma.html</link><description>## 常用的 Git 命令
 
 更新端口刷新DNS
 
@@ -1600,7 +1600,7 @@ git checkout branch-name
 
 ```bash
 git merge branch-name
-```。</description><guid isPermaLink="true">https://realfake.top/post/tong-bu-dai-ma.html</guid><pubDate>Sun, 20 Jul 2025 04:41:37 +0000</pubDate></item><item><title>查找代码</title><link>https://realfake.top/post/cha-zhao-dai-ma.html</link><description>## Windows 查找
+```。</description><guid isPermaLink="true">https://feeday.cn/post/tong-bu-dai-ma.html</guid><pubDate>Sun, 20 Jul 2025 04:41:37 +0000</pubDate></item><item><title>查找代码</title><link>https://feeday.cn/post/cha-zhao-dai-ma.html</link><description>## Windows 查找
 ```
 Get-ChildItem -Recurse -File | Select-String -Pattern '56'
 ```
@@ -1617,7 +1617,7 @@ grep -l 'Money' file1 file2 file3...
 
 ```
 sed -i s/'length', 55'/'length', 56'/g `grep 'length', 55' -rl --include='formatting.php' ./`
-```。</description><guid isPermaLink="true">https://realfake.top/post/cha-zhao-dai-ma.html</guid><pubDate>Sun, 20 Jul 2025 04:40:46 +0000</pubDate></item><item><title>NextChat</title><link>https://realfake.top/post/NextChat.html</link><description>
+```。</description><guid isPermaLink="true">https://feeday.cn/post/cha-zhao-dai-ma.html</guid><pubDate>Sun, 20 Jul 2025 04:40:46 +0000</pubDate></item><item><title>NextChat</title><link>https://feeday.cn/post/NextChat.html</link><description>
 
 ✨ Light and Fast AI Assistant,with Claude, DeepSeek, GPT4 &amp; Gemini Pro support. 
 
@@ -1642,6 +1642,6 @@ sed -i s/'length', 55'/'length', 56'/g `grep 'length', 55' -rl --include='format
 
 ## Dokploy
 
-Dokploy 是一个免费的、可自托管的平台即服务 （PaaS），可简化应用程序和数据库的部署和管理。</description><guid isPermaLink="true">https://realfake.top/post/NextChat.html</guid><pubDate>Sat, 19 Jul 2025 20:47:38 +0000</pubDate></item><item><title>创建博客</title><link>https://realfake.top/post/chuang-jian-bo-ke.html</link><description>## 安装步骤
+Dokploy 是一个免费的、可自托管的平台即服务 （PaaS），可简化应用程序和数据库的部署和管理。</description><guid isPermaLink="true">https://feeday.cn/post/NextChat.html</guid><pubDate>Sat, 19 Jul 2025 20:47:38 +0000</pubDate></item><item><title>创建博客</title><link>https://feeday.cn/post/chuang-jian-bo-ke.html</link><description>## 安装步骤
 
-1. 【创建仓库】点击[通过模板创建仓库](https://github.com/new?template_name=Gmeek-template&amp;template_owner=Meekdai)，建议仓库名称为`XXX.github.io`，其中`XXX`为你的github用户名。</description><guid isPermaLink="true">https://realfake.top/post/chuang-jian-bo-ke.html</guid><pubDate>Sat, 19 Jul 2025 17:50:50 +0000</pubDate></item></channel></rss>
+1. 【创建仓库】点击[通过模板创建仓库](https://github.com/new?template_name=Gmeek-template&amp;template_owner=Meekdai)，建议仓库名称为`XXX.github.io`，其中`XXX`为你的github用户名。</description><guid isPermaLink="true">https://feeday.cn/post/chuang-jian-bo-ke.html</guid><pubDate>Sat, 19 Jul 2025 17:50:50 +0000</pubDate></item></channel></rss>
