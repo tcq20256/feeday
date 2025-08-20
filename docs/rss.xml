@@ -1,5 +1,64 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Tue, 19 Aug 2025 15:47:12 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>正则表达式</title><link>https://feeday.cn/post/zheng-ze-biao-da-shi.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Wed, 20 Aug 2025 04:09:17 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>删除重复图像</title><link>https://feeday.cn/post/shan-chu-zhong-fu-tu-xiang.html</link><description>删除重复图像
+## 安装依赖
+```
+pip install opencv-python numpy keras tensorflow
+```
+## 脚本程序
+```
+import os
+import cv2
+import numpy as np
+from keras.applications.resnet50 import ResNet50, preprocess_input
+
+# 加载ResNet50模型用于提取图像特征
+model = ResNet50(weights='imagenet', include_top=False, input_shape=(224, 224, 3))
+
+def extract_image_features(image_path):
+    image = cv2.imread(image_path)  # 读取图片
+    image = cv2.resize(image, (224, 224))  # 调整图片大小
+    image = np.expand_dims(image, axis=0)  # 扩展维度
+    image = preprocess_input(image)  # 预处理图片
+    
+    features = model.predict(image)  # 提取特征
+    features = features.flatten()  # 展平特征向量
+    features /= np.linalg.norm(features)  # 特征向量归一化
+    
+    return features
+
+def delete_duplicate_images(directory):
+    images = []
+    features = []
+    to_delete = []
+    
+    # 遍历目录中的所有文件
+    for filename in os.listdir(directory):
+        file_path = os.path.join(directory, filename)
+        if os.path.isfile(file_path):
+            try:
+                image_features = extract_image_features(file_path)
+                for i, feature in enumerate(features):
+                    # 计算图像之间的余弦相似度
+                    similarity = np.dot(image_features, feature) / (np.linalg.norm(image_features) * np.linalg.norm(feature))
+                    if similarity &gt; 0.99:  # 设定一个阈值，判断图片是否相似
+                        print(f'Found duplicate: {filename} and {images[i]}')
+                        to_delete.append(file_path)
+                        break
+                else:
+                    images.append(filename)
+                    features.append(image_features)
+            except Exception as e:
+                print(f'Error processing {filename}: {e}')
+    
+    # 删除重复的图片
+    for file_path in to_delete:
+        os.remove(file_path)
+        print(f'Deleted duplicate image: {file_path}')
+
+# 设置图片文件夹路径
+directory = r'D:\test'
+delete_duplicate_images(directory)
+```。</description><guid isPermaLink="true">https://feeday.cn/post/shan-chu-zhong-fu-tu-xiang.html</guid><pubDate>Wed, 20 Aug 2025 04:08:42 +0000</pubDate></item><item><title>正则表达式</title><link>https://feeday.cn/post/zheng-ze-biao-da-shi.html</link><description>
 # 正则表达式速查与示例
 
 ---
