@@ -40,24 +40,6 @@ curl -O https://repo.anaconda.com/miniconda/Miniconda3-py39_24.7.1-0-Linux-x86_6
 bash Miniconda3-py39_24.7.1-0-Linux-x86_64.sh
 conda --version
 
-conda create -n yt-dlp-web python=3.9 -y
-conda activate yt-dlp-web
-python -m pip install --upgrade pip
-
-git clone https://github.com/tcq20256/yt-dlp-youtube-web.git
-cd yt-dlp-youtube-web
-
-pip install -r requirements.txt
-python app.py
-```
-
-### 🛠️ 方法三：手动安装（Windows）
-
-```
-curl -O https://repo.anaconda.com/miniconda/Miniconda3-py39_24.7.1-0-Linux-x86_64.sh
-bash Miniconda3-py39_24.7.1-0-Linux-x86_64.sh
-conda --version
-
 sudo yum install -y git
 git --version
 
