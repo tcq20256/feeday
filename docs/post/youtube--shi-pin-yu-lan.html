@@ -116,20 +116,36 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <div class="highlight highlight-source-shell"><pre class="notranslate">chmod +x install.sh
 ./install.sh</pre></div>
 <h3>🛠️ 方法二：手动安装（Centos7.6）</h3>
-<h4>👉 <a href="http://127.0.0.1:5000" rel="nofollow">http://127.0.0.1:5000</a></h4>
 <pre class="notranslate"><code class="notranslate">curl -O https://repo.anaconda.com/miniconda/Miniconda3-py39_24.7.1-0-Linux-x86_64.sh
 bash Miniconda3-py39_24.7.1-0-Linux-x86_64.sh
+conda --version
 
 conda create -n yt-dlp-web python=3.9 -y
 conda activate yt-dlp-web
+python -m pip install --upgrade pip
 
 git clone https://github.com/tcq20256/yt-dlp-youtube-web.git
 cd yt-dlp-youtube-web
-sudo apt update &amp;&amp; sudo apt install -y python3 python3-venv python3-pip ffmpeg
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
 
+pip install -r requirements.txt
+python app.py
+</code></pre>
+<h3>🛠️ 方法三：手动安装（Windows）</h3>
+<pre class="notranslate"><code class="notranslate">curl -O https://repo.anaconda.com/miniconda/Miniconda3-py39_24.7.1-0-Linux-x86_64.sh
+bash Miniconda3-py39_24.7.1-0-Linux-x86_64.sh
+conda --version
+
+sudo yum install -y git
+git --version
+
+conda create -n yt-dlp-web python=3.9 -y
+conda activate yt-dlp-web
+python -m pip install --upgrade pip
+
+git clone https://github.com/tcq20256/yt-dlp-youtube-web.git
+cd yt-dlp-youtube-web
+
+pip install -r requirements.txt
 python app.py
 </code></pre></div>
 <div style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</div>
