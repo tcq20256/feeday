@@ -1,9 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Puck.Chat</title><link>https://puck.chat</link><description>BB Work No Money</description><copyright>Puck.Chat</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://puck.chat</link></image><lastBuildDate>Thu, 04 Sep 2025 14:56:06 +0000</lastBuildDate><managingEditor>Puck.Chat</managingEditor><ttl>60</ttl><webMaster>Puck.Chat</webMaster><item><title>雾钟巷-GPT5</title><link>https://puck.chat/post/wu-zhong-xiang--GPT5.html</link><description># 雾钟巷-GPT5
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Puck.Chat</title><link>https://puck.chat</link><description>BB Work No Money</description><copyright>Puck.Chat</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://puck.chat</link></image><lastBuildDate>Thu, 04 Sep 2025 15:00:07 +0000</lastBuildDate><managingEditor>Puck.Chat</managingEditor><ttl>60</ttl><webMaster>Puck.Chat</webMaster><item><title>GPT5-鬼故事-雾钟巷</title><link>https://puck.chat/post/GPT5--gui-gu-shi---wu-zhong-xiang.html</link><description>## 一
 
-## 一
-
-林远回到雾钟巷的时候，天刚下过一阵细雨。</description><guid isPermaLink="true">https://puck.chat/post/wu-zhong-xiang--GPT5.html</guid><pubDate>Thu, 04 Sep 2025 14:50:12 +0000</pubDate></item><item><title>word 合并文档</title><link>https://puck.chat/post/word%20-he-bing-wen-dang.html</link><description>## 文档转换docx后合并
+林远回到雾钟巷的时候，天刚下过一阵细雨。</description><guid isPermaLink="true">https://puck.chat/post/GPT5--gui-gu-shi---wu-zhong-xiang.html</guid><pubDate>Thu, 04 Sep 2025 14:50:12 +0000</pubDate></item><item><title>word 合并文档</title><link>https://puck.chat/post/word%20-he-bing-wen-dang.html</link><description>## 文档转换docx后合并
 ```
 import os
 import sys
