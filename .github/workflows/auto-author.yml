@@ -26,20 +26,25 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install deps
+        run: |
+          pip install requests
+
       - name: Run stub author
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO: ${{ github.repository }}       # owner/repo
+          REPO: ${{ github.repository }}       # e.g. tcq20256/puck.chat
           SERIES_NAME: ${{ vars.SERIES_NAME }} # 可选变量
           DRY_RUN: ${{ inputs.dry_run }}
         run: |
           python - <<'PY'
-          import os, sys, requests, datetime, textwrap, json
-          OWNER, REPO = os.environ.get("REPO","/").split("/")[:2]
+          import os, sys, requests, datetime, textwrap
+
+          REPO_FULL = os.environ.get("REPO")           # "owner/repo"
           TOKEN = os.environ.get("GITHUB_TOKEN")
           SERIES = os.environ.get("SERIES_NAME") or "雾钟巷·蝶梦"
           DRY = str(os.environ.get("DRY_RUN","false")).lower()=="true"
-          if not (OWNER and REPO and TOKEN):
+          if not REPO_FULL or not TOKEN:
               print("Missing env REPO/GITHUB_TOKEN", file=sys.stderr); sys.exit(1)
 
           GH = "https://api.github.com"
@@ -47,7 +52,7 @@ jobs:
 
           # 今天是否已发（带 auto 标签）
           today = datetime.datetime.utcnow().date().isoformat()
-          r = requests.get(f"{GH}/repos/{OWNER}/{REPO}/issues",
+          r = requests.get(f"{GH}/repos/{REPO_FULL}/issues",
                            headers=hdr, params={"state":"open","labels":"auto"}, timeout=30)
           r.raise_for_status()
           for it in r.json():
@@ -78,7 +83,8 @@ jobs:
 
           # 创建 Issue
           payload = {"title": title, "body": body, "labels": labels}
-          cr = requests.post(f"{GH}/repos/{OWNER}/{REPO}/issues", headers=hdr, json=payload, timeout=30)
+          cr = requests.post(f"{GH}/repos/{REPO_FULL}/issues",
+                             headers=hdr, json=payload, timeout=30)
           cr.raise_for_status()
           url = cr.json().get("html_url")
           print("Created:", url)
