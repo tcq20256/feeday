@@ -41,6 +41,22 @@ for (const link of links) {
   }
 }
 ```
+## dataset
+```
+const links = document.getElementsByTagName('a');
+
+// 遍历所有链接并查找匹配 Hugging Face blob 地址
+for (const link of links) {
+  const href = link.href;
+  // 匹配 datasets 仓库 blob 链接
+  const urlRegex = /^https:\/\/huggingface\.co\/datasets\/[^/]+\/[^/]+\/blob\/[^/]+\/.+$/;
+  if (urlRegex.test(href)) {
+    // 替换 blob → resolve
+    const realUrl = href.replace('/blob/', '/resolve/');
+    console.log('直链: ' + realUrl);
+  }
+}
+```
 。">
 <meta property="og:title" content="获取网页链接">
 <meta property="og:description" content="控制台浏览器获取网址
@@ -71,6 +87,22 @@ for (const link of links) {
   const urlRegex = /https:\/\/www\.youtube\.com\/watch\?v=[A-Za-z0-9_-]+/;
   if (urlRegex.test(href)) {
     console.log('匹配到的网址: ' + href);
+  }
+}
+```
+## dataset
+```
+const links = document.getElementsByTagName('a');
+
+// 遍历所有链接并查找匹配 Hugging Face blob 地址
+for (const link of links) {
+  const href = link.href;
+  // 匹配 datasets 仓库 blob 链接
+  const urlRegex = /^https:\/\/huggingface\.co\/datasets\/[^/]+\/[^/]+\/blob\/[^/]+\/.+$/;
+  if (urlRegex.test(href)) {
+    // 替换 blob → resolve
+    const realUrl = href.replace('/blob/', '/resolve/');
+    console.log('直链: ' + realUrl);
   }
 }
 ```
@@ -168,6 +200,21 @@ for (const link of links) {
   const urlRegex = /https:\/\/www\.youtube\.com\/watch\?v=[A-Za-z0-9_-]+/;
   if (urlRegex.test(href)) {
     console.log("匹配到的网址: " + href);
+  }
+}
+</code></pre>
+<h2>dataset</h2>
+<pre class="notranslate"><code class="notranslate">const links = document.getElementsByTagName('a');
+
+// 遍历所有链接并查找匹配 Hugging Face blob 地址
+for (const link of links) {
+  const href = link.href;
+  // 匹配 datasets 仓库 blob 链接
+  const urlRegex = /^https:\/\/huggingface\.co\/datasets\/[^/]+\/[^/]+\/blob\/[^/]+\/.+$/;
+  if (urlRegex.test(href)) {
+    // 替换 blob → resolve
+    const realUrl = href.replace("/blob/", "/resolve/");
+    console.log("直链: " + realUrl);
   }
 }
 </code></pre></div>
