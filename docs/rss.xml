@@ -1,5 +1,124 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Wed, 10 Sep 2025 15:15:31 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>雾钟巷·蝶梦｜占位稿 2025-09-09</title><link>https://feeday.cn/post/wu-zhong-xiang-%C2%B7-die-meng-%EF%BD%9C-zhan-wei-gao-%202025-09-09.html</link><description>&gt; 这是自动写作占位稿（无 API 版），用于验证“自动创建 Issue → 发布站点”的流水线。</description><guid isPermaLink="true">https://feeday.cn/post/wu-zhong-xiang-%C2%B7-die-meng-%EF%BD%9C-zhan-wei-gao-%202025-09-09.html</guid><pubDate>Tue, 09 Sep 2025 14:20:03 +0000</pubDate></item><item><title>雾钟巷·蝶梦｜占位稿 2025-09-08</title><link>https://feeday.cn/post/wu-zhong-xiang-%C2%B7-die-meng-%EF%BD%9C-zhan-wei-gao-%202025-09-08.html</link><description>&gt; 这是自动写作占位稿（无 API 版），用于验证“自动创建 Issue → 发布站点”的流水线。</description><guid isPermaLink="true">https://feeday.cn/post/wu-zhong-xiang-%C2%B7-die-meng-%EF%BD%9C-zhan-wei-gao-%202025-09-08.html</guid><pubDate>Mon, 08 Sep 2025 14:22:30 +0000</pubDate></item><item><title>雾钟巷·蝶梦｜占位稿 2025-09-07</title><link>https://feeday.cn/post/wu-zhong-xiang-%C2%B7-die-meng-%EF%BD%9C-zhan-wei-gao-%202025-09-07.html</link><description>&gt; 这是自动写作占位稿（无 API 版），用于验证“自动创建 Issue → 发布站点”的流水线。</description><guid isPermaLink="true">https://feeday.cn/post/wu-zhong-xiang-%C2%B7-die-meng-%EF%BD%9C-zhan-wei-gao-%202025-09-07.html</guid><pubDate>Sun, 07 Sep 2025 14:17:11 +0000</pubDate></item><item><title>GPT5-雾钟巷-归途</title><link>https://feeday.cn/post/GPT5--wu-zhong-xiang---gui-tu.html</link><description>林远在城市里住在一间低矮的隔断房，窗外是一条永远潮着油烟的背街。</description><guid isPermaLink="true">https://feeday.cn/post/GPT5--wu-zhong-xiang---gui-tu.html</guid><pubDate>Sat, 06 Sep 2025 09:34:40 +0000</pubDate></item><item><title>GPT5-雾钟巷-无名日</title><link>https://feeday.cn/post/GPT5--wu-zhong-xiang---wu-ming-ri.html</link><description>林远拖着行李从小站出来。</description><guid isPermaLink="true">https://feeday.cn/post/GPT5--wu-zhong-xiang---wu-ming-ri.html</guid><pubDate>Thu, 04 Sep 2025 15:34:35 +0000</pubDate></item><item><title>GPT5-鬼故事-雾钟巷</title><link>https://feeday.cn/post/GPT5--gui-gu-shi---wu-zhong-xiang.html</link><description>## 一
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Wed, 10 Sep 2025 15:58:37 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>下载链接</title><link>https://feeday.cn/post/xia-zai-lian-jie.html</link><description>## 获取链接
+```
+const links = document.getElementsByTagName('a');
+
+// 遍历所有链接并查找匹配 Hugging Face blob 地址
+for (const link of links) {
+  const href = link.href;
+  // 匹配 datasets 仓库 blob 链接
+  const urlRegex = /^https:\/\/huggingface\.co\/datasets\/[^/]+\/[^/]+\/blob\/[^/]+\/.+$/;
+  if (urlRegex.test(href)) {
+    // 替换 blob → resolve
+    const realUrl = href.replace('/blob/', '/resolve/');
+    console.log('直链: ' + realUrl);
+  }
+}
+```
+
+## 执行下载
+
+```
+# -*- coding: utf-8 -*-
+'''
+auto_paste_two_options.py
+两个选项：
+1) 开始：进入坐标获取界面 → F5 保存坐标后自动开始循环
+0) 退出
+
+循环逻辑：
+- 从 TXT 每行读取
+- 点击输入框 → 粘贴 → 回车(或点击按钮)
+- 间隔 N 秒继续
+'''
+
+import os, sys, json, time, subprocess
+
+# ===== 依赖自动安装 =====
+def ensure_packages():
+    for p in ['pyautogui', 'keyboard', 'pyperclip']:
+        try:
+            __import__('pyautogui' if p=='pyautogui' else p)
+        except Exception:
+            print(f'[安装] 缺少 {p}，正在安装...')
+            subprocess.check_call([sys.executable, '-m', 'pip', 'install', p])
+ensure_packages()
+
+import pyautogui, keyboard, pyperclip
+
+pyautogui.FAILSAFE = True
+pyautogui.PAUSE = 0.03
+
+CONFIG_FILE = 'auto_paste_config.json'
+STATE_FILE  = 'auto_paste_state.json'
+
+# ===== 这里按需改默认值 =====
+DEFAULT_CONFIG = {
+    'txt_file': r'c:\Users\Puck\Desktop\sid.txt',   # ← 改成你的 txt 路径
+    'coords': {'click_target': None, 'submit_btn': None},
+    'interval_sec': 180,                  # 间隔秒（3分钟）
+    'clear_before_paste': True,           # 粘贴前 Ctrl+A 清空
+    'press_enter_after_paste': True       # True=回车提交；False=点击 submit_btn
+}
+
+# ========== 工具函数 ==========
+def load_json(path, default=None):
+    if os.path.exists(path):
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return default
+
+def save_json(path, data):
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+def get_conf():
+    conf = load_json(CONFIG_FILE, None)
+    if conf is None:
+        conf = DEFAULT_CONFIG.copy()
+        save_json(CONFIG_FILE, conf)
+    else:
+        # 补齐字段
+        for k, v in DEFAULT_CONFIG.items():
+            if k not in conf: conf[k] = v
+        if 'coords' not in conf or not isinstance(conf['coords'], dict):
+            conf['coords'] = {'click_target': None, 'submit_btn': None}
+        conf['coords'].setdefault('click_target', None)
+        conf['coords'].setdefault('submit_btn', None)
+        save_json(CONFIG_FILE, conf)
+    return conf
+
+def click(xy):
+    if not xy: return
+    x, y = xy
+    pyautogui.moveTo(x, y, duration=0.05)
+    pyautogui.click()
+
+def paste_text(text, clear_before=True):
+    if clear_before:
+        pyautogui.hotkey('ctrl', 'a'); time.sleep(0.05)
+    pyperclip.copy(text); time.sleep(0.05)
+    pyautogui.hotkey('ctrl', 'v')
+
+def press_enter():
+    pyautogui.press('enter')
+
+def human_time(sec):
+    m, s = divmod(int(sec), 60)
+    h, m = divmod(m, 60)
+    if h: return f'{h}小时{m}分{s}秒'
+    if m: return f'{m}分{s}秒'
+    return f'{s}秒'
+
+def countdown(total_sec):
+    start = time.time()
+    paused = False
+    while True:
+        if keyboard.is_pressed('esc'):
+            print('\n[退出] ESC 触发，结束循环。</description><guid isPermaLink="true">https://feeday.cn/post/xia-zai-lian-jie.html</guid><pubDate>Wed, 10 Sep 2025 15:58:07 +0000</pubDate></item><item><title>雾钟巷·蝶梦｜占位稿 2025-09-09</title><link>https://feeday.cn/post/wu-zhong-xiang-%C2%B7-die-meng-%EF%BD%9C-zhan-wei-gao-%202025-09-09.html</link><description>&gt; 这是自动写作占位稿（无 API 版），用于验证“自动创建 Issue → 发布站点”的流水线。</description><guid isPermaLink="true">https://feeday.cn/post/wu-zhong-xiang-%C2%B7-die-meng-%EF%BD%9C-zhan-wei-gao-%202025-09-09.html</guid><pubDate>Tue, 09 Sep 2025 14:20:03 +0000</pubDate></item><item><title>雾钟巷·蝶梦｜占位稿 2025-09-08</title><link>https://feeday.cn/post/wu-zhong-xiang-%C2%B7-die-meng-%EF%BD%9C-zhan-wei-gao-%202025-09-08.html</link><description>&gt; 这是自动写作占位稿（无 API 版），用于验证“自动创建 Issue → 发布站点”的流水线。</description><guid isPermaLink="true">https://feeday.cn/post/wu-zhong-xiang-%C2%B7-die-meng-%EF%BD%9C-zhan-wei-gao-%202025-09-08.html</guid><pubDate>Mon, 08 Sep 2025 14:22:30 +0000</pubDate></item><item><title>雾钟巷·蝶梦｜占位稿 2025-09-07</title><link>https://feeday.cn/post/wu-zhong-xiang-%C2%B7-die-meng-%EF%BD%9C-zhan-wei-gao-%202025-09-07.html</link><description>&gt; 这是自动写作占位稿（无 API 版），用于验证“自动创建 Issue → 发布站点”的流水线。</description><guid isPermaLink="true">https://feeday.cn/post/wu-zhong-xiang-%C2%B7-die-meng-%EF%BD%9C-zhan-wei-gao-%202025-09-07.html</guid><pubDate>Sun, 07 Sep 2025 14:17:11 +0000</pubDate></item><item><title>GPT5-雾钟巷-归途</title><link>https://feeday.cn/post/GPT5--wu-zhong-xiang---gui-tu.html</link><description>林远在城市里住在一间低矮的隔断房，窗外是一条永远潮着油烟的背街。</description><guid isPermaLink="true">https://feeday.cn/post/GPT5--wu-zhong-xiang---gui-tu.html</guid><pubDate>Sat, 06 Sep 2025 09:34:40 +0000</pubDate></item><item><title>GPT5-雾钟巷-无名日</title><link>https://feeday.cn/post/GPT5--wu-zhong-xiang---wu-ming-ri.html</link><description>林远拖着行李从小站出来。</description><guid isPermaLink="true">https://feeday.cn/post/GPT5--wu-zhong-xiang---wu-ming-ri.html</guid><pubDate>Thu, 04 Sep 2025 15:34:35 +0000</pubDate></item><item><title>GPT5-鬼故事-雾钟巷</title><link>https://feeday.cn/post/GPT5--gui-gu-shi---wu-zhong-xiang.html</link><description>## 一
 
 林远回到雾钟巷的时候，天刚下过一阵细雨。</description><guid isPermaLink="true">https://feeday.cn/post/GPT5--gui-gu-shi---wu-zhong-xiang.html</guid><pubDate>Thu, 04 Sep 2025 14:50:12 +0000</pubDate></item><item><title>word 合并文档</title><link>https://feeday.cn/post/word%20-he-bing-wen-dang.html</link><description>## 文档转换docx后合并
 ```
