@@ -5,6 +5,9 @@ ssh -p 22 root@192.168.1.1
 ```
 
 #  密钥连接
+
+- https://github.com/settings/ssh/new
+
 ```
 ssh-keygen -t rsa -b 4096 -C "123@qq.com"
 type C:\.ssh\id_rsa.pub
