@@ -1,9 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Sat, 13 Sep 2025 04:32:26 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>CentOS 7.6  SSH 防暴力破解</title><link>https://feeday.cn/post/CentOS%207.6%20%20SSH%20-fang-bao-li-po-jie.html</link><description>#  登录连接
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Sat, 13 Sep 2025 04:44:05 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>CentOS 7.6  SSH 防暴力破解</title><link>https://feeday.cn/post/CentOS%207.6%20%20SSH%20-fang-bao-li-po-jie.html</link><description>#  普通连接
 
 ```
 ssh -p 22 root@192.168.1.1
+```
+
+#  密钥连接
+```
+ssh-keygen -t rsa -b 4096 -C '123@qq.com'
+type C:\.ssh\id_rsa.pub
+
 ssh -i &lt;私钥文件路径&gt; &lt;用户名&gt;@&lt;服务器IP&gt;
+
+ssh -T git@github.com
+git@github.com:tcq20256/feeday.git
 ```
 
 # 封禁攻击的IP

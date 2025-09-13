@@ -1,8 +1,18 @@
-#  登录连接
+#  普通连接
 
 ```
 ssh -p 22 root@192.168.1.1
+```
+
+#  密钥连接
+```
+ssh-keygen -t rsa -b 4096 -C "123@qq.com"
+type C:\.ssh\id_rsa.pub
+
 ssh -i <私钥文件路径> <用户名>@<服务器IP>
+
+ssh -T git@github.com
+git@github.com:tcq20256/feeday.git
 ```
 
 # 封禁攻击的IP
