@@ -10,7 +10,14 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="# 封禁攻击的IP
+<meta name="description" content="#  登录连接
+
+```
+ssh -p 22 root@192.168.1.1
+ssh -i <私钥文件路径> <用户名>@<服务器IP>
+```
+
+# 封禁攻击的IP
 
 ```
 #!/usr/bin/env bash
@@ -166,7 +173,14 @@ msg '校验 fail2ban 配置语法 ...'
 if ! fail2ban-client -t; then
   err '配置语法校验失败，请检查上方输出。">
 <meta property="og:title" content="CentOS 7.6  SSH 防暴力破解">
-<meta property="og:description" content="# 封禁攻击的IP
+<meta property="og:description" content="#  登录连接
+
+```
+ssh -p 22 root@192.168.1.1
+ssh -i <私钥文件路径> <用户名>@<服务器IP>
+```
+
+# 封禁攻击的IP
 
 ```
 #!/usr/bin/env bash
@@ -391,7 +405,11 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><h1>封禁攻击的IP</h1>
+<div class="markdown-body" id="postBody"><h1>登录连接</h1>
+<pre class="notranslate"><code class="notranslate">ssh -p 22 root@192.168.1.1
+ssh -i &lt;私钥文件路径&gt; &lt;用户名&gt;@&lt;服务器IP&gt;
+</code></pre>
+<h1>封禁攻击的IP</h1>
 <pre class="notranslate"><code class="notranslate">#!/usr/bin/env bash
 # setup_ssh_antibrute.sh
 # CentOS 7.6：Fail2Ban SSH 防暴力破解（安装/配置 + 自愈修复 一体化）
