@@ -1,6 +1,6 @@
 ## 模型定价
-
-https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seededit-3-0-i2i
+- [在线生成](https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seededit-3-0-i2i)
+- [使用量查看](https://console.volcengine.com/ark/region:ark+cn-beijing/openManagement?LLM=%7B%7D&OpenTokenDrawer=false&tab=ComputerVision)
 
 模型名称 | 定价元/张
 -- | --

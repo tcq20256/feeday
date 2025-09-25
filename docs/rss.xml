@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Thu, 25 Sep 2025 15:04:36 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>豆包 API</title><link>https://feeday.cn/post/dou-bao-%20API.html</link><description>## 模型定价
-
-https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seededit-3-0-i2i
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Thu, 25 Sep 2025 15:13:50 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>豆包 API</title><link>https://feeday.cn/post/dou-bao-%20API.html</link><description>## 模型定价
+- [在线生成](https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seededit-3-0-i2i)
+- [使用量查看](https://console.volcengine.com/ark/region:ark+cn-beijing/openManagement?LLM=%7B%7D&amp;OpenTokenDrawer=false&amp;tab=ComputerVision)
 
 模型名称 | 定价元/张
 -- | --
