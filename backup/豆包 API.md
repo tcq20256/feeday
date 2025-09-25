@@ -1,5 +1,7 @@
 ## 模型定价
 
+https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seededit-3-0-i2i
+
 模型名称 | 定价元/张
 -- | --
 doubao-seedream-4.0 | 0.2
