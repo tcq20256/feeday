@@ -149,3 +149,119 @@ for idx, prompt in enumerate(prompts, start=1):
     except Exception as e:
         print(f"[{idx}] 提示词: {prompt} -> 生成失败: {e}")
 ```
+
+## 本地图片批量修改
+
+```
+import os
+import sys
+import subprocess
+import base64
+import mimetypes
+import requests
+from time import sleep
+
+# ===== 自动安装依赖 =====
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "--upgrade", package])
+
+try:
+    from volcenginesdkarkruntime import Ark
+except ImportError:
+    install("volcengine-python-sdk[ark]")
+    from volcenginesdkarkruntime import Ark
+
+# ===== 工具函数 =====
+def to_data_url(img_path: str) -> str:
+    """把本地图片转成 data URL: data:image/xxx;base64,xxxx"""
+    with open(img_path, "rb") as f:
+        b64 = base64.b64encode(f.read()).decode("utf-8")
+    mime, _ = mimetypes.guess_type(img_path)
+    if not mime:
+        mime = "image/jpeg"
+    return f"data:{mime};base64,{b64}"
+
+def download(url: str, out_path: str, timeout: int = 60, retry: int = 3) -> bool:
+    for i in range(1, retry + 1):
+        try:
+            r = requests.get(url, timeout=timeout)
+            if r.status_code == 200:
+                with open(out_path, "wb") as f:
+                    f.write(r.content)
+                return True
+            else:
+                print(f"    [下载] HTTP {r.status_code}（{i}/{retry}）")
+        except Exception as e:
+            print(f"    [下载] 异常：{e}（{i}/{retry}）")
+        sleep(1)
+    return False
+
+# ===== 初始化 Ark 客户端 =====
+client = Ark(
+    base_url="https://ark.cn-beijing.volces.com/api/v3",
+    api_key=os.getenv("ARK_API_KEY", "xxx"),  # 推荐改用环境变量
+)
+
+# ===== 路径配置 =====
+IMG_DIR  = r"C:\doubao\ys"     # 输入原图目录
+SAVE_DIR = r"C:\doubao\i2i"    # 输出目录
+TXT_FILE = r"C:\prompts.txt"   # 提示词（1 行=全局，或与图片数一一对应）
+os.makedirs(SAVE_DIR, exist_ok=True)
+
+# ===== 读取提示词 =====
+with open(TXT_FILE, "r", encoding="utf-8") as f:
+    prompts = [line.strip() for line in f if line.strip()]
+if not prompts:
+    raise RuntimeError("prompts.txt 为空：请至少提供一行提示词。")
+
+# ===== 收集并排序图片 =====
+images = [fn for fn in os.listdir(IMG_DIR) if fn.lower().endswith((".jpg", ".jpeg", ".png", ".webp", ".bmp"))]
+images.sort()
+if not images:
+    raise RuntimeError(f"在目录中未找到图片：{IMG_DIR}")
+
+# 提示词策略：1 行 -> 所有图片共用；多行且与图片数相等 -> 一一对应；否则 -> 用第一行并警告
+if len(prompts) == 1:
+    def pick_prompt(_idx): return prompts[0]
+elif len(prompts) == len(images):
+    def pick_prompt(idx): return prompts[idx]
+else:
+    print(f"[警告] 图片数({len(images)}) 与提示词行数({len(prompts)})不匹配，将对所有图片使用第一行提示词。")
+    def pick_prompt(_idx): return prompts[0]
+
+# ===== 逐张处理 =====
+ok_count = 0
+for i, img_name in enumerate(images):
+    src = os.path.join(IMG_DIR, img_name)
+    name, _ = os.path.splitext(img_name)
+    dst = os.path.join(SAVE_DIR, f"{name}-i2i.jpg")
+    prompt = pick_prompt(i)
+
+    try:
+        image_data_url = to_data_url(src)  # 直接用 data URL，避免“InvalidParameter: invalid url specified”
+
+        resp = client.images.generate(
+            model="doubao-seededit-3-0-i2i-250628",
+            prompt=prompt,
+            image=image_data_url,   # 关键：传 data URL
+            seed=123,
+            guidance_scale=5.5,
+            size="adaptive",
+            watermark=True,
+            # response_format 默认返回 URL；如需 base64，可改为 response_format="b64_json"
+        )
+
+        out_url = resp.data[0].url
+        print(f"[{i+1}] {img_name} | 提示词: {prompt} -> {out_url}")
+
+        if download(out_url, dst):
+            print(f"    已保存: {dst}")
+            ok_count += 1
+        else:
+            print(f"    [失败] 下载未成功: {dst}")
+
+    except Exception as e:
+        print(f"[{i+1}] {img_name} -> 生成失败: {e}")
+
+print(f"\n完成：成功生成并保存 {ok_count}/{len(images)} 张，输出目录：{SAVE_DIR}")
+```
