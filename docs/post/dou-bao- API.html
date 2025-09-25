@@ -171,6 +171,7 @@ import subprocess
 import base64
 import mimetypes
 import requests
+import re
 from time import sleep
 
 # ===== 自动安装依赖 =====
@@ -208,6 +209,11 @@ def download(url: str, out_path: str, timeout: int = 60, retry: int = 3) -> bool
         sleep(1)
     return False
 
+def natural_key(s: str):
+    '''自然排序 key，确保 2.jpg < 10.jpg'''
+    return [int(text) if text.isdigit() else text.lower()
+            for text in re.split(r'(\d+)', s)]
+
 # ===== 初始化 Ark 客户端 =====
 client = Ark(
     base_url='https://ark.cn-beijing.volces.com/api/v3',
@@ -215,9 +221,9 @@ client = Ark(
 )
 
 # ===== 路径配置 =====
-IMG_DIR  = r'C:\doubao\ys'     # 输入原图目录
+IMG_DIR  = r'C:\doubao\188'     # 输入原图目录
 SAVE_DIR = r'C:\doubao\i2i'    # 输出目录
-TXT_FILE = r'C:\prompts.txt'   # 提示词（1 行=全局，或与图片数一一对应）
+TXT_FILE = r'C:\prompts.txt'   # 提示词文件
 os.makedirs(SAVE_DIR, exist_ok=True)
 
 # ===== 读取提示词 =====
@@ -387,6 +393,7 @@ import subprocess
 import base64
 import mimetypes
 import requests
+import re
 from time import sleep
 
 # ===== 自动安装依赖 =====
@@ -424,6 +431,11 @@ def download(url: str, out_path: str, timeout: int = 60, retry: int = 3) -> bool
         sleep(1)
     return False
 
+def natural_key(s: str):
+    '''自然排序 key，确保 2.jpg < 10.jpg'''
+    return [int(text) if text.isdigit() else text.lower()
+            for text in re.split(r'(\d+)', s)]
+
 # ===== 初始化 Ark 客户端 =====
 client = Ark(
     base_url='https://ark.cn-beijing.volces.com/api/v3',
@@ -431,9 +443,9 @@ client = Ark(
 )
 
 # ===== 路径配置 =====
-IMG_DIR  = r'C:\doubao\ys'     # 输入原图目录
+IMG_DIR  = r'C:\doubao\188'     # 输入原图目录
 SAVE_DIR = r'C:\doubao\i2i'    # 输出目录
-TXT_FILE = r'C:\prompts.txt'   # 提示词（1 行=全局，或与图片数一一对应）
+TXT_FILE = r'C:\prompts.txt'   # 提示词文件
 os.makedirs(SAVE_DIR, exist_ok=True)
 
 # ===== 读取提示词 =====
@@ -675,6 +687,7 @@ import subprocess
 import base64
 import mimetypes
 import requests
+import re
 from time import sleep
 
 # ===== 自动安装依赖 =====
@@ -712,6 +725,11 @@ def download(url: str, out_path: str, timeout: int = 60, retry: int = 3) -&gt; b
         sleep(1)
     return False
 
+def natural_key(s: str):
+    """自然排序 key，确保 2.jpg &lt; 10.jpg"""
+    return [int(text) if text.isdigit() else text.lower()
+            for text in re.split(r'(\d+)', s)]
+
 # ===== 初始化 Ark 客户端 =====
 client = Ark(
     base_url="https://ark.cn-beijing.volces.com/api/v3",
@@ -719,9 +737,9 @@ client = Ark(
 )
 
 # ===== 路径配置 =====
-IMG_DIR  = r"C:\doubao\ys"     # 输入原图目录
+IMG_DIR  = r"C:\doubao\188"     # 输入原图目录
 SAVE_DIR = r"C:\doubao\i2i"    # 输出目录
-TXT_FILE = r"C:\prompts.txt"   # 提示词（1 行=全局，或与图片数一一对应）
+TXT_FILE = r"C:\prompts.txt"   # 提示词文件
 os.makedirs(SAVE_DIR, exist_ok=True)
 
 # ===== 读取提示词 =====
@@ -730,13 +748,13 @@ with open(TXT_FILE, "r", encoding="utf-8") as f:
 if not prompts:
     raise RuntimeError("prompts.txt 为空：请至少提供一行提示词。")
 
-# ===== 收集并排序图片 =====
+# ===== 收集并自然排序图片 =====
 images = [fn for fn in os.listdir(IMG_DIR) if fn.lower().endswith((".jpg", ".jpeg", ".png", ".webp", ".bmp"))]
-images.sort()
+images.sort(key=natural_key)
 if not images:
     raise RuntimeError(f"在目录中未找到图片：{IMG_DIR}")
 
-# 提示词策略：1 行 -&gt; 所有图片共用；多行且与图片数相等 -&gt; 一一对应；否则 -&gt; 用第一行并警告
+# 提示词策略
 if len(prompts) == 1:
     def pick_prompt(_idx): return prompts[0]
 elif len(prompts) == len(images):
@@ -754,17 +772,16 @@ for i, img_name in enumerate(images):
     prompt = pick_prompt(i)
 
     try:
-        image_data_url = to_data_url(src)  # 直接用 data URL，避免“InvalidParameter: invalid url specified”
+        image_data_url = to_data_url(src)
 
         resp = client.images.generate(
             model="doubao-seededit-3-0-i2i-250628",
             prompt=prompt,
-            image=image_data_url,   # 关键：传 data URL
+            image=image_data_url,   # data URL
             seed=123,
             guidance_scale=5.5,
             size="adaptive",
             watermark=True,
-            # response_format 默认返回 URL；如需 base64，可改为 response_format="b64_json"
         )
 
         out_url = resp.data[0].url
