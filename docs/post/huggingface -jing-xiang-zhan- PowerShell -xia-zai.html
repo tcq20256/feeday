@@ -190,6 +190,57 @@ pip install huggingface_hub==0.25.2 -i https://pypi.tuna.tsinghua.edu.cn/simple
 <h3>下载数据集</h3>
 <pre class="notranslate"><code class="notranslate">$env:HF_ENDPOINT = "https://hf-mirror.com"
 &amp; "D:\Python313\Scripts\huggingface-cli.exe" download --repo-type dataset --resume-download datxy/file --local-dir D:\hf2\datxy_file --local-dir-use-symlinks False
+</code></pre>
+<h3>一键下载脚本</h3>
+<pre class="notranslate"><code class="notranslate">@echo off
+title 🤗 Hugging Face Mirror Downloader (hf-mirror.com)
+chcp 65001 &gt;nul
+color 0A
+
+echo.
+echo ============================================
+echo   🤗 Hugging Face Mirror Downloader
+echo   Supports model / dataset auto download
+echo   Mirror: https://hf-mirror.com
+echo ============================================
+echo.
+
+:: 1. Set mirror environment variable (temporary)
+set HF_ENDPOINT=https://hf-mirror.com
+
+:: 2. Ask for repo type (model or dataset)
+set /p REPO_TYPE=Enter repo type [model/dataset] (default: dataset): 
+if "%REPO_TYPE%"=="" set REPO_TYPE=dataset
+
+:: 3. Ask for repo ID (username/repo_name)
+set /p REPO_ID=Enter Hugging Face repo ID (e.g. datxy/file): 
+
+:: 4. Ask for local save path
+set /p TARGET_DIR=Enter local save path (default: D:\hf_downloads\%REPO_ID%): 
+if "%TARGET_DIR%"=="" set TARGET_DIR=D:\hf_downloads\%REPO_ID%
+
+:: 5. Check if huggingface-cli exists
+if not exist "D:\Python313\Scripts\huggingface-cli.exe" (
+    echo ❌ huggingface-cli.exe not found!
+    echo Please make sure huggingface_hub 0.25.2 is installed.
+    echo Try:
+    echo pip install huggingface_hub==0.25.2 -i https://pypi.tuna.tsinghua.edu.cn/simple
+    pause
+    exit /b
+)
+
+:: 6. Start download
+echo.
+echo 🚀 Starting download: %REPO_ID%
+echo Target directory: %TARGET_DIR%
+echo -------------------------------------
+"D:\Python313\Scripts\huggingface-cli.exe" download --repo-type %REPO_TYPE% --resume-download %REPO_ID% --local-dir "%TARGET_DIR%" --local-dir-use-symlinks False
+echo -------------------------------------
+echo ✅ Download completed!
+echo.
+
+pause
+exit /b
 </code></pre></div>
 <div style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</div>
 
