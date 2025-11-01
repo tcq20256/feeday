@@ -1,5 +1,72 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Sat, 01 Nov 2025 16:39:44 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>huggingface 镜像站 PowerShell 下载</title><link>https://feeday.cn/post/huggingface%20-jing-xiang-zhan-%20PowerShell%20-xia-zai.html</link><description>HF Mirror —— Hugging Face 下载全攻略（国内可用）
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Sat, 01 Nov 2025 16:41:52 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>IndexTTS-2</title><link>https://feeday.cn/post/IndexTTS-2.html</link><description>## 版本更新
+
+
+- **2025/09/08** IndexTTS-2 发布（首个支持精确合成时长控制的自回归零样本文本转语音模型）  
+- **2025/05/14** IndexTTS-1.5 发布（提升模型稳定性和英文表现）  
+- **2025/03/25** IndexTTS-1.0 发布（开放权重和推理代码）  
+- **2025/02/12** 论文提交至 arXiv，并发布 Demo 与测试集  
+
+---
+
+&lt;div style='text-align:left'&gt;
+  &lt;a href='https://arxiv.org/abs/2506.21619'&gt;
+    &lt;img src='https://img.shields.io/badge/ArXiv-2506.21619-red?logo=arxiv'/&gt;
+  &lt;/a&gt;
+  &lt;br/&gt;
+  &lt;a href='https://github.com/index-tts/index-tts'&gt;
+    &lt;img src='https://img.shields.io/badge/GitHub-Code-orange?logo=github'/&gt;
+  &lt;/a&gt;
+  &lt;a href='https://index-tts.github.io/index-tts2.github.io/'&gt;
+    &lt;img src='https://img.shields.io/badge/GitHub-Demo-orange?logo=github'/&gt;
+  &lt;/a&gt;
+  &lt;br/&gt;
+  &lt;a href='https://huggingface.co/spaces/IndexTeam/IndexTTS-2-Demo'&gt;
+    &lt;img src='https://img.shields.io/badge/HuggingFace-Demo-blue?logo=huggingface'/&gt;
+  &lt;/a&gt;
+  &lt;a href='https://huggingface.co/IndexTeam/IndexTTS-2'&gt;
+    &lt;img src='https://img.shields.io/badge/HuggingFace-Model-blue?logo=huggingface' /&gt;
+  &lt;/a&gt;
+  &lt;br/&gt;
+  &lt;a href='https://modelscope.cn/studios/IndexTeam/IndexTTS-2-Demo'&gt;
+    &lt;img src='https://img.shields.io/badge/ModelScope-Demo-purple?logo=modelscope'/&gt;
+  &lt;/&gt;
+  &lt;a href='https://modelscope.cn/models/IndexTeam/IndexTTS-2'&gt;
+    &lt;img src='https://img.shields.io/badge/ModelScope-Model-purple?logo=modelscope'/&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+
+---
+
+## 模型下载
+
+| **HuggingFace**                                          | **ModelScope** |
+|----------------------------------------------------------|----------------------------------------------------------|
+| [IndexTTS-2](https://huggingface.co/IndexTeam/IndexTTS-2) | [IndexTTS-2](https://modelscope.cn/models/IndexTeam/IndexTTS-2) |
+| [IndexTTS-1.5](https://huggingface.co/IndexTeam/IndexTTS-1.5) | [IndexTTS-1.5](https://modelscope.cn/models/IndexTeam/IndexTTS-1.5) |
+| [IndexTTS](https://huggingface.co/IndexTeam/Index-TTS) | [IndexTTS](https://modelscope.cn/models/IndexTeam/Index-TTS) |
+
+---
+
+
+##  社区支持
+
+* QQ 群：553460296 (No.1) / 663272642 (No.4)
+* Discord：[Join](https://discord.gg/uT32E7KDmy)
+* Email：[indexspeech@bilibili.com](mailto:indexspeech@bilibili.com)
+* 官方仓库：[https://github.com/index-tts/index-tts](https://github.com/index-tts/index-tts)
+
+---
+
+## 论文概览
+
+IndexTTS2：情感表达和持续时间控制的自动回归零样本文本转语音的突破
+
+[周思怡](https://arxiv.org/search/cs?searchtype=author&amp;query=Zhou,+S)， [周义全](https://arxiv.org/search/cs?searchtype=author&amp;query=Zhou,+Y)， [何毅](https://arxiv.org/search/cs?searchtype=author&amp;query=He,+Y)， [周勋](https://arxiv.org/search/cs?searchtype=author&amp;query=Zhou,+X)， [王金超](https://arxiv.org/search/cs?searchtype=author&amp;query=Wang,+J)， [邓伟](https://arxiv.org/search/cs?searchtype=author&amp;query=Deng,+W)， [舒景晨](https://arxiv.org/search/cs?searchtype=author&amp;query=Shu,+J)
+
+[v2] 2025 年 9 月 3 日星期三 10：46：35 UTC （1,632 KB）
+
+现有的自回归大规模文本转语音（TTS）模型在语音自然性方面具有优势，但其逐个标记的生成机制使得合成语音的持续时间难以精确控制。</description><guid isPermaLink="true">https://feeday.cn/post/IndexTTS-2.html</guid><pubDate>Sat, 01 Nov 2025 16:41:25 +0000</pubDate></item><item><title>huggingface 镜像站 PowerShell 下载</title><link>https://feeday.cn/post/huggingface%20-jing-xiang-zhan-%20PowerShell%20-xia-zai.html</link><description>HF Mirror —— Hugging Face 下载全攻略（国内可用）
 
 &gt; AI 开发绕不过一个问题：如何从 Hugging Face 稳定下载模型或数据集。</description><guid isPermaLink="true">https://feeday.cn/post/huggingface%20-jing-xiang-zhan-%20PowerShell%20-xia-zai.html</guid><pubDate>Sat, 01 Nov 2025 16:11:41 +0000</pubDate></item><item><title>rename_by_md5_with_log.py</title><link>https://feeday.cn/post/rename_by_md5_with_log.py.html</link><description>以文件 MD5 作为文件名（保留扩展名），递归处理子文件夹，
     并生成一个 md5_rename_map.csv 记录原始文件名与改后文件名及MD5
