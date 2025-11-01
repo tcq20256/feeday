@@ -1,5 +1,37 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Sat, 01 Nov 2025 16:43:59 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>CentOS-WSL</title><link>https://feeday.cn/post/CentOS-WSL.html</link><description># CentOS WSL
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Sat, 01 Nov 2025 16:49:58 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>通用媒体链接查看器</title><link>https://feeday.cn/post/tong-yong-mei-ti-lian-jie-cha-kan-qi.html</link><description>输入图像视频链接查看预览
+```
+&lt;!doctype html&gt;
+&lt;html lang='zh-CN'&gt;
+&lt;head&gt;
+  &lt;meta charset='utf-8' /&gt;
+  &lt;meta name='viewport' content='width=device-width, initial-scale=1' /&gt;
+  &lt;title&gt;通用媒体提取器：图片 + 视频 + BBCode 支持&lt;/title&gt;
+  &lt;style&gt;
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.5;margin:0;padding:24px;background:#0b0c0f;color:#e6e6e6;scroll-behavior:smooth}
+    h1{font-size:20px;margin:0 0 12px}
+    textarea{width:100%;min-height:160px;padding:12px;border-radius:12px;border:1px solid #2b2f36;background:#12141a;color:#e6e6e6;resize:vertical;margin-bottom:12px}
+    button{background:#3b82f6;border:none;color:white;padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:600;margin-right:8px}
+    button.secondary{background:#2b2f36;color:#d0d0d0}
+    .tip{font-size:12px;color:#9aa0a6;margin:8px 0 16px}
+    .grid{display:flex;flex-wrap:wrap;gap:12px}
+    figure{margin:0;background:#12141a;border:1px solid #2b2f36;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px;max-width:400px}
+    figure&gt;img,figure&gt;video{max-width:100%;height:auto;object-fit:contain;background:#0b0c0f;cursor:pointer;border-radius:10px}
+    figcaption{font-size:12px;padding:6px 4px;color:#9aa0a6;word-break:break-all}
+    .err{color:#ff8a8a}
+    #topBtn{position:fixed;bottom:24px;right:24px;background:#3b82f6;color:white;border:none;border-radius:50%;width:48px;height:48px;font-size:20px;cursor:pointer;display:none;box-shadow:0 4px 10px rgba(0,0,0,0.3)}
+    #topBtn:hover{background:#2563eb}
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;通用媒体提取器（支持图片、视频、BBCode）&lt;/h1&gt;
+
+  &lt;textarea id='urls' placeholder='可粘贴任意文字，自动提取图片/视频链接，如：\n#3 http://x.cn/a.jpg http://x.cn/b.png [img]http://x.cn/c.webp[/img] [url=\'http://x.cn/d.jpg\']http://x.cn/e.jpg[/url]\nhttp://x.cn/f.mp4'&gt;&lt;/textarea&gt;
+
+  &lt;button id='render'&gt;显示媒体&lt;/button&gt;
+  &lt;button id='clear' class='secondary'&gt;清空&lt;/button&gt;
+
+  &lt;div class='tip'&gt;自动识别常见图片格式（.jpg/.jpeg/.png/.gif/.webp/.svg/.avif/.tiff/.bmp）及视频格式（.mp4/.webm/.mov）。</description><guid isPermaLink="true">https://feeday.cn/post/tong-yong-mei-ti-lian-jie-cha-kan-qi.html</guid><pubDate>Sat, 01 Nov 2025 16:49:29 +0000</pubDate></item><item><title>CentOS-WSL</title><link>https://feeday.cn/post/CentOS-WSL.html</link><description># CentOS WSL
 
 [CentOS](https://www.centos.org/) QCOW2 cloud images converted to RootFS for [WSL](https://docs.microsoft.com/en-us/windows/wsl/).
 
