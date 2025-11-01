@@ -8,7 +8,7 @@ import hashlib
 from pathlib import Path
 
 # ======== 可修改配置 ========
-ROOT_DIR = Path(r"C:\Users\Puck\Desktop\md")  # 要处理的目录
+ROOT_DIR = Path(r"C:\test\md")  # 要处理的目录
 OUTPUT_CSV = ROOT_DIR / "md5_rename_map1025.csv"    # 输出映射表路径
 DRY_RUN = False  # True 仅预览不执行重命名
 # ===========================
