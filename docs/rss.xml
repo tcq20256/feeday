@@ -1,5 +1,25 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Sat, 01 Nov 2025 16:42:48 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>YOLOv5</title><link>https://feeday.cn/post/YOLOv5.html</link><description># 🎯 YOLOv5 介绍文档
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Sat, 01 Nov 2025 16:43:59 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>CentOS-WSL</title><link>https://feeday.cn/post/CentOS-WSL.html</link><description># CentOS WSL
+
+[CentOS](https://www.centos.org/) QCOW2 cloud images converted to RootFS for [WSL](https://docs.microsoft.com/en-us/windows/wsl/).
+
+## Current releases:
+ - [CentOS 9-stream](https://github.com/mishamosher/CentOS-WSL/releases/tag/9-stream-20230626)
+ - [CentOS 8-stream](https://github.com/mishamosher/CentOS-WSL/releases/tag/8-stream-20230626)
+ - [CentOS 8](https://github.com/mishamosher/CentOS-WSL/releases/tag/8.4-2105)
+ - [CentOS 7](https://github.com/mishamosher/CentOS-WSL/releases/tag/7.9-2211)
+ - [CentOS 6](https://github.com/mishamosher/CentOS-WSL/releases/tag/6.10-1907)
+
+# 常用命令
+
+在 PowerShell 或 CMD（管理员权限） 里执行：
+
+```
+wsl -l -v
+wsl --shutdown
+wsl --unregister CentOS7.6
+```
+。</description><guid isPermaLink="true">https://feeday.cn/post/CentOS-WSL.html</guid><pubDate>Sat, 01 Nov 2025 16:43:23 +0000</pubDate></item><item><title>YOLOv5</title><link>https://feeday.cn/post/YOLOv5.html</link><description># 🎯 YOLOv5 介绍文档
 
 ## 🧠 一、什么是 YOLO？
 
