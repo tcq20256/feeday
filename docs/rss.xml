@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Sat, 01 Nov 2025 16:12:07 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>huggingface 镜像站 PowerShell 下载</title><link>https://feeday.cn/post/huggingface%20-jing-xiang-zhan-%20PowerShell%20-xia-zai.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Sat, 01 Nov 2025 16:13:25 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>huggingface 镜像站 PowerShell 下载</title><link>https://feeday.cn/post/huggingface%20-jing-xiang-zhan-%20PowerShell%20-xia-zai.html</link><description>
 
 打开 PowerShell 安装依赖
 ```
@@ -25,7 +25,7 @@ D:\Python313\
 下载数据集
 ```
 $env:HF_ENDPOINT = 'https://hf-mirror.com'
-&amp; 'D:\Python313\Scripts\huggingface-cli.exe' download --repo-type dataset --resume-download datxy/file/ --local-dir D:\hf_downloads\datxy_file --local-dir-use-symlinks False
+&amp; 'D:\Python313\Scripts\huggingface-cli.exe' download --repo-type dataset --resume-download datxy/file --local-dir D:\hf2\datxy_file --local-dir-use-symlinks False
 ```。</description><guid isPermaLink="true">https://feeday.cn/post/huggingface%20-jing-xiang-zhan-%20PowerShell%20-xia-zai.html</guid><pubDate>Sat, 01 Nov 2025 16:11:41 +0000</pubDate></item><item><title>rename_by_md5_with_log.py</title><link>https://feeday.cn/post/rename_by_md5_with_log.py.html</link><description>以文件 MD5 作为文件名（保留扩展名），递归处理子文件夹，
     并生成一个 md5_rename_map.csv 记录原始文件名与改后文件名及MD5
 

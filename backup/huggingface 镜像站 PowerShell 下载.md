@@ -24,5 +24,5 @@ D:\Python313\
 下载数据集
 ```
 $env:HF_ENDPOINT = "https://hf-mirror.com"
-& "D:\Python313\Scripts\huggingface-cli.exe" download --repo-type dataset --resume-download datxy/file/ --local-dir D:\hf_downloads\datxy_file --local-dir-use-symlinks False
+& "D:\Python313\Scripts\huggingface-cli.exe" download --repo-type dataset --resume-download datxy/file --local-dir D:\hf2\datxy_file --local-dir-use-symlinks False
 ```
