@@ -1,21 +1,21 @@
-🤗 HF Mirror —— Hugging Face 下载全攻略（国内可用）
+HF Mirror —— Hugging Face 下载全攻略（国内可用）
 
-> 💡 AI 开发绕不过一个问题：如何从 Hugging Face 稳定下载模型或数据集。  
+> AI 开发绕不过一个问题：如何从 Hugging Face 稳定下载模型或数据集。  
 > 在网络通畅的情况下，任何方式都可以；但在国内环境中，**断点续传、多线程下载** 显得尤为重要。  
 > 否则动辄断线重来、速度龟速，简直浪费生命！  
 > 基于此，本文整合了官方方法与第三方工具，进行横向对比与实践说明。
 
 ---
 
-### 🌐 官方与镜像资源
+### 官方与镜像资源
 
 - 🇨🇳 镜像站：[https://hf-mirror.com](https://hf-mirror.com/)
-- 📘 教程原文：[https://padeoe.com/huggingface-large-models-downloader/](https://padeoe.com/huggingface-large-models-downloader/)
-- 💾 代码示例：[https://gist.github.com/padeoe/697678ab8e528b85a2a7bddafea1fa4f](https://gist.github.com/padeoe/697678ab8e528b85a2a7bddafea1fa4f)
+- 教程原文：[https://padeoe.com/huggingface-large-models-downloader/](https://padeoe.com/huggingface-large-models-downloader/)
+- 代码示例：[https://gist.github.com/padeoe/697678ab8e528b85a2a7bddafea1fa4f](https://gist.github.com/padeoe/697678ab8e528b85a2a7bddafea1fa4f)
 
 ---
 
-### 📊 下载方式对比表
+### 下载方式对比表
 
 | 方法类别 | 示例 / 链接 | 推荐程度 | 优点 | 缺点 |
 |-----------|--------------|------------|--------|--------|
