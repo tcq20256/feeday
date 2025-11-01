@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://tcq20256.github.io/feeday/</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://tcq20256.github.io/feeday/</link></image><lastBuildDate>Sat, 01 Nov 2025 15:04:49 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>rename_by_md5_with_log.py</title><link>https://tcq20256.github.io/feeday//post/rename_by_md5_with_log.py.html</link><description>以文件 MD5 作为文件名（保留扩展名），递归处理子文件夹，
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Sat, 01 Nov 2025 15:18:39 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>rename_by_md5_with_log.py</title><link>https://feeday.cn/post/rename_by_md5_with_log.py.html</link><description>以文件 MD5 作为文件名（保留扩展名），递归处理子文件夹，
     并生成一个 md5_rename_map.csv 记录原始文件名与改后文件名及MD5
 
 ```
@@ -66,7 +66,7 @@ def main():
 
 if __name__ == '__main__':
     main()
-```。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/rename_by_md5_with_log.py.html</guid><pubDate>Thu, 30 Oct 2025 16:26:17 +0000</pubDate></item><item><title>更新脚本</title><link>https://tcq20256.github.io/feeday//post/geng-xin-jiao-ben.html</link><description>```
+```。</description><guid isPermaLink="true">https://feeday.cn/post/rename_by_md5_with_log.py.html</guid><pubDate>Thu, 30 Oct 2025 16:26:17 +0000</pubDate></item><item><title>更新脚本</title><link>https://feeday.cn/post/geng-xin-jiao-ben.html</link><description>```
 name: auto-author (stub)
 
 on:
@@ -133,7 +133,7 @@ jobs:
                     + datetime.timedelta(hours=8)).strftime('%Y-%m-%d %H:%M')
           title = f'{SERIES}｜占位稿 {today}'
           body = textwrap.dedent(f'''
-          &gt; 这是自动写作占位稿（无 API 版），用于验证“自动创建 Issue → 发布站点”的流水线。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/geng-xin-jiao-ben.html</guid><pubDate>Tue, 14 Oct 2025 16:08:20 +0000</pubDate></item><item><title>豆包 API</title><link>https://tcq20256.github.io/feeday//post/dou-bao-%20API.html</link><description>## 模型定价
+          &gt; 这是自动写作占位稿（无 API 版），用于验证“自动创建 Issue → 发布站点”的流水线。</description><guid isPermaLink="true">https://feeday.cn/post/geng-xin-jiao-ben.html</guid><pubDate>Tue, 14 Oct 2025 16:08:20 +0000</pubDate></item><item><title>豆包 API</title><link>https://feeday.cn/post/dou-bao-%20API.html</link><description>## 模型定价
 - [在线生成](https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seededit-3-0-i2i)
 - [使用量查看](https://console.volcengine.com/ark/region:ark+cn-beijing/openManagement?LLM=%7B%7D&amp;OpenTokenDrawer=false&amp;tab=ComputerVision)
 
@@ -355,7 +355,7 @@ os.makedirs(SAVE_DIR, exist_ok=True)
 with open(TXT_FILE, 'r', encoding='utf-8') as f:
     prompts = [line.strip() for line in f if line.strip()]
 if not prompts:
-    raise RuntimeError('prompts.txt 为空：请至少提供一行提示词。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/dou-bao-%20API.html</guid><pubDate>Thu, 25 Sep 2025 14:01:00 +0000</pubDate></item><item><title>srt 切视频音频</title><link>https://tcq20256.github.io/feeday//post/srt%20-qie-shi-pin-yin-pin.html</link><description>## 按字幕切割音频视频
+    raise RuntimeError('prompts.txt 为空：请至少提供一行提示词。</description><guid isPermaLink="true">https://feeday.cn/post/dou-bao-%20API.html</guid><pubDate>Thu, 25 Sep 2025 14:01:00 +0000</pubDate></item><item><title>srt 切视频音频</title><link>https://feeday.cn/post/srt%20-qie-shi-pin-yin-pin.html</link><description>## 按字幕切割音频视频
 ```
 # -*- coding: utf-8 -*-
 '''
@@ -473,7 +473,7 @@ def main():
 
 if __name__ == '__main__':
     main()
-```。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/srt%20-qie-shi-pin-yin-pin.html</guid><pubDate>Sun, 21 Sep 2025 10:46:32 +0000</pubDate></item><item><title>Gitea 管理脚本</title><link>https://tcq20256.github.io/feeday//post/Gitea%20-guan-li-jiao-ben.html</link><description># 部署 Gitea
+```。</description><guid isPermaLink="true">https://feeday.cn/post/srt%20-qie-shi-pin-yin-pin.html</guid><pubDate>Sun, 21 Sep 2025 10:46:32 +0000</pubDate></item><item><title>Gitea 管理脚本</title><link>https://feeday.cn/post/Gitea%20-guan-li-jiao-ben.html</link><description># 部署 Gitea
 ```
 #!/bin/bash
 # Gitea 管理脚本：安装前先卸载旧的
@@ -569,7 +569,7 @@ menu() {
 }
 
 menu
-```。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/Gitea%20-guan-li-jiao-ben.html</guid><pubDate>Sat, 13 Sep 2025 05:29:30 +0000</pubDate></item><item><title>CentOS 7.6  SSH 防暴力破解</title><link>https://tcq20256.github.io/feeday//post/CentOS%207.6%20%20SSH%20-fang-bao-li-po-jie.html</link><description>#  普通连接
+```。</description><guid isPermaLink="true">https://feeday.cn/post/Gitea%20-guan-li-jiao-ben.html</guid><pubDate>Sat, 13 Sep 2025 05:29:30 +0000</pubDate></item><item><title>CentOS 7.6  SSH 防暴力破解</title><link>https://feeday.cn/post/CentOS%207.6%20%20SSH%20-fang-bao-li-po-jie.html</link><description>#  普通连接
 
 ```
 ssh -p 22 root@192.168.1.1
@@ -743,7 +743,7 @@ ln -sfn /run/fail2ban /var/run/fail2ban
 # 7) 语法测试 &amp; 启动
 msg '校验 fail2ban 配置语法 ...'
 if ! fail2ban-client -t; then
-  err '配置语法校验失败，请检查上方输出。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/CentOS%207.6%20%20SSH%20-fang-bao-li-po-jie.html</guid><pubDate>Sat, 13 Sep 2025 04:09:13 +0000</pubDate></item><item><title>下载链接</title><link>https://tcq20256.github.io/feeday//post/xia-zai-lian-jie.html</link><description>## 获取链接
+  err '配置语法校验失败，请检查上方输出。</description><guid isPermaLink="true">https://feeday.cn/post/CentOS%207.6%20%20SSH%20-fang-bao-li-po-jie.html</guid><pubDate>Sat, 13 Sep 2025 04:09:13 +0000</pubDate></item><item><title>下载链接</title><link>https://feeday.cn/post/xia-zai-lian-jie.html</link><description>## 获取链接
 ```
 const links = document.getElementsByTagName('a');
 
@@ -862,9 +862,9 @@ def countdown(total_sec):
     paused = False
     while True:
         if keyboard.is_pressed('esc'):
-            print('\n[退出] ESC 触发，结束循环。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/xia-zai-lian-jie.html</guid><pubDate>Wed, 10 Sep 2025 15:58:07 +0000</pubDate></item><item><title>GPT5-雾钟巷-归途</title><link>https://tcq20256.github.io/feeday//post/GPT5--wu-zhong-xiang---gui-tu.html</link><description>林远在城市里住在一间低矮的隔断房，窗外是一条永远潮着油烟的背街。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/GPT5--wu-zhong-xiang---gui-tu.html</guid><pubDate>Sat, 06 Sep 2025 09:34:40 +0000</pubDate></item><item><title>GPT5-雾钟巷-无名日</title><link>https://tcq20256.github.io/feeday//post/GPT5--wu-zhong-xiang---wu-ming-ri.html</link><description>林远拖着行李从小站出来。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/GPT5--wu-zhong-xiang---wu-ming-ri.html</guid><pubDate>Thu, 04 Sep 2025 15:34:35 +0000</pubDate></item><item><title>GPT5-鬼故事-雾钟巷</title><link>https://tcq20256.github.io/feeday//post/GPT5--gui-gu-shi---wu-zhong-xiang.html</link><description>## 一
+            print('\n[退出] ESC 触发，结束循环。</description><guid isPermaLink="true">https://feeday.cn/post/xia-zai-lian-jie.html</guid><pubDate>Wed, 10 Sep 2025 15:58:07 +0000</pubDate></item><item><title>GPT5-雾钟巷-归途</title><link>https://feeday.cn/post/GPT5--wu-zhong-xiang---gui-tu.html</link><description>林远在城市里住在一间低矮的隔断房，窗外是一条永远潮着油烟的背街。</description><guid isPermaLink="true">https://feeday.cn/post/GPT5--wu-zhong-xiang---gui-tu.html</guid><pubDate>Sat, 06 Sep 2025 09:34:40 +0000</pubDate></item><item><title>GPT5-雾钟巷-无名日</title><link>https://feeday.cn/post/GPT5--wu-zhong-xiang---wu-ming-ri.html</link><description>林远拖着行李从小站出来。</description><guid isPermaLink="true">https://feeday.cn/post/GPT5--wu-zhong-xiang---wu-ming-ri.html</guid><pubDate>Thu, 04 Sep 2025 15:34:35 +0000</pubDate></item><item><title>GPT5-鬼故事-雾钟巷</title><link>https://feeday.cn/post/GPT5--gui-gu-shi---wu-zhong-xiang.html</link><description>## 一
 
-林远回到雾钟巷的时候，天刚下过一阵细雨。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/GPT5--gui-gu-shi---wu-zhong-xiang.html</guid><pubDate>Thu, 04 Sep 2025 14:50:12 +0000</pubDate></item><item><title>word 合并文档</title><link>https://tcq20256.github.io/feeday//post/word%20-he-bing-wen-dang.html</link><description>## 文档转换docx后合并
+林远回到雾钟巷的时候，天刚下过一阵细雨。</description><guid isPermaLink="true">https://feeday.cn/post/GPT5--gui-gu-shi---wu-zhong-xiang.html</guid><pubDate>Thu, 04 Sep 2025 14:50:12 +0000</pubDate></item><item><title>word 合并文档</title><link>https://feeday.cn/post/word%20-he-bing-wen-dang.html</link><description>## 文档转换docx后合并
 ```
 import os
 import sys
@@ -994,9 +994,9 @@ def merge_docs(input_dir, output_file):
              if f.lower().endswith(('.doc', '.docx')) and not f.startswith('~$')]
     names.sort()
     if not names:
-        print('⚠️ 目录中没有 .doc / .docx 文件。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/word%20-he-bing-wen-dang.html</guid><pubDate>Wed, 03 Sep 2025 10:23:23 +0000</pubDate></item><item><title>youtube-视频预览</title><link>https://tcq20256.github.io/feeday//post/youtube--shi-pin-yu-lan.html</link><description># 🎬 yt-dlp-youtube-web
+        print('⚠️ 目录中没有 .doc / .docx 文件。</description><guid isPermaLink="true">https://feeday.cn/post/word%20-he-bing-wen-dang.html</guid><pubDate>Wed, 03 Sep 2025 10:23:23 +0000</pubDate></item><item><title>youtube-视频预览</title><link>https://feeday.cn/post/youtube--shi-pin-yu-lan.html</link><description># 🎬 yt-dlp-youtube-web
 
-基于 **Python Flask** 的 油管视频预览，仅供测试，适配 Cookie 验证。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/youtube--shi-pin-yu-lan.html</guid><pubDate>Sat, 30 Aug 2025 17:54:41 +0000</pubDate></item><item><title>删除重复图像</title><link>https://tcq20256.github.io/feeday//post/shan-chu-zhong-fu-tu-xiang.html</link><description>删除重复图像
+基于 **Python Flask** 的 油管视频预览，仅供测试，适配 Cookie 验证。</description><guid isPermaLink="true">https://feeday.cn/post/youtube--shi-pin-yu-lan.html</guid><pubDate>Sat, 30 Aug 2025 17:54:41 +0000</pubDate></item><item><title>删除重复图像</title><link>https://feeday.cn/post/shan-chu-zhong-fu-tu-xiang.html</link><description>删除重复图像
 ## 安装依赖
 ```
 pip install opencv-python numpy keras tensorflow
@@ -1055,7 +1055,7 @@ def delete_duplicate_images(directory):
 # 设置图片文件夹路径
 directory = r'D:\test'
 delete_duplicate_images(directory)
-```。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/shan-chu-zhong-fu-tu-xiang.html</guid><pubDate>Wed, 20 Aug 2025 04:08:42 +0000</pubDate></item><item><title>正则表达式</title><link>https://tcq20256.github.io/feeday//post/zheng-ze-biao-da-shi.html</link><description>
+```。</description><guid isPermaLink="true">https://feeday.cn/post/shan-chu-zhong-fu-tu-xiang.html</guid><pubDate>Wed, 20 Aug 2025 04:08:42 +0000</pubDate></item><item><title>正则表达式</title><link>https://feeday.cn/post/zheng-ze-biao-da-shi.html</link><description>
 # 正则表达式速查与示例
 
 ---
@@ -1108,7 +1108,7 @@ delete_duplicate_images(directory)
 1. 原始版本（不允许域名中有 `.`）
 ```regex
 https?:\/\/[^\s\/$.?#]+[^\s]*?(?=')
-```。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/zheng-ze-biao-da-shi.html</guid><pubDate>Thu, 14 Aug 2025 14:46:44 +0000</pubDate></item><item><title>删除重复文件</title><link>https://tcq20256.github.io/feeday//post/shan-chu-zhong-fu-wen-jian.html</link><description>## 删除重复文件
+```。</description><guid isPermaLink="true">https://feeday.cn/post/zheng-ze-biao-da-shi.html</guid><pubDate>Thu, 14 Aug 2025 14:46:44 +0000</pubDate></item><item><title>删除重复文件</title><link>https://feeday.cn/post/shan-chu-zhong-fu-wen-jian.html</link><description>## 删除重复文件
 ```
 import os
 import re
@@ -1152,7 +1152,7 @@ for root, fname in iter_files(FOLDER):
             print(f'删除失败：{path}，原因：{e}')
             skipped += 1
 
-print(f'\n完成。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/shan-chu-zhong-fu-wen-jian.html</guid><pubDate>Thu, 14 Aug 2025 14:07:26 +0000</pubDate></item><item><title>文本合并</title><link>https://tcq20256.github.io/feeday//post/wen-ben-he-bing.html</link><description>##  特殊格式文本合并
+print(f'\n完成。</description><guid isPermaLink="true">https://feeday.cn/post/shan-chu-zhong-fu-wen-jian.html</guid><pubDate>Thu, 14 Aug 2025 14:07:26 +0000</pubDate></item><item><title>文本合并</title><link>https://feeday.cn/post/wen-ben-he-bing.html</link><description>##  特殊格式文本合并
 ```
 import os
 import chardet  # pip install chardet
@@ -1182,7 +1182,7 @@ def read_file_with_encoding(file_path):
                     return f.read().strip()
             except UnicodeDecodeError:
                 continue
-        raise ValueError(f'无法读取文件 {file_path}，编码不支持。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/wen-ben-he-bing.html</guid><pubDate>Tue, 12 Aug 2025 10:27:27 +0000</pubDate></item><item><title>微软本地文字转语音</title><link>https://tcq20256.github.io/feeday//post/wei-ruan-ben-di-wen-zi-zhuan-yu-yin.html</link><description>## HTML 版本
+        raise ValueError(f'无法读取文件 {file_path}，编码不支持。</description><guid isPermaLink="true">https://feeday.cn/post/wen-ben-he-bing.html</guid><pubDate>Tue, 12 Aug 2025 10:27:27 +0000</pubDate></item><item><title>微软本地文字转语音</title><link>https://feeday.cn/post/wei-ruan-ben-di-wen-zi-zhuan-yu-yin.html</link><description>## HTML 版本
 ```
 &lt;!DOCTYPE html&gt;
 &lt;html lang='zh-CN'&gt;
@@ -1228,7 +1228,7 @@ def read_file_with_encoding(file_path):
                 option.textContent = '无可用语音（请安装TTS引擎）';
                 option.disabled = true;
                 voiceSelect.appendChild(option);
-                alert('未检测到任何可用语音。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/wei-ruan-ben-di-wen-zi-zhuan-yu-yin.html</guid><pubDate>Tue, 12 Aug 2025 04:37:10 +0000</pubDate></item><item><title>视频延长</title><link>https://tcq20256.github.io/feeday//post/shi-pin-yan-chang.html</link><description># 视频延长
+                alert('未检测到任何可用语音。</description><guid isPermaLink="true">https://feeday.cn/post/wei-ruan-ben-di-wen-zi-zhuan-yu-yin.html</guid><pubDate>Tue, 12 Aug 2025 04:37:10 +0000</pubDate></item><item><title>视频延长</title><link>https://feeday.cn/post/shi-pin-yan-chang.html</link><description># 视频延长
 
 不满足十秒的水平正倒播放延迟十秒以上
 
@@ -1247,11 +1247,11 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 def build_pingpong_min_duration(clip, min_sec=10):
     '''
     把 clip 做成“正放+倒放”交替的 ping-pong 循环，
-    一直拼到时长 &gt;= min_sec，不截断。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/shi-pin-yan-chang.html</guid><pubDate>Mon, 11 Aug 2025 04:31:45 +0000</pubDate></item><item><title>deepseek-chat-鬼故事-雾钟巷</title><link>https://tcq20256.github.io/feeday//post/deepseek-chat--gui-gu-shi---wu-zhong-xiang.html</link><description>## 雾钟巷
+    一直拼到时长 &gt;= min_sec，不截断。</description><guid isPermaLink="true">https://feeday.cn/post/shi-pin-yan-chang.html</guid><pubDate>Mon, 11 Aug 2025 04:31:45 +0000</pubDate></item><item><title>deepseek-chat-鬼故事-雾钟巷</title><link>https://feeday.cn/post/deepseek-chat--gui-gu-shi---wu-zhong-xiang.html</link><description>## 雾钟巷
 
 ### 文案  
 
-'当钟声敲响第十二下，你会听见自己的心跳消失。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/deepseek-chat--gui-gu-shi---wu-zhong-xiang.html</guid><pubDate>Sun, 10 Aug 2025 04:26:13 +0000</pubDate></item><item><title>指定文件夹重命名</title><link>https://tcq20256.github.io/feeday//post/zhi-ding-wen-jian-jia-zhong-ming-ming.html</link><description>指定文件夹包含子文件夹重命名
+'当钟声敲响第十二下，你会听见自己的心跳消失。</description><guid isPermaLink="true">https://feeday.cn/post/deepseek-chat--gui-gu-shi---wu-zhong-xiang.html</guid><pubDate>Sun, 10 Aug 2025 04:26:13 +0000</pubDate></item><item><title>指定文件夹重命名</title><link>https://feeday.cn/post/zhi-ding-wen-jian-jia-zhong-ming-ming.html</link><description>指定文件夹包含子文件夹重命名
 ```
 import os
 import shutil
@@ -1259,7 +1259,7 @@ import uuid
 
 def rename_image_files(directory, prefix='Real_'):
     '''
-    遍历目录及子目录，批量重命名图像/视频文件为 前缀+编号，避免重复、覆盖、遗漏。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/zhi-ding-wen-jian-jia-zhong-ming-ming.html</guid><pubDate>Fri, 08 Aug 2025 04:24:09 +0000</pubDate></item><item><title>Kontext-提示词</title><link>https://tcq20256.github.io/feeday//post/Kontext--ti-shi-ci.html</link><description>
+    遍历目录及子目录，批量重命名图像/视频文件为 前缀+编号，避免重复、覆盖、遗漏。</description><guid isPermaLink="true">https://feeday.cn/post/zhi-ding-wen-jian-jia-zhong-ming-ming.html</guid><pubDate>Fri, 08 Aug 2025 04:24:09 +0000</pubDate></item><item><title>Kontext-提示词</title><link>https://feeday.cn/post/Kontext--ti-shi-ci.html</link><description>
 
 - [https://huggingface.co/spaces/kontext-community](https://huggingface.co/spaces/kontext-community/FLUX.1-Kontext-multi-image)
 
@@ -1272,7 +1272,7 @@ restore and colorize this photo. Repair the damaged white background. Maintain t
 
 需求类型 | 英文模板 | 中文解析
 -- | -- | --
-对象修改 | 'Change [object] to [new state], keep [content to preserve] unchanged' | 更改 [具体对象] 为 [新的状态]，同时保持 [需要保留的内容] 不变。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/Kontext--ti-shi-ci.html</guid><pubDate>Wed, 30 Jul 2025 10:02:57 +0000</pubDate></item><item><title>多个表合并</title><link>https://tcq20256.github.io/feeday//post/duo-ge-biao-he-bing.html</link><description>### 多张格式一样的表合并成一个表
+对象修改 | 'Change [object] to [new state], keep [content to preserve] unchanged' | 更改 [具体对象] 为 [新的状态]，同时保持 [需要保留的内容] 不变。</description><guid isPermaLink="true">https://feeday.cn/post/Kontext--ti-shi-ci.html</guid><pubDate>Wed, 30 Jul 2025 10:02:57 +0000</pubDate></item><item><title>多个表合并</title><link>https://feeday.cn/post/duo-ge-biao-he-bing.html</link><description>### 多张格式一样的表合并成一个表
 ```
 import pandas as pd
 import os
@@ -1290,7 +1290,7 @@ combined_df = pd.concat(df_list, ignore_index=True)
 # 保存为一个新文件
 combined_df.to_csv(r'D:\hb.csv', index=False)
 
-```。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/duo-ge-biao-he-bing.html</guid><pubDate>Mon, 28 Jul 2025 05:05:08 +0000</pubDate></item><item><title>文本行转表列</title><link>https://tcq20256.github.io/feeday//post/wen-ben-xing-zhuan-biao-lie.html</link><description>
+```。</description><guid isPermaLink="true">https://feeday.cn/post/duo-ge-biao-he-bing.html</guid><pubDate>Mon, 28 Jul 2025 05:05:08 +0000</pubDate></item><item><title>文本行转表列</title><link>https://feeday.cn/post/wen-ben-xing-zhuan-biao-lie.html</link><description>
 ### 运行脚本
 ```
 import sys
@@ -1305,7 +1305,7 @@ def install_package(package):
     except ImportError:
         print(f'缺少包 {package}，正在安装...')
         subprocess.check_call([sys.executable, '-m', 'pip', 'install', package])
-        print(f'{package} 安装完成。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/wen-ben-xing-zhuan-biao-lie.html</guid><pubDate>Thu, 24 Jul 2025 14:56:23 +0000</pubDate></item><item><title>语言模型-API-批量生成文本</title><link>https://tcq20256.github.io/feeday//post/yu-yan-mo-xing--API--pi-liang-sheng-cheng-wen-ben.html</link><description>文本模型批量生成文本测试
+        print(f'{package} 安装完成。</description><guid isPermaLink="true">https://feeday.cn/post/wen-ben-xing-zhuan-biao-lie.html</guid><pubDate>Thu, 24 Jul 2025 14:56:23 +0000</pubDate></item><item><title>语言模型-API-批量生成文本</title><link>https://feeday.cn/post/yu-yan-mo-xing--API--pi-liang-sheng-cheng-wen-ben.html</link><description>文本模型批量生成文本测试
 
 ## ChatGPT 
 
@@ -1638,7 +1638,7 @@ client = OpenAI(
 
 model_name = 'kimi-k2-0711-preview'
 system_prompt = (
-    '你是 Kimi，由 Moonshot AI 提供的人工智能助手。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/yu-yan-mo-xing--API--pi-liang-sheng-cheng-wen-ben.html</guid><pubDate>Thu, 24 Jul 2025 14:11:48 +0000</pubDate></item><item><title>筛出文件指定比例的文件</title><link>https://tcq20256.github.io/feeday//post/shai-chu-wen-jian-zhi-ding-bi-li-de-wen-jian.html</link><description>筛出文件指定比例的文件
+    '你是 Kimi，由 Moonshot AI 提供的人工智能助手。</description><guid isPermaLink="true">https://feeday.cn/post/yu-yan-mo-xing--API--pi-liang-sheng-cheng-wen-ben.html</guid><pubDate>Thu, 24 Jul 2025 14:11:48 +0000</pubDate></item><item><title>筛出文件指定比例的文件</title><link>https://feeday.cn/post/shai-chu-wen-jian-zhi-ding-bi-li-de-wen-jian.html</link><description>筛出文件指定比例的文件
 ```
 import os
 import shutil
@@ -1678,7 +1678,7 @@ for subfolder in os.listdir(source_dir):
         shutil.move(file_path, dest_path)
         print(f'Moved: {file_path} → {dest_path}')
 
-print(f'\n✅ 每个子文件夹已随机移动约 {move_percent}% 文件。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/shai-chu-wen-jian-zhi-ding-bi-li-de-wen-jian.html</guid><pubDate>Wed, 23 Jul 2025 04:51:37 +0000</pubDate></item><item><title>视频提取图像</title><link>https://tcq20256.github.io/feeday//post/shi-pin-ti-qu-tu-xiang.html</link><description>视频提取图像
+print(f'\n✅ 每个子文件夹已随机移动约 {move_percent}% 文件。</description><guid isPermaLink="true">https://feeday.cn/post/shai-chu-wen-jian-zhi-ding-bi-li-de-wen-jian.html</guid><pubDate>Wed, 23 Jul 2025 04:51:37 +0000</pubDate></item><item><title>视频提取图像</title><link>https://feeday.cn/post/shi-pin-ti-qu-tu-xiang.html</link><description>视频提取图像
 ```
 import cv2
 import os
@@ -1723,7 +1723,7 @@ def extract_frames(video_path, output_folder):
                 cv2.imwrite(output_path, frame)
                 print(f'已保存：{output_path}')
             else:
-                print(f'第 {timestamp} 秒图像为空，跳过保存。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/shi-pin-ti-qu-tu-xiang.html</guid><pubDate>Wed, 23 Jul 2025 04:50:00 +0000</pubDate></item><item><title>筛查重复或类似图像</title><link>https://tcq20256.github.io/feeday//post/shai-cha-zhong-fu-huo-lei-si-tu-xiang.html</link><description>筛查重复或类似图像
+                print(f'第 {timestamp} 秒图像为空，跳过保存。</description><guid isPermaLink="true">https://feeday.cn/post/shi-pin-ti-qu-tu-xiang.html</guid><pubDate>Wed, 23 Jul 2025 04:50:00 +0000</pubDate></item><item><title>筛查重复或类似图像</title><link>https://feeday.cn/post/shai-cha-zhong-fu-huo-lei-si-tu-xiang.html</link><description>筛查重复或类似图像
 ```
 import subprocess
 import sys
@@ -1839,7 +1839,7 @@ input_directory = r'D:\test\img'  # 图片所在文件夹
 output_directory = r'D:\test\img2'  # 自定义保存重复图片的文件夹
 
 move_duplicate_images(input_directory, output_directory, use_cosine_similarity=False)  # 设置为True使用余弦相似度判断两个图片的特征方向是否相似，设置为False移除重复图像
-```。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/shai-cha-zhong-fu-huo-lei-si-tu-xiang.html</guid><pubDate>Wed, 23 Jul 2025 04:47:45 +0000</pubDate></item><item><title>图像直方图在线调节</title><link>https://tcq20256.github.io/feeday//post/tu-xiang-zhi-fang-tu-zai-xian-diao-jie.html</link><description>```
+```。</description><guid isPermaLink="true">https://feeday.cn/post/shai-cha-zhong-fu-huo-lei-si-tu-xiang.html</guid><pubDate>Wed, 23 Jul 2025 04:47:45 +0000</pubDate></item><item><title>图像直方图在线调节</title><link>https://feeday.cn/post/tu-xiang-zhi-fang-tu-zai-xian-diao-jie.html</link><description>```
 &lt;!DOCTYPE html&gt;
 &lt;html lang='zh-CN'&gt;
 &lt;head&gt;
@@ -2023,7 +2023,7 @@ histChart.update();
 &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-````。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/tu-xiang-zhi-fang-tu-zai-xian-diao-jie.html</guid><pubDate>Sun, 20 Jul 2025 04:49:40 +0000</pubDate></item><item><title>图像分类脚本</title><link>https://tcq20256.github.io/feeday//post/tu-xiang-fen-lei-jiao-ben.html</link><description>## ResNet50
+````。</description><guid isPermaLink="true">https://feeday.cn/post/tu-xiang-zhi-fang-tu-zai-xian-diao-jie.html</guid><pubDate>Sun, 20 Jul 2025 04:49:40 +0000</pubDate></item><item><title>图像分类脚本</title><link>https://feeday.cn/post/tu-xiang-fen-lei-jiao-ben.html</link><description>## ResNet50
 ```
 import subprocess
 import sys
@@ -2127,7 +2127,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     organize_images_by_class(args.src, args.dst)
-```。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/tu-xiang-fen-lei-jiao-ben.html</guid><pubDate>Sun, 20 Jul 2025 04:49:00 +0000</pubDate></item><item><title>typecho 密码忘记密码 sqlite 数据库</title><link>https://tcq20256.github.io/feeday//post/typecho%20-mi-ma-wang-ji-mi-ma-%20sqlite%20-shu-ju-ku.html</link><description>博客忘记了密码可以用以下方法找回密码。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/typecho%20-mi-ma-wang-ji-mi-ma-%20sqlite%20-shu-ju-ku.html</guid><pubDate>Sun, 20 Jul 2025 04:48:22 +0000</pubDate></item><item><title>在线文件加密解密</title><link>https://tcq20256.github.io/feeday//post/zai-xian-wen-jian-jia-mi-jie-mi.html</link><description>huggingface  spaces gradio
+```。</description><guid isPermaLink="true">https://feeday.cn/post/tu-xiang-fen-lei-jiao-ben.html</guid><pubDate>Sun, 20 Jul 2025 04:49:00 +0000</pubDate></item><item><title>typecho 密码忘记密码 sqlite 数据库</title><link>https://feeday.cn/post/typecho%20-mi-ma-wang-ji-mi-ma-%20sqlite%20-shu-ju-ku.html</link><description>博客忘记了密码可以用以下方法找回密码。</description><guid isPermaLink="true">https://feeday.cn/post/typecho%20-mi-ma-wang-ji-mi-ma-%20sqlite%20-shu-ju-ku.html</guid><pubDate>Sun, 20 Jul 2025 04:48:22 +0000</pubDate></item><item><title>在线文件加密解密</title><link>https://feeday.cn/post/zai-xian-wen-jian-jia-mi-jie-mi.html</link><description>huggingface  spaces gradio
 
 ## requirements.txt
 ```
@@ -2203,7 +2203,7 @@ with gr.Blocks() as demo:
 
 if __name__ == '__main__':
     demo.launch()
-```。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/zai-xian-wen-jian-jia-mi-jie-mi.html</guid><pubDate>Sun, 20 Jul 2025 04:47:52 +0000</pubDate></item><item><title>视频提取图像</title><link>https://tcq20256.github.io/feeday//post/shi-pin-ti-qu-tu-xiang.html</link><description>```
+```。</description><guid isPermaLink="true">https://feeday.cn/post/zai-xian-wen-jian-jia-mi-jie-mi.html</guid><pubDate>Sun, 20 Jul 2025 04:47:52 +0000</pubDate></item><item><title>视频提取图像</title><link>https://feeday.cn/post/shi-pin-ti-qu-tu-xiang.html</link><description>```
 import os
 import cv2
 from pathlib import Path
@@ -2256,7 +2256,7 @@ for filename in os.listdir(video_dir):
         # 释放视频对象
         cap.release()
 
-print('所有视频的帧提取完毕。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/shi-pin-ti-qu-tu-xiang.html</guid><pubDate>Sun, 20 Jul 2025 04:47:14 +0000</pubDate></item><item><title>导出docx文档里的图像</title><link>https://tcq20256.github.io/feeday//post/dao-chu-docx-wen-dang-li-de-tu-xiang.html</link><description>## 执行结果
+print('所有视频的帧提取完毕。</description><guid isPermaLink="true">https://feeday.cn/post/shi-pin-ti-qu-tu-xiang.html</guid><pubDate>Sun, 20 Jul 2025 04:47:14 +0000</pubDate></item><item><title>导出docx文档里的图像</title><link>https://feeday.cn/post/dao-chu-docx-wen-dang-li-de-tu-xiang.html</link><description>## 执行结果
 ```
 f:/doc/
 │
@@ -2374,7 +2374,7 @@ def process_documents(folder_path, output_folder):
 folder_path = 'f:/doc'
 output_folder = 'f:/doc/png'
 process_documents(folder_path, output_folder)
-```。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/dao-chu-docx-wen-dang-li-de-tu-xiang.html</guid><pubDate>Sun, 20 Jul 2025 04:46:40 +0000</pubDate></item><item><title>创建指定大小文件</title><link>https://tcq20256.github.io/feeday//post/chuang-jian-zhi-ding-da-xiao-wen-jian.html</link><description>运行 cmd 执行创建文本文件
+```。</description><guid isPermaLink="true">https://feeday.cn/post/dao-chu-docx-wen-dang-li-de-tu-xiang.html</guid><pubDate>Sun, 20 Jul 2025 04:46:40 +0000</pubDate></item><item><title>创建指定大小文件</title><link>https://feeday.cn/post/chuang-jian-zhi-ding-da-xiao-wen-jian.html</link><description>运行 cmd 执行创建文本文件
 
 ```
 fsutil file createnew f:\1GB.txt 1073741824
@@ -2387,7 +2387,7 @@ byte (B):1073741824
 kilobyte (kB):1048576
 megabyte (MB):1024
 gigabyte (GB):	1
-```。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/chuang-jian-zhi-ding-da-xiao-wen-jian.html</guid><pubDate>Sun, 20 Jul 2025 04:46:02 +0000</pubDate></item><item><title>获取网页链接</title><link>https://tcq20256.github.io/feeday//post/huo-qu-wang-ye-lian-jie.html</link><description>控制台浏览器获取网址
+```。</description><guid isPermaLink="true">https://feeday.cn/post/chuang-jian-zhi-ding-da-xiao-wen-jian.html</guid><pubDate>Sun, 20 Jul 2025 04:46:02 +0000</pubDate></item><item><title>获取网页链接</title><link>https://feeday.cn/post/huo-qu-wang-ye-lian-jie.html</link><description>控制台浏览器获取网址
 
 ## bilibili
 ```
@@ -2434,7 +2434,7 @@ for (const link of links) {
   }
 }
 ```
-。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/huo-qu-wang-ye-lian-jie.html</guid><pubDate>Sun, 20 Jul 2025 04:45:35 +0000</pubDate></item><item><title>查找替换</title><link>https://tcq20256.github.io/feeday//post/cha-zhao-ti-huan.html</link><description>搜索匹配当前目录下所有[文件名]或文件里的内容打印显示行号
+。</description><guid isPermaLink="true">https://feeday.cn/post/huo-qu-wang-ye-lian-jie.html</guid><pubDate>Sun, 20 Jul 2025 04:45:35 +0000</pubDate></item><item><title>查找替换</title><link>https://feeday.cn/post/cha-zhao-ti-huan.html</link><description>搜索匹配当前目录下所有[文件名]或文件里的内容打印显示行号
 ```
 grep -rn 'Money' *
 ```
@@ -2447,7 +2447,7 @@ grep -l 'Money' file1 file2 file3...
 查找 formatting.php 文件内 length’, 55 替换 length’, 56 :
 ```
 sed -i s/'length', 55'/'length', 56'/g `grep 'length', 55' -rl --include='formatting.php' ./`
-```。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/cha-zhao-ti-huan.html</guid><pubDate>Sun, 20 Jul 2025 04:45:05 +0000</pubDate></item><item><title>移到文件</title><link>https://tcq20256.github.io/feeday//post/yi-dao-wen-jian.html</link><description>### 按照指定文件名移到文件
+```。</description><guid isPermaLink="true">https://feeday.cn/post/cha-zhao-ti-huan.html</guid><pubDate>Sun, 20 Jul 2025 04:45:05 +0000</pubDate></item><item><title>移到文件</title><link>https://feeday.cn/post/yi-dao-wen-jian.html</link><description>### 按照指定文件名移到文件
 
 ### 简介
 假设目录与文件如下：
@@ -2477,7 +2477,7 @@ error
 ⚠ 未找到匹配文件 for key: 'missing'
 ✔ 已移动: 'test_error.log' 对应关键字 'error' 到 'H:\copy\test_error.log'
  
-共 4 个关键字，成功移动 3 个，对应文件。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/yi-dao-wen-jian.html</guid><pubDate>Sun, 20 Jul 2025 04:44:19 +0000</pubDate></item><item><title>删除重复图像</title><link>https://tcq20256.github.io/feeday//post/shan-chu-zhong-fu-tu-xiang.html</link><description>```
+共 4 个关键字，成功移动 3 个，对应文件。</description><guid isPermaLink="true">https://feeday.cn/post/yi-dao-wen-jian.html</guid><pubDate>Sun, 20 Jul 2025 04:44:19 +0000</pubDate></item><item><title>删除重复图像</title><link>https://feeday.cn/post/shan-chu-zhong-fu-tu-xiang.html</link><description>```
 import os
 import cv2
 import numpy as np
@@ -2538,9 +2538,9 @@ def delete_duplicate_images():
 model = ResNet50(weights='imagenet', include_top=False, pooling='avg')
  
 delete_duplicate_images()
-```。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/shan-chu-zhong-fu-tu-xiang.html</guid><pubDate>Sun, 20 Jul 2025 04:43:13 +0000</pubDate></item><item><title>md5处理文件</title><link>https://tcq20256.github.io/feeday//post/md5-chu-li-wen-jian.html</link><description>## 删除MD5值相同的文件
+```。</description><guid isPermaLink="true">https://feeday.cn/post/shan-chu-zhong-fu-tu-xiang.html</guid><pubDate>Sun, 20 Jul 2025 04:43:13 +0000</pubDate></item><item><title>md5处理文件</title><link>https://feeday.cn/post/md5-chu-li-wen-jian.html</link><description>## 删除MD5值相同的文件
 
-通过MD5值把重复的文件移到del文件夹，表格记录。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/md5-chu-li-wen-jian.html</guid><pubDate>Sun, 20 Jul 2025 04:42:26 +0000</pubDate></item><item><title>同步代码</title><link>https://tcq20256.github.io/feeday//post/tong-bu-dai-ma.html</link><description>## 常用的 Git 命令
+通过MD5值把重复的文件移到del文件夹，表格记录。</description><guid isPermaLink="true">https://feeday.cn/post/md5-chu-li-wen-jian.html</guid><pubDate>Sun, 20 Jul 2025 04:42:26 +0000</pubDate></item><item><title>同步代码</title><link>https://feeday.cn/post/tong-bu-dai-ma.html</link><description>## 常用的 Git 命令
 
 更新端口刷新DNS
 
@@ -2671,7 +2671,7 @@ git checkout branch-name
 
 ```bash
 git merge branch-name
-```。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/tong-bu-dai-ma.html</guid><pubDate>Sun, 20 Jul 2025 04:41:37 +0000</pubDate></item><item><title>查找代码</title><link>https://tcq20256.github.io/feeday//post/cha-zhao-dai-ma.html</link><description>## Windows 查找
+```。</description><guid isPermaLink="true">https://feeday.cn/post/tong-bu-dai-ma.html</guid><pubDate>Sun, 20 Jul 2025 04:41:37 +0000</pubDate></item><item><title>查找代码</title><link>https://feeday.cn/post/cha-zhao-dai-ma.html</link><description>## Windows 查找
 ```
 Get-ChildItem -Recurse -File | Select-String -Pattern '56'
 ```
@@ -2688,7 +2688,7 @@ grep -l 'Money' file1 file2 file3...
 
 ```
 sed -i s/'length', 55'/'length', 56'/g `grep 'length', 55' -rl --include='formatting.php' ./`
-```。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/cha-zhao-dai-ma.html</guid><pubDate>Sun, 20 Jul 2025 04:40:46 +0000</pubDate></item><item><title>NextChat</title><link>https://tcq20256.github.io/feeday//post/NextChat.html</link><description>
+```。</description><guid isPermaLink="true">https://feeday.cn/post/cha-zhao-dai-ma.html</guid><pubDate>Sun, 20 Jul 2025 04:40:46 +0000</pubDate></item><item><title>NextChat</title><link>https://feeday.cn/post/NextChat.html</link><description>
 
 ✨ Light and Fast AI Assistant,with Claude, DeepSeek, GPT4 &amp; Gemini Pro support. 
 
@@ -2713,6 +2713,6 @@ sed -i s/'length', 55'/'length', 56'/g `grep 'length', 55' -rl --include='format
 
 ## Dokploy
 
-Dokploy 是一个免费的、可自托管的平台即服务 （PaaS），可简化应用程序和数据库的部署和管理。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/NextChat.html</guid><pubDate>Sat, 19 Jul 2025 20:47:38 +0000</pubDate></item><item><title>创建博客</title><link>https://tcq20256.github.io/feeday//post/chuang-jian-bo-ke.html</link><description>## 安装步骤
+Dokploy 是一个免费的、可自托管的平台即服务 （PaaS），可简化应用程序和数据库的部署和管理。</description><guid isPermaLink="true">https://feeday.cn/post/NextChat.html</guid><pubDate>Sat, 19 Jul 2025 20:47:38 +0000</pubDate></item><item><title>创建博客</title><link>https://feeday.cn/post/chuang-jian-bo-ke.html</link><description>## 安装步骤
 
-1. 【创建仓库】点击[通过模板创建仓库](https://github.com/new?template_name=Gmeek-template&amp;template_owner=Meekdai)，建议仓库名称为`XXX.github.io`，其中`XXX`为你的github用户名。</description><guid isPermaLink="true">https://tcq20256.github.io/feeday//post/chuang-jian-bo-ke.html</guid><pubDate>Sat, 19 Jul 2025 17:50:50 +0000</pubDate></item></channel></rss>
+1. 【创建仓库】点击[通过模板创建仓库](https://github.com/new?template_name=Gmeek-template&amp;template_owner=Meekdai)，建议仓库名称为`XXX.github.io`，其中`XXX`为你的github用户名。</description><guid isPermaLink="true">https://feeday.cn/post/chuang-jian-bo-ke.html</guid><pubDate>Sat, 19 Jul 2025 17:50:50 +0000</pubDate></item></channel></rss>
