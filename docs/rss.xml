@@ -1,5 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Sat, 01 Nov 2025 16:49:58 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>通用媒体链接查看器</title><link>https://feeday.cn/post/tong-yong-mei-ti-lian-jie-cha-kan-qi.html</link><description>输入图像视频链接查看预览
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn</link></image><lastBuildDate>Sun, 02 Nov 2025 09:41:54 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>按文本匹配移动文件</title><link>https://feeday.cn/post/an-wen-ben-pi-pei-yi-dong-wen-jian.html</link><description>按照文本每行匹配文件复制到指定位置
+
+## 🧩 功能简介
+
+从指定的 TXT 文件（`txt_file`）中读取若干关键字（去重并按字典序排序）。</description><guid isPermaLink="true">https://feeday.cn/post/an-wen-ben-pi-pei-yi-dong-wen-jian.html</guid><pubDate>Sun, 02 Nov 2025 09:41:26 +0000</pubDate></item><item><title>通用媒体链接查看器</title><link>https://feeday.cn/post/tong-yong-mei-ti-lian-jie-cha-kan-qi.html</link><description>输入图像视频链接查看预览
 ```
 &lt;!doctype html&gt;
 &lt;html lang='zh-CN'&gt;
