@@ -1,4 +1,6 @@
 Centos7.6老版本安装conda
+
+## 安装脚本
 ```
 #!/bin/bash
 # ==========================================
@@ -61,4 +63,11 @@ echo "👉 source ~/.bashrc"
 echo "👉 conda create -n py310 python=3.10 -y"
 echo "👉 conda activate py310"
 echo "source /root/miniconda3/bin/activate"
+```
+
+## 创建激活环境
+```
+source /root/miniconda3/bin/activate
+conda create -n py310 python=3.10 -y
+conda activate py310
 ```
