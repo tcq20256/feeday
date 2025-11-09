@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://blog.cpuck.com</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://blog.cpuck.com</link></image><lastBuildDate>Sun, 09 Nov 2025 07:20:16 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>git-day</title><link>https://blog.cpuck.com/post/git-day.html</link><description>同步代码项目脚本
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://blog.cpuck.com</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://blog.cpuck.com</link></image><lastBuildDate>Sun, 09 Nov 2025 07:23:01 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>GIthub同步项目到服务器脚本</title><link>https://blog.cpuck.com/post/GIthub-tong-bu-xiang-mu-dao-fu-wu-qi-jiao-ben.html</link><description>同步代码项目脚本
 ```
 #!/bin/bash
 # ==========================================
@@ -58,7 +58,7 @@ done
 
 echo '✅ 所有仓库处理完毕 $(date '+%F %T')' | tee -a '$LOG_FILE'
 echo '========================================' | tee -a '$LOG_FILE'
-```。</description><guid isPermaLink="true">https://blog.cpuck.com/post/git-day.html</guid><pubDate>Sun, 09 Nov 2025 07:19:50 +0000</pubDate></item><item><title>install_centos7.6_conda.sh</title><link>https://blog.cpuck.com/post/install_centos7.6_conda.sh.html</link><description>Centos7.6老版本安装conda
+```。</description><guid isPermaLink="true">https://blog.cpuck.com/post/GIthub-tong-bu-xiang-mu-dao-fu-wu-qi-jiao-ben.html</guid><pubDate>Sun, 09 Nov 2025 07:19:50 +0000</pubDate></item><item><title>install_centos7.6_conda.sh</title><link>https://blog.cpuck.com/post/install_centos7.6_conda.sh.html</link><description>Centos7.6老版本安装conda
 ```
 #!/bin/bash
 # ==========================================
