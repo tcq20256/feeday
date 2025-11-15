@@ -1,7 +1,7 @@
 
 检查 imgur 图片在多个镜像站是否可用
 
-
+- https://shiquda.link/load-imgur-images/
 ```
 import requests
 import time
