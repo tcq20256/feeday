@@ -1,5 +1,24 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn/feeday</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn/feeday</link></image><lastBuildDate>Sat, 22 Nov 2025 19:08:58 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>windows-开始菜单目录</title><link>https://feeday.cn/feeday/post/windows--kai-shi-cai-dan-mu-lu.html</link><description>删除开始菜单应用列表，找对应文件夹删除。</description><guid isPermaLink="true">https://feeday.cn/feeday/post/windows--kai-shi-cai-dan-mu-lu.html</guid><pubDate>Sat, 15 Nov 2025 07:21:39 +0000</pubDate></item><item><title>imgur镜像站测试</title><link>https://feeday.cn/feeday/post/imgur-jing-xiang-zhan-ce-shi.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>feeday</title><link>https://feeday.cn/feeday</link><description>BB Work No Money</description><copyright>feeday</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://feeday.cn/feeday</link></image><lastBuildDate>Sat, 22 Nov 2025 19:15:10 +0000</lastBuildDate><managingEditor>feeday</managingEditor><ttl>60</ttl><webMaster>feeday</webMaster><item><title>配置文件</title><link>https://feeday.cn/feeday/post/pei-zhi-wen-jian.html</link><description>```
+{
+  'title': 'feeday',
+  'subTitle': 'BB Work No Money',
+  'homeUrl': 'https://feeday.cn/feeday',
+  'avatarUrl': 'https://github.githubassets.com/favicons/favicon.svg',
+  'bottomText': '❤️ 转载文章请注明出处，谢谢！❤️',
+  'script': '&lt;script src='/gmeek/GmeekTOC.js'&gt;&lt;/script&gt;',
+  'allHead': '&lt;script src='/gmeek/GmeekVercount.js'&gt;&lt;/script&gt;',
+  'head': '&lt;script async src=\'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1964437526797765\' crossorigin=\'anonymous\'&gt;&lt;/script&gt;\n&lt;!-- blog119 --&gt;\n&lt;ins class=\'adsbygoogle\' style=\'display:inline-block;width:728px;height:90px\' data-ad-client=\'ca-pub-1964437526797765\' data-ad-slot=\'6408697538\'&gt;&lt;/ins&gt;\n&lt;script&gt;\n     (adsbygoogle = window.adsbygoogle || []).push({});\n&lt;/script&gt;',
+  'iconList': {
+    'add': 'M8 1C8.4 1 8.7 1.3 8.7 1.7V7.3H14.3C14.7 7.3 15 7.6 15 8C15 8.4 14.7 8.7 14.3 8.7H8.7V14.3C8.7 14.7 8.4 15 8 15C7.6 15 7.3 14.7 7.3 14.3V8.7H1.7C1.3 8.7 1 8.4 1 8C1 7.6 1.3 7.3 1.7 7.3H7.3V1.7C7.3 1.3 7.6 1 8 1Z'
+  },
+  'exlink': {
+    'add': 'https://github.com/tcq233/feeday/issues/new'
+  },
+
+  'GMEEK_VERSION': 'last'
+}
+```。</description><guid isPermaLink="true">https://feeday.cn/feeday/post/pei-zhi-wen-jian.html</guid><pubDate>Sat, 22 Nov 2025 19:10:41 +0000</pubDate></item><item><title>windows-开始菜单目录</title><link>https://feeday.cn/feeday/post/windows--kai-shi-cai-dan-mu-lu.html</link><description>删除开始菜单应用列表，找对应文件夹删除。</description><guid isPermaLink="true">https://feeday.cn/feeday/post/windows--kai-shi-cai-dan-mu-lu.html</guid><pubDate>Sat, 15 Nov 2025 07:21:39 +0000</pubDate></item><item><title>imgur镜像站测试</title><link>https://feeday.cn/feeday/post/imgur-jing-xiang-zhan-ce-shi.html</link><description>
 检查 imgur 图片在多个镜像站是否可用
 
 - https://shiquda.link/load-imgur-images/

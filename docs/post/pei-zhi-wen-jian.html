@@ -10,120 +10,52 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="
-# 正则表达式速查与示例
+<meta name="description" content="```
+{
+  'title': 'feeday',
+  'subTitle': 'BB Work No Money',
+  'homeUrl': 'https://feeday.cn/feeday',
+  'avatarUrl': 'https://github.githubassets.com/favicons/favicon.svg',
+  'bottomText': '❤️ 转载文章请注明出处，谢谢！❤️',
+  'script': '<script src='/gmeek/GmeekTOC.js'></script>',
+  'allHead': '<script src='/gmeek/GmeekVercount.js'></script>',
+  'head': '<script async src=\'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1964437526797765\' crossorigin=\'anonymous\'></script>\n<!-- blog119 -->\n<ins class=\'adsbygoogle\' style=\'display:inline-block;width:728px;height:90px\' data-ad-client=\'ca-pub-1964437526797765\' data-ad-slot=\'6408697538\'></ins>\n<script>\n     (adsbygoogle = window.adsbygoogle || []).push({});\n</script>',
+  'iconList': {
+    'add': 'M8 1C8.4 1 8.7 1.3 8.7 1.7V7.3H14.3C14.7 7.3 15 7.6 15 8C15 8.4 14.7 8.7 14.3 8.7H8.7V14.3C8.7 14.7 8.4 15 8 15C7.6 15 7.3 14.7 7.3 14.3V8.7H1.7C1.3 8.7 1 8.4 1 8C1 7.6 1.3 7.3 1.7 7.3H7.3V1.7C7.3 1.3 7.6 1 8 1Z'
+  },
+  'exlink': {
+    'add': 'https://github.com/tcq233/feeday/issues/new'
+  },
 
----
-
-## 基础匹配
-
-| 功能 | 正则 | 示例文本 | 匹配结果 |
-|------|------|----------|----------|
-| **非数字** | `[^0-9]*` | `abc123` | `abc` |
-| **非数字（简写）** | `\D+` | `A9B` | `A` |
-| **n 位数字** | `\d{4}` | `2025-08` | `2025` |
-| **至少 n 位数字** | `\d{3,}` | `abc12345xyz` | `12345` |
-| **长度 3–20 的任意字符** | `.{3,20}` | `hello` | `hello` |
-
----
-
-## 多行模式（`(?m)`）
-
-| 功能 | 正则 | 示例文本 | 匹配结果 |
-|------|------|----------|----------|
-| **每行最后两个字符** | `(?m).{2}$` | `abc\ndefg` | `bc`, `fg` |
-| **每行开头两个字符** | `(?m)^.{2}` | `abc\ndefg` | `ab`, `de` |
-
----
-
-## 字符类
-
-| 功能 | 正则 | 示例文本 | 匹配结果 |
-|------|------|----------|----------|
-| **中文字符** | `[\u4e00-\u9fa5]` | `你好123` | `你`, `好` |
-| **中文字符（推荐）** | `\p{Han}` | `汉字abc` | `汉`, `字` |
-| **英文和数字** | `[A-Za-z0-9]+` | `abc123!` | `abc123` |
-| **数字、字母、下划线** | `[A-Za-z0-9_]+` | `abc_123!` | `abc_123` |
-| **长度 3–20 的数字/字母/下划线** | `[A-Za-z0-9_]{3,20}` | `abc_123` | `abc_123` |
-
----
-
-## 常用提取规则
-
-| 功能 | 正则 | 示例文本 | 匹配结果 |
-|------|------|----------|----------|
-| **匹配 `(数字)`** | `\(\d+\)` | `file(1).txt` | `(1)` |
-| **邮箱** | `^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$` | `test@example.com` | `test@example.com` |
-| **中国大陆手机号** | `^1[3-9]\d{9}$` | `13812345678` | `13812345678` |
-
----
-
-## URL 匹配（双引号包围）
-
-1. 原始版本（不允许域名中有 `.`）
-```regex
-https?:\/\/[^\s\/$.?#]+[^\s]*?(?=')
+  'GMEEK_VERSION': 'last'
+}
 ```。">
-<meta property="og:title" content="正则表达式">
-<meta property="og:description" content="
-# 正则表达式速查与示例
+<meta property="og:title" content="配置文件">
+<meta property="og:description" content="```
+{
+  'title': 'feeday',
+  'subTitle': 'BB Work No Money',
+  'homeUrl': 'https://feeday.cn/feeday',
+  'avatarUrl': 'https://github.githubassets.com/favicons/favicon.svg',
+  'bottomText': '❤️ 转载文章请注明出处，谢谢！❤️',
+  'script': '<script src='/gmeek/GmeekTOC.js'></script>',
+  'allHead': '<script src='/gmeek/GmeekVercount.js'></script>',
+  'head': '<script async src=\'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1964437526797765\' crossorigin=\'anonymous\'></script>\n<!-- blog119 -->\n<ins class=\'adsbygoogle\' style=\'display:inline-block;width:728px;height:90px\' data-ad-client=\'ca-pub-1964437526797765\' data-ad-slot=\'6408697538\'></ins>\n<script>\n     (adsbygoogle = window.adsbygoogle || []).push({});\n</script>',
+  'iconList': {
+    'add': 'M8 1C8.4 1 8.7 1.3 8.7 1.7V7.3H14.3C14.7 7.3 15 7.6 15 8C15 8.4 14.7 8.7 14.3 8.7H8.7V14.3C8.7 14.7 8.4 15 8 15C7.6 15 7.3 14.7 7.3 14.3V8.7H1.7C1.3 8.7 1 8.4 1 8C1 7.6 1.3 7.3 1.7 7.3H7.3V1.7C7.3 1.3 7.6 1 8 1Z'
+  },
+  'exlink': {
+    'add': 'https://github.com/tcq233/feeday/issues/new'
+  },
 
----
-
-## 基础匹配
-
-| 功能 | 正则 | 示例文本 | 匹配结果 |
-|------|------|----------|----------|
-| **非数字** | `[^0-9]*` | `abc123` | `abc` |
-| **非数字（简写）** | `\D+` | `A9B` | `A` |
-| **n 位数字** | `\d{4}` | `2025-08` | `2025` |
-| **至少 n 位数字** | `\d{3,}` | `abc12345xyz` | `12345` |
-| **长度 3–20 的任意字符** | `.{3,20}` | `hello` | `hello` |
-
----
-
-## 多行模式（`(?m)`）
-
-| 功能 | 正则 | 示例文本 | 匹配结果 |
-|------|------|----------|----------|
-| **每行最后两个字符** | `(?m).{2}$` | `abc\ndefg` | `bc`, `fg` |
-| **每行开头两个字符** | `(?m)^.{2}` | `abc\ndefg` | `ab`, `de` |
-
----
-
-## 字符类
-
-| 功能 | 正则 | 示例文本 | 匹配结果 |
-|------|------|----------|----------|
-| **中文字符** | `[\u4e00-\u9fa5]` | `你好123` | `你`, `好` |
-| **中文字符（推荐）** | `\p{Han}` | `汉字abc` | `汉`, `字` |
-| **英文和数字** | `[A-Za-z0-9]+` | `abc123!` | `abc123` |
-| **数字、字母、下划线** | `[A-Za-z0-9_]+` | `abc_123!` | `abc_123` |
-| **长度 3–20 的数字/字母/下划线** | `[A-Za-z0-9_]{3,20}` | `abc_123` | `abc_123` |
-
----
-
-## 常用提取规则
-
-| 功能 | 正则 | 示例文本 | 匹配结果 |
-|------|------|----------|----------|
-| **匹配 `(数字)`** | `\(\d+\)` | `file(1).txt` | `(1)` |
-| **邮箱** | `^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$` | `test@example.com` | `test@example.com` |
-| **中国大陆手机号** | `^1[3-9]\d{9}$` | `13812345678` | `13812345678` |
-
----
-
-## URL 匹配（双引号包围）
-
-1. 原始版本（不允许域名中有 `.`）
-```regex
-https?:\/\/[^\s\/$.?#]+[^\s]*?(?=')
+  'GMEEK_VERSION': 'last'
+}
 ```。">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://feeday.cn/feeday/post/zheng-ze-biao-da-shi.html">
+<meta property="og:url" content="https://feeday.cn/feeday/post/pei-zhi-wen-jian.html">
 <meta property="og:image" content="https://github.githubassets.com/favicons/favicon.svg">
-<title>正则表达式</title>
-<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
+<title>配置文件</title>
+
 
 
 </head>
@@ -165,7 +97,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 <body>
     <div id="header">
-<h1 class="postTitle">正则表达式</h1>
+<h1 class="postTitle">配置文件</h1>
 <div class="title-right">
     <a href="https://feeday.cn/feeday" id="buttonHome" class="btn btn-invisible circle" title="首页">
         <svg class="octicon" width="16" height="16">
@@ -173,7 +105,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
         </svg>
     </a>
     
-    <a href="https://github.com/tcq233/feeday/issues/30" target="_blank" class="btn btn-invisible circle" title="Issue">
+    <a href="https://github.com/tcq233/feeday/issues/103" target="_blank" class="btn btn-invisible circle" title="Issue">
         <svg class="octicon" width="16" height="16">
             <path id="pathIssue" fill-rule="evenodd"></path>
         </svg>
@@ -189,159 +121,25 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><h1>正则表达式速查与示例</h1>
-<hr>
-<h2>基础匹配</h2>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th>功能</th>
-<th>正则</th>
-<th>示例文本</th>
-<th>匹配结果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>非数字</strong></td>
-<td><code class="notranslate">[^0-9]*</code></td>
-<td><code class="notranslate">abc123</code></td>
-<td><code class="notranslate">abc</code></td>
-</tr>
-<tr>
-<td><strong>非数字（简写）</strong></td>
-<td><code class="notranslate">\D+</code></td>
-<td><code class="notranslate">A9B</code></td>
-<td><code class="notranslate">A</code></td>
-</tr>
-<tr>
-<td><strong>n 位数字</strong></td>
-<td><code class="notranslate">\d{4}</code></td>
-<td><code class="notranslate">2025-08</code></td>
-<td><code class="notranslate">2025</code></td>
-</tr>
-<tr>
-<td><strong>至少 n 位数字</strong></td>
-<td><code class="notranslate">\d{3,}</code></td>
-<td><code class="notranslate">abc12345xyz</code></td>
-<td><code class="notranslate">12345</code></td>
-</tr>
-<tr>
-<td><strong>长度 3–20 的任意字符</strong></td>
-<td><code class="notranslate">.{3,20}</code></td>
-<td><code class="notranslate">hello</code></td>
-<td><code class="notranslate">hello</code></td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<hr>
-<h2>多行模式（<code class="notranslate">(?m)</code>）</h2>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th>功能</th>
-<th>正则</th>
-<th>示例文本</th>
-<th>匹配结果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>每行最后两个字符</strong></td>
-<td><code class="notranslate">(?m).{2}$</code></td>
-<td><code class="notranslate">abc\ndefg</code></td>
-<td><code class="notranslate">bc</code>, <code class="notranslate">fg</code></td>
-</tr>
-<tr>
-<td><strong>每行开头两个字符</strong></td>
-<td><code class="notranslate">(?m)^.{2}</code></td>
-<td><code class="notranslate">abc\ndefg</code></td>
-<td><code class="notranslate">ab</code>, <code class="notranslate">de</code></td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<hr>
-<h2>字符类</h2>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th>功能</th>
-<th>正则</th>
-<th>示例文本</th>
-<th>匹配结果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>中文字符</strong></td>
-<td><code class="notranslate">[\u4e00-\u9fa5]</code></td>
-<td><code class="notranslate">你好123</code></td>
-<td><code class="notranslate">你</code>, <code class="notranslate">好</code></td>
-</tr>
-<tr>
-<td><strong>中文字符（推荐）</strong></td>
-<td><code class="notranslate">\p{Han}</code></td>
-<td><code class="notranslate">汉字abc</code></td>
-<td><code class="notranslate">汉</code>, <code class="notranslate">字</code></td>
-</tr>
-<tr>
-<td><strong>英文和数字</strong></td>
-<td><code class="notranslate">[A-Za-z0-9]+</code></td>
-<td><code class="notranslate">abc123!</code></td>
-<td><code class="notranslate">abc123</code></td>
-</tr>
-<tr>
-<td><strong>数字、字母、下划线</strong></td>
-<td><code class="notranslate">[A-Za-z0-9_]+</code></td>
-<td><code class="notranslate">abc_123!</code></td>
-<td><code class="notranslate">abc_123</code></td>
-</tr>
-<tr>
-<td><strong>长度 3–20 的数字/字母/下划线</strong></td>
-<td><code class="notranslate">[A-Za-z0-9_]{3,20}</code></td>
-<td><code class="notranslate">abc_123</code></td>
-<td><code class="notranslate">abc_123</code></td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<hr>
-<h2>常用提取规则</h2>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th>功能</th>
-<th>正则</th>
-<th>示例文本</th>
-<th>匹配结果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>匹配 <code class="notranslate">(数字)</code></strong></td>
-<td><code class="notranslate">\(\d+\)</code></td>
-<td><code class="notranslate">file(1).txt</code></td>
-<td><code class="notranslate">(1)</code></td>
-</tr>
-<tr>
-<td><strong>邮箱</strong></td>
-<td><code class="notranslate">^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$</code></td>
-<td><code class="notranslate">test@example.com</code></td>
-<td><code class="notranslate">test@example.com</code></td>
-</tr>
-<tr>
-<td><strong>中国大陆手机号</strong></td>
-<td><code class="notranslate">^1[3-9]\d{9}$</code></td>
-<td><code class="notranslate">13812345678</code></td>
-<td><code class="notranslate">13812345678</code></td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<hr>
-<h2>URL 匹配（双引号包围）</h2>
-<ol>
-<li>原始版本（不允许域名中有 <code class="notranslate">.</code>）</li>
-</ol>
-<div class="highlight highlight-source-regexp"><pre class="notranslate"><span class="pl-s">h</span><span class="pl-s">t</span><span class="pl-s">t</span><span class="pl-s">p</span><span class="pl-s">s</span><span class="pl-c1">?</span><span class="pl-s">:</span><span class="pl-cce">\/</span><span class="pl-cce">\/</span><span class="pl-kos">[</span><span class="pl-c1">^</span><span class="pl-cce">\s</span><span class="pl-cce">\/</span><span class="pl-c1">$</span><span class="pl-c1">.</span><span class="pl-c1">?</span><span class="pl-c1">#</span><span class="pl-kos">]</span><span class="pl-c1">+</span><span class="pl-kos">[</span><span class="pl-c1">^</span><span class="pl-cce">\s</span><span class="pl-kos">]</span><span class="pl-c1">*</span>?<span class="pl-kos">(?</span><span class="pl-c1">=</span><span class="pl-s">"</span><span class="pl-kos">)</span></pre></div></div>
+<div class="markdown-body" id="postBody"><pre class="notranslate"><code class="notranslate">{
+  "title": "feeday",
+  "subTitle": "BB Work No Money",
+  "homeUrl": "https://feeday.cn/feeday",
+  "avatarUrl": "https://github.githubassets.com/favicons/favicon.svg",
+  "bottomText": "❤️ 转载文章请注明出处，谢谢！❤️",
+  "script": "&lt;script src='/gmeek/GmeekTOC.js'&gt;&lt;/script&gt;",
+  "allHead": "&lt;script src='/gmeek/GmeekVercount.js'&gt;&lt;/script&gt;",
+  "head": "&lt;script async src=\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1964437526797765\" crossorigin=\"anonymous\"&gt;&lt;/script&gt;\n&lt;!-- blog119 --&gt;\n&lt;ins class=\"adsbygoogle\" style=\"display:inline-block;width:728px;height:90px\" data-ad-client=\"ca-pub-1964437526797765\" data-ad-slot=\"6408697538\"&gt;&lt;/ins&gt;\n&lt;script&gt;\n     (adsbygoogle = window.adsbygoogle || []).push({});\n&lt;/script&gt;",
+  "iconList": {
+    "add": "M8 1C8.4 1 8.7 1.3 8.7 1.7V7.3H14.3C14.7 7.3 15 7.6 15 8C15 8.4 14.7 8.7 14.3 8.7H8.7V14.3C8.7 14.7 8.4 15 8 15C7.6 15 7.3 14.7 7.3 14.3V8.7H1.7C1.3 8.7 1 8.4 1 8C1 7.6 1.3 7.3 1.7 7.3H7.3V1.7C7.3 1.3 7.6 1 8 1Z"
+  },
+  "exlink": {
+    "add": "https://github.com/tcq233/feeday/issues/new"
+  },
+
+  "GMEEK_VERSION": "last"
+}
+</code></pre></div>
 <div style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
